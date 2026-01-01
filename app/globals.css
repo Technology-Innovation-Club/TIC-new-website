@@ -147,4 +147,10 @@
       0 1px 0 rgba(16, 1, 76, 0.04),
       0 10px 30px rgba(16, 1, 76, 0.08);
   }
+
+  /* Poppins utility */
+  .font-poppins {
+    font-family: var(--font-poppins), ui-sans-serif, system-ui, -apple-system,
+      "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  }
 }

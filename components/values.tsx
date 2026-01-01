@@ -34,14 +34,15 @@ export function Values() {
       <div className="max-w-7xl mx-auto">
         <div className="max-w-3xl">
           <p className="text-sm font-extrabold tracking-widest uppercase text-primary">
-            Values
+            Core Principles
           </p>
           <h2 className="mt-4 text-5xl sm:text-6xl text-balance">
-            The culture behind the wins
+            What drives our impact
           </h2>
           <p className="mt-5 text-lg text-foreground/70 leading-relaxed">
-            These values aren’t slogans—this is how we review work, run
-            programs, and build leaders.
+            These principles guide our approach to innovation, collaboration,
+            and leadership, ensuring every project delivers real value and
+            measurable outcomes.
           </p>
         </div>
 
@@ -49,12 +50,12 @@ export function Values() {
           {values.map((v) => (
             <div
               key={v.title}
-              className="rounded-2xl border border-border bg-white p-7 text-center tic-shadow hover:-translate-y-0.5 transition-transform"
+              className="rounded-2xl border border-border bg-white p-7 text-center tic-shadow hover:-translate-y-0.5 transition-transform font-poppins"
             >
               <div className="mx-auto w-12 h-12 rounded-2xl bg-secondary/15 border border-secondary/25 grid place-items-center text-primary">
                 {v.icon}
               </div>
-              <h3 className="mt-5 text-lg font-extrabold text-primary">
+              <h3 className="mt-5 text-lg font-normal text-primary">
                 {v.title}
               </h3>
               <p className="mt-2 text-sm text-foreground/70 leading-relaxed">

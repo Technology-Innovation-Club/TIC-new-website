@@ -2,14 +2,20 @@
 
 import { ArrowRight, Menu, X } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
+import { ImageLogo } from "./image-logo";
 
-const navItems = [
+interface NavItem {
+  label: string;
+  href: string;
+}
+
+const navItems: NavItem[] = [
   { label: "About", href: "#about" },
   { label: "Wins", href: "#wins" },
   { label: "Streams", href: "#streams" },
   { label: "Calendar", href: "#calendar" },
   { label: "Contact", href: "#contact" },
-] as const;
+];
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,9 +42,10 @@ export function Header() {
           key={item.href}
           href={item.href}
           onClick={() => setIsOpen(false)}
-          className="text-sm font-semibold text-foreground/80 hover:text-primary transition-colors"
+          className="text-sm font-semibold text-foreground/80 font-poppins relative group"
         >
           {item.label}
+          <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
         </a>
       )),
     [],
@@ -51,19 +58,12 @@ export function Header() {
           <a href="#main" className="flex items-center gap-3 group">
             <div className="relative">
               <div className="absolute -inset-1 rounded-xl bg-secondary/25 blur-sm opacity-0 group-hover:opacity-100 transition-opacity" />
-              <div className="relative w-10 h-10 rounded-xl border border-border bg-white grid place-items-center">
-                {/* Placeholder/logo slot */}
-                <img
-                  src="/tech-innovation-club-logo.jpg"
-                  alt="Tech Innovation Club (TIC) logo"
-                  className="w-8 h-8 object-contain"
-                />
-              </div>
+              <ImageLogo className="w-18 h-18" />
             </div>
 
             <div className="leading-tight">
               <div className="flex items-center gap-2">
-                <span className="font-bold text-primary">TIC</span>
+                <span className="font-bold text-primary font-poppins">TIC</span>
                 <span className="text-[10px] font-bold uppercase tracking-widest text-secondary">
                   Pan-Atlantic University
                 </span>
@@ -83,7 +83,7 @@ export function Header() {
             </a>
             <a
               href="#contact"
-              className="px-5 py-2 rounded-lg bg-secondary text-secondary-foreground font-bold hover:brightness-[0.98] active:translate-y-px transition-all inline-flex items-center gap-2"
+              className="px-5 py-2 rounded-lg bg-secondary text-secondary-foreground font-semibold hover:brightness-[0.98] active:translate-y-px transition-all inline-flex items-center gap-2 font-poppins"
             >
               Partner / Join
               <ArrowRight size={16} />

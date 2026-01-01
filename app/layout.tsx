@@ -1,6 +1,7 @@
 import type React from "react";
 import type { Metadata, Viewport } from "next";
 import { Figtree } from "next/font/google";
+import { inter, poppins } from "../lib/fonts";
 import "./globals.css";
 
 const figtree = Figtree({
@@ -12,7 +13,7 @@ const figtree = Figtree({
 export const metadata: Metadata = {
   title: "Tech Innovation Club | Pan-Atlantic University",
   description:
-    "Tech Innovation Club (TIC) is Pan-Atlantic University's innovation engine—building real products, winning hackathons, and developing world-class talent in Lagos, Nigeria.",
+    "Tech Innovation Club (TIC) is Pan-Atlantic University's innovation engine, building real products, winning hackathons, and developing world-class talent in Lagos, Nigeria.",
   keywords: [
     "TIC",
     "Pan-Atlantic University",
@@ -50,7 +51,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={figtree.variable}>
+    <html
+      lang="en"
+      className={`${figtree.variable} ${inter.variable} ${poppins.variable}`}
+    >
       <body className="font-sans">
         <a
           href="#main"

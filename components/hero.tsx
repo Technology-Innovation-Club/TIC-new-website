@@ -1,6 +1,7 @@
 "use client";
 
 import { ArrowRight, ChevronDown } from "lucide-react";
+import { cn } from "../lib/utils";
 
 export function Hero() {
   const scrollTo = (id: string) => {
@@ -13,52 +14,49 @@ export function Hero() {
       {/* Subtle premium backdrop (still a white page) */}
       <div className="absolute inset-0 tic-grid opacity-[0.35]" />
       <div
-        className="absolute -top-40 left-1/2 -translate-x-1/2 w-225 h-225 rounded-full"
-        style={{
-          background:
-            "radial-gradient(circle, rgba(250,173,42,0.18) 0%, rgba(250,173,42,0) 55%)",
-        }}
-      />
-      <div
-        className="absolute -bottom-64 -right-30 w-175 h-175 rounded-full"
-        style={{
-          background:
-            "radial-gradient(circle, rgba(16,1,76,0.10) 0%, rgba(16,1,76,0) 60%)",
-        }}
+        className={cn(
+          "absolute -top-40 left-1/2 -translate-x-1/2 w-225 h-225 rounded-full",
+          "bg-[radial-gradient(circle,rgba(250,173,42,0.18)_0%,rgba(250,173,42,0)_55%)]",
+        )}
+        aria-hidden="true"
       />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 sm:pt-24 sm:pb-20">
-        <div className="max-w-4xl mx-auto text-center">
+      <div
+        className={cn(
+          "absolute -bottom-64 -right-30 w-175 h-175 rounded-full",
+          "bg-[radial-gradient(circle,rgba(16,1,76,0.10)_0%,rgba(16,1,76,0)_60%)]",
+        )}
+        aria-hidden="true"
+      />
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-16 sm:pt-14 sm:pb-20">
+        <div className="max-w-6xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 rounded-full border border-secondary/35 bg-secondary/10 px-4 py-2">
             <span
               className="w-2 h-2 rounded-full bg-secondary"
               aria-hidden="true"
             />
             <span className="text-xs font-bold tracking-widest uppercase text-primary">
-              Africa’s student-built innovation engine
+              Africa’s student innovation hub
             </span>
           </div>
 
           <h1 className="mt-8 text-5xl sm:text-6xl lg:text-7xl leading-[1.02] text-balance">
-            Hackathon winners building{" "}
-            <span className="relative inline-block">
-              <span className="absolute inset-x-0 -bottom-1 h-3 bg-secondary/35 -z-10 rounded-full" />
-              real products
-            </span>{" "}
-            with measurable impact.
+            Building real-world tech products with measurable impact
           </h1>
 
           <p className="mt-6 text-lg sm:text-xl text-foreground/75 leading-relaxed text-pretty">
-            Tech Innovation Club (TIC) at Pan-Atlantic University turns
-            high-potential students into builders: shipping portfolio-grade
-            products, competing nationally, and launching initiatives that
-            matter to real users.
+            Tech Innovation Club (TIC) at Pan-Atlantic University empowers
+            students to bridge theory and practice, delivering solutions for
+            real users, and driving innovation at scale. Our members ship
+            portfolio-grade products, compete in national challenges, and launch
+            initiatives that matter.
           </p>
 
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3">
             <a
               href="#contact"
-              className="w-full sm:w-auto px-7 py-3 rounded-xl bg-secondary text-secondary-foreground font-extrabold tracking-tight hover:brightness-[0.98] active:translate-y-px transition-all inline-flex items-center justify-center gap-2"
+              className="w-full sm:w-auto px-7 py-3 rounded-xl bg-secondary font-poppins text-secondary-foreground font-normal tracking-tight hover:brightness-[0.98] active:translate-y-px transition-all inline-flex items-center justify-center gap-2"
             >
               Partner with TIC
               <ArrowRight size={18} />

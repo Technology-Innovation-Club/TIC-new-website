@@ -5,6 +5,13 @@ import { useMemo, useState } from "react";
 
 type EventType = "hackathon" | "workshop" | "event" | "program" | "conference";
 
+interface CalendarEvent {
+  date: string;
+  title: string;
+  description: string;
+  type: EventType;
+}
+
 const typeStyles: Record<EventType, string> = {
   hackathon: "bg-secondary/15 border-secondary/25 text-primary",
   workshop: "bg-primary/5 border-border text-primary",
@@ -14,52 +21,51 @@ const typeStyles: Record<EventType, string> = {
 };
 
 export function Calendar() {
-  const upcomingEvents = useMemo(
-    () =>
-      [
-        {
-          date: "Jan 15, 2025",
-          title: "CodeSpark Sprint #1",
-          description:
-            "Build a complete project in 48 hours with mentors, prizes, and industry judges.",
-          type: "hackathon" as const,
-        },
-        {
-          date: "Jan 22, 2025",
-          title: "Web Development Workshop",
-          description:
-            "Modern Next.js patterns, performance, and shipping like a product team.",
-          type: "workshop" as const,
-        },
-        {
-          date: "Feb 5, 2025",
-          title: "TIC Demo Day",
-          description:
-            "Showcase projects to operators, investors, and industry leaders. Build your network.",
-          type: "event" as const,
-        },
-        {
-          date: "Feb 19, 2025",
-          title: "AI & ML Labs Launch",
-          description:
-            "Hands-on intro to ML workflows and building with LLMs (responsibly) in real apps.",
-          type: "workshop" as const,
-        },
-        {
-          date: "Mar 5, 2025",
-          title: "Startup Bootcamp",
-          description:
-            "10-week builder program: validate, ship MVPs, and learn distribution and iteration.",
-          type: "program" as const,
-        },
-        {
-          date: "Mar 20, 2025",
-          title: "Annual TIC Conference",
-          description:
-            "3 days of keynotes, workshops, and partner sessions focused on real execution.",
-          type: "conference" as const,
-        },
-      ] as const,
+  const upcomingEvents: CalendarEvent[] = useMemo(
+    () => [
+      {
+        date: "Jan 15, 2025",
+        title: "CodeSpark Sprint #1",
+        description:
+          "Build a complete project in 48 hours with mentors, prizes, and industry judges.",
+        type: "hackathon",
+      },
+      {
+        date: "Jan 22, 2025",
+        title: "Web Development Workshop",
+        description:
+          "Modern Next.js patterns, performance, and shipping like a product team.",
+        type: "workshop",
+      },
+      {
+        date: "Feb 5, 2025",
+        title: "TIC Demo Day",
+        description:
+          "Showcase projects to operators, investors, and industry leaders. Build your network.",
+        type: "event",
+      },
+      {
+        date: "Feb 19, 2025",
+        title: "AI & ML Labs Launch",
+        description:
+          "Hands-on intro to ML workflows and building with LLMs (responsibly) in real apps.",
+        type: "workshop",
+      },
+      {
+        date: "Mar 5, 2025",
+        title: "Startup Bootcamp",
+        description:
+          "10-week builder program: validate, ship MVPs, and learn distribution and iteration.",
+        type: "program",
+      },
+      {
+        date: "Mar 20, 2025",
+        title: "Annual TIC Conference",
+        description:
+          "3 days of keynotes, workshops, and partner sessions focused on real execution.",
+        type: "conference",
+      },
+    ],
     [],
   );
 
@@ -104,18 +110,11 @@ export function Calendar() {
                   <div className="flex items-start justify-between gap-4">
                     <div>
                       <div className="flex items-center gap-2">
-                        <span
-                          className={`inline-flex items-center rounded-full border px-3 py-1 text-xs font-bold ${
-                            typeStyles[event.type]
-                          }`}
-                        >
-                          {event.type}
-                        </span>
                         <span className="text-xs font-bold tracking-widest uppercase text-foreground/55">
                           {event.date}
                         </span>
                       </div>
-                      <h3 className="mt-3 text-xl font-extrabold text-primary">
+                      <h3 className="mt-3 text-xl font-semibold text-primary font-poppins">
                         {event.title}
                       </h3>
                       <p className="mt-2 text-sm text-foreground/70 leading-relaxed">
@@ -161,7 +160,7 @@ export function Calendar() {
         <div className="mt-10 flex justify-center">
           <button
             onClick={() => setShowAll((v) => !v)}
-            className="px-6 py-3 rounded-xl border-2 border-primary text-primary font-bold hover:bg-primary/5 transition-colors"
+            className="px-6 py-3 rounded-xl border-2 border-primary text-primary font-semibold hover:bg-primary/5 transition-colors font-poppins"
           >
             {showAll ? "Show fewer events" : "View all events"}
           </button>
