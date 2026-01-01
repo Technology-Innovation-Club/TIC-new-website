@@ -145,8 +145,8 @@ function StackedCardLayer({
   return (
     <motion.div
       ref={setRef}
-      style={{ y, scale, opacity, zIndex: index }}
-      className="absolute inset-0 will-change-transform"
+      style={{ y, scale, opacity, zIndex: 10 + index }}
+      className="absolute inset-0 will-change-transform pointer-events-auto"
     >
       {children}
     </motion.div>

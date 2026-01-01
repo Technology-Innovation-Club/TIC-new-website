@@ -96,7 +96,7 @@ export function Programmes() {
         peek={18}
         vhPerCard={90}
         renderCard={(p) => (
-          <article className="relative rounded-2xl border border-border bg-white p-8 tic-shadow">
+          <article className="relative rounded-2xl border border-border bg-white p-8 tic-shadow shadow-xl">
             <div
               className="absolute inset-x-0 top-0 h-1.5 rounded-t-2xl bg-gold/70"
               aria-hidden="true"

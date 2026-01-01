@@ -77,7 +77,7 @@ export function Header() {
           <a href="#main" className="flex items-center gap-3 group">
             <div className="relative">
               <div className="absolute -inset-1 rounded-xl bg-secondary/25 blur-sm opacity-0 group-hover:opacity-100 transition-opacity" />
-              <ImageLogo className="w-18 h-18" />
+              <ImageLogo className="w-10 h-10" />
             </div>
 
             <div className="leading-tight">

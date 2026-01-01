@@ -106,9 +106,9 @@ export function Wins() {
         renderCard={(win) => (
           <article
             className={[
-              "relative rounded-2xl border border-white/15 bg-white/10 p-8 backdrop-blur tic-shadow",
-              "hover:bg-white/12 transition-colors",
-              win.featured ? "ring-1 ring-white/15" : "",
+              "relative rounded-2xl border border-white/20 bg-[#1a0a5c] p-8 tic-shadow",
+              "hover:bg-[#1f0d66] transition-colors",
+              win.featured ? "ring-1 ring-white/20" : "",
             ].join(" ")}
           >
             <div

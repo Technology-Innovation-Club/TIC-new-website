@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useInView, useSpring, useTransform } from "framer-motion";
-import { useRef, useEffect, useState, ReactNode } from "react";
+import { useRef, useEffect, ReactNode } from "react";
 
 // Subtle fade up animation for sections
 export function AnimatedSection({
@@ -113,9 +113,8 @@ export function CountUp({
   const hasAnimatedRef = useRef(false);
 
   const spring = useSpring(0, {
-    stiffness: 50,
-    damping: 30,
-    duration: duration * 1000,
+    stiffness: 120,
+    damping: 20,
   });
 
   const display = useTransform(spring, (current) =>

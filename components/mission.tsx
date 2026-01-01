@@ -1,12 +1,7 @@
 "use client";
 
 import { BriefcaseBusiness, CheckCircle2, Rocket, Wrench } from "lucide-react";
-import {
-  AnimatedSection,
-  SlideIn,
-  StaggerContainer,
-  StaggerItem,
-} from "./ui/motion";
+import { SlideIn, StaggerContainer, StaggerItem } from "./ui/motion";
 
 export function Mission() {
   const pillars = [
@@ -65,7 +60,7 @@ export function Mission() {
                       <div className="w-10 h-10 rounded-xl bg-secondary/15 border border-secondary/25 grid place-items-center text-primary">
                         {p.icon}
                       </div>
-                      <h3 className="mt-4 font-extrabold text-primary">
+                      <h3 className="mt-4 font-semibold font-poppins text-primary">
                         {p.title}
                       </h3>
                       <p className="mt-2 text-sm text-foreground/70 leading-relaxed">
