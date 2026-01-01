@@ -1,7 +1,9 @@
 "use client";
 
+import { useState, useMemo } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Calendar as CalIcon, ChevronDown } from "lucide-react";
-import { useMemo, useState } from "react";
+import { AnimatedSection, StaggerContainer, StaggerItem } from "./ui/motion";
 
 type EventType = "hackathon" | "workshop" | "event" | "program" | "conference";
 
@@ -11,14 +13,6 @@ interface CalendarEvent {
   description: string;
   type: EventType;
 }
-
-const typeStyles: Record<EventType, string> = {
-  hackathon: "bg-secondary/15 border-secondary/25 text-primary",
-  workshop: "bg-primary/5 border-border text-primary",
-  event: "bg-muted border-border text-foreground",
-  program: "bg-secondary/10 border-secondary/20 text-primary",
-  conference: "bg-primary/5 border-border text-primary",
-};
 
 export function Calendar() {
   const upcomingEvents: CalendarEvent[] = useMemo(
@@ -70,6 +64,9 @@ export function Calendar() {
   );
 
   const [showAll, setShowAll] = useState(false);
+  const [openEvent, setOpenEvent] = useState<string | null>(null);
+
+  const displayedEvents = showAll ? upcomingEvents : upcomingEvents.slice(0, 4);
 
   return (
     <section
@@ -77,85 +74,106 @@ export function Calendar() {
       className="w-full py-24 px-4 sm:px-6 lg:px-8 bg-white"
     >
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
-          <div className="max-w-3xl">
-            <p className="text-sm font-extrabold tracking-widest uppercase text-primary">
-              Calendar
-            </p>
-            <h2 className="mt-4 text-5xl sm:text-6xl text-balance">
-              Upcoming activities
-            </h2>
-            <p className="mt-5 text-lg text-foreground/70 leading-relaxed">
-              Workshops, sprints, demo days, and partner-facing events designed
-              around tangible output.
-            </p>
-          </div>
+        <AnimatedSection>
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
+            <div className="max-w-3xl">
+              <p className="text-sm font-extrabold tracking-widest uppercase text-primary">
+                Calendar
+              </p>
+              <h2 className="mt-4 text-5xl sm:text-6xl text-balance">
+                Upcoming activities
+              </h2>
+              <p className="mt-5 text-lg text-foreground/70 leading-relaxed">
+                Workshops, sprints, demo days, and partner-facing events
+                designed around tangible output.
+              </p>
+            </div>
 
-          <div className="flex items-center gap-2">
-            <span className="inline-flex items-center gap-2 rounded-full border border-border bg-muted px-4 py-2 text-sm font-semibold text-foreground/75">
-              <CalIcon className="w-4 h-4 text-primary" />
-              Mock schedule (editable)
-            </span>
+            <div className="flex items-center gap-2">
+              <span className="inline-flex items-center gap-2 rounded-full border border-border bg-muted px-4 py-2 text-sm font-semibold text-foreground/75">
+                <CalIcon className="w-4 h-4 text-primary" />
+                Mock schedule (editable)
+              </span>
+            </div>
           </div>
-        </div>
+        </AnimatedSection>
 
-        <div className="mt-12 grid md:grid-cols-2 gap-6">
-          {(showAll ? upcomingEvents : upcomingEvents.slice(0, 4)).map(
-            (event) => (
-              <details
-                key={`${event.date}-${event.title}`}
-                className="group rounded-2xl border border-border bg-white p-7 tic-shadow open:shadow-[0_1px_0_rgba(16,1,76,0.06),0_18px_50px_rgba(16,1,76,0.12)] transition-shadow"
+        <StaggerContainer
+          className="mt-12 grid md:grid-cols-2 gap-6"
+          staggerDelay={0.08}
+        >
+          {displayedEvents.map((event) => (
+            <StaggerItem key={event.title}>
+              <div
+                className="group rounded-2xl border border-border bg-white p-7 tic-shadow cursor-pointer hover:-translate-y-1 transition-transform duration-200"
+                onClick={() =>
+                  setOpenEvent(openEvent === event.title ? null : event.title)
+                }
               >
-                <summary className="list-none cursor-pointer">
-                  <div className="flex items-start justify-between gap-4">
-                    <div>
-                      <div className="flex items-center gap-2">
-                        <span className="text-xs font-bold tracking-widest uppercase text-foreground/55">
-                          {event.date}
-                        </span>
-                      </div>
-                      <h3 className="mt-3 text-xl font-semibold text-primary font-poppins">
-                        {event.title}
-                      </h3>
-                      <p className="mt-2 text-sm text-foreground/70 leading-relaxed">
-                        {event.description}
-                      </p>
-                    </div>
-
-                    <span className="mt-1 inline-flex items-center justify-center w-9 h-9 rounded-xl border border-border bg-muted text-primary group-open:rotate-180 transition-transform">
-                      <ChevronDown className="w-4 h-4" />
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <span className="text-xs font-bold tracking-widest uppercase text-foreground/55">
+                      {event.date}
                     </span>
+                    <h3 className="mt-3 text-xl font-semibold text-primary font-poppins">
+                      {event.title}
+                    </h3>
+                    <p className="mt-2 text-sm text-foreground/70 leading-relaxed">
+                      {event.description}
+                    </p>
                   </div>
-                </summary>
 
-                <div className="mt-6 pt-6 border-t border-border">
-                  <p className="text-sm font-bold text-primary">
-                    Details (placeholder)
-                  </p>
-                  <p className="mt-2 text-sm text-foreground/70 leading-relaxed">
-                    Add location, speakers, registration, and partner slots
-                    here. This expandable layout keeps the section clean while
-                    still letting leaders scan quickly.
-                  </p>
-                  <div className="mt-4 flex flex-wrap gap-3">
-                    <a
-                      href="#contact"
-                      className="px-4 py-2 rounded-lg bg-secondary text-secondary-foreground font-bold hover:brightness-[0.98] transition-colors"
-                    >
-                      Sponsor this event
-                    </a>
-                    <a
-                      href="#contact"
-                      className="px-4 py-2 rounded-lg border border-border text-primary font-semibold hover:bg-muted transition-colors"
-                    >
-                      Become a guest mentor
-                    </a>
-                  </div>
+                  <span
+                    className={`mt-1 inline-flex items-center justify-center w-9 h-9 rounded-xl border border-border bg-muted text-primary transition-transform duration-200 ${
+                      openEvent === event.title ? "rotate-180" : ""
+                    }`}
+                  >
+                    <ChevronDown className="w-4 h-4" />
+                  </span>
                 </div>
-              </details>
-            ),
-          )}
-        </div>
+
+                <AnimatePresence>
+                  {openEvent === event.title && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.2 }}
+                      className="overflow-hidden"
+                    >
+                      <div className="mt-6 pt-6 border-t border-border">
+                        <p className="text-sm font-bold text-primary">
+                          Details (placeholder)
+                        </p>
+                        <p className="mt-2 text-sm text-foreground/70 leading-relaxed">
+                          Add location, speakers, registration, and partner
+                          slots here. This expandable layout keeps the section
+                          clean while still letting leaders scan quickly.
+                        </p>
+                        <div className="mt-4 flex flex-wrap gap-3">
+                          <a
+                            href="#contact"
+                            className="px-4 py-2 rounded-lg bg-secondary text-secondary-foreground font-bold hover:brightness-[0.98] transition-colors"
+                            onClick={(e) => e.stopPropagation()}
+                          >
+                            Sponsor this event
+                          </a>
+                          <a
+                            href="#contact"
+                            className="px-4 py-2 rounded-lg border border-border text-primary font-semibold hover:bg-muted transition-colors"
+                            onClick={(e) => e.stopPropagation()}
+                          >
+                            Become a guest mentor
+                          </a>
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            </StaggerItem>
+          ))}
+        </StaggerContainer>
 
         <div className="mt-10 flex justify-center">
           <button

@@ -1,4 +1,7 @@
+"use client";
+
 import { ArrowRight, BookOpen, Globe, Rocket, Users } from "lucide-react";
+import { SlideIn, StaggerContainer, StaggerItem } from "./ui/motion";
 
 interface Objective {
   title: string;
@@ -35,56 +38,82 @@ export function Objectives() {
   ];
 
   return (
-    <section className="w-full py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
+    <section
+      id="outcomes"
+      className="w-full py-24 px-4 sm:px-6 lg:px-8 bg-gray-50"
+    >
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-start">
-          <div>
-            <p className="text-sm font-extrabold tracking-widest uppercase text-primary">
-              Outcomes
-            </p>
-            <h2 className="mt-4 text-5xl sm:text-6xl text-balance">
-              What members gain
-            </h2>
-            <p className="mt-5 text-lg text-foreground/70 leading-relaxed">
-              TIC is designed to produce builders. People who can execute,
-              communicate, and iterate with discipline.
-            </p>
-
-            <div className="mt-8 rounded-2xl border border-secondary/25 bg-secondary/10 p-7">
-              <p className="text-sm font-semibold text-primary font-poppins">
-                Leaders & partners care about one thing:
+          <SlideIn direction="left">
+            <div>
+              <p className="text-sm font-extrabold tracking-widest uppercase text-primary">
+                Outcomes
               </p>
-              <p className="mt-2 text-sm text-foreground/70 leading-relaxed">
-                can the team deliver outcomes repeatedly? TIC’s structure
-                optimizes for repeatable execution.
+              <h2 className="mt-4 text-5xl sm:text-6xl text-balance">
+                What members gain
+              </h2>
+              <p className="mt-5 text-lg text-foreground/70 leading-relaxed">
+                Career readiness, credible portfolios, and the confidence that
+                comes from building under real constraints.
               </p>
-              <a
-                href="#contact"
-                className="mt-4 inline-flex items-center gap-2 text-sm font-extrabold text-primary hover:underline"
-              >
-                Support the pipeline <ArrowRight size={16} />
-              </a>
-            </div>
-          </div>
 
-          <div className="grid sm:grid-cols-2 gap-5">
-            {objectives.map((o) => (
-              <div
-                key={o.title}
-                className="rounded-2xl border border-border bg-white p-7 tic-shadow"
-              >
-                <div className="w-11 h-11 rounded-2xl bg-primary/5 border border-border grid place-items-center text-primary">
-                  {o.icon}
-                </div>
-                <h3 className="mt-4 text-lg font-semibold text-primary font-poppins">
-                  {o.title}
-                </h3>
-                <p className="mt-2 text-sm text-foreground/70 leading-relaxed">
-                  {o.description}
-                </p>
+              <div className="mt-8 flex flex-col sm:flex-row gap-3">
+                <a
+                  href="#contact"
+                  className="px-6 py-3 rounded-xl bg-secondary text-secondary-foreground font-semibold hover:brightness-[0.98] transition-colors text-center inline-flex items-center justify-center gap-2"
+                >
+                  Join the Community <ArrowRight size={18} />
+                </a>
+                <a
+                  href="/about"
+                  className="px-6 py-3 rounded-xl border-2 border-primary text-primary font-semibold hover:bg-primary/5 transition-colors text-center"
+                >
+                  Explore our Streams
+                </a>
               </div>
+
+              <div className="mt-8 rounded-2xl border border-secondary/25 bg-secondary/10 p-7">
+                <p className="text-sm font-semibold text-primary font-poppins">
+                  Leaders & partners care about one thing:
+                </p>
+                <p className="mt-2 text-sm text-foreground/70 leading-relaxed">
+                  can the team deliver outcomes repeatedly? TICs structure
+                  optimizes for repeatable execution.
+                </p>
+                <a
+                  href="#contact"
+                  className="mt-4 inline-flex items-center gap-2 text-sm font-extrabold text-primary hover:underline group"
+                >
+                  Support the pipeline{" "}
+                  <ArrowRight
+                    size={16}
+                    className="group-hover:translate-x-1 transition-transform"
+                  />
+                </a>
+              </div>
+            </div>
+          </SlideIn>
+
+          <StaggerContainer
+            className="grid sm:grid-cols-2 gap-5"
+            staggerDelay={0.08}
+          >
+            {objectives.map((o) => (
+              <StaggerItem key={o.title}>
+                <div className="rounded-2xl border border-border bg-white p-7 tic-shadow h-full hover:-translate-y-1 transition-transform duration-200">
+                  <div className="w-11 h-11 rounded-2xl bg-primary/5 border border-border grid place-items-center text-primary">
+                    {o.icon}
+                  </div>
+                  <h3 className="mt-4 text-lg font-semibold text-primary font-poppins">
+                    {o.title}
+                  </h3>
+                  <p className="mt-2 text-sm text-foreground/70 leading-relaxed">
+                    {o.description}
+                  </p>
+                </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </div>
     </section>
