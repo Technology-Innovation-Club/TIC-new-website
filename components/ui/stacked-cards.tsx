@@ -73,10 +73,10 @@ export function StackedCards<T>({
   return (
     <div
       ref={containerRef}
-      className={cn("relative", className)}
+      className={cn("relative isolate", className)}
       style={{ height: scrollHeight }}
     >
-      <div className="sticky" style={{ top: topOffset }}>
+      <div className="sticky z-20" style={{ top: topOffset }}>
         <div
           className={cn("relative", stageClassName)}
           style={stageHeight ? { height: stageHeight } : undefined}
