@@ -7,7 +7,7 @@ export function Wins() {
       eyebrow: "Lagos Impact Hackathon (UNILAG)",
       title: "1st place + $2,000",
       description:
-        "Built SupaMart — an AI-powered, offline-first POS & inventory system designed for reliability in real-world retail conditions.",
+        "Built SupaMart, an AI-powered offline-first POS and inventory system designed for real retail conditions.",
       pills: ["AI + Offline-first", "POS & Inventory", "Built for SMBs"],
       metrics: [
         { k: "Outcome", v: "1st place" },
@@ -20,8 +20,7 @@ export function Wins() {
       icon: <TrendingUp className="w-7 h-7" />,
       eyebrow: "Zenith Bank Zecathon",
       title: "Top 5 nationally",
-      description:
-        "Ranked among Nigeria’s strongest teams—demonstrating PAU’s engineering depth and execution under pressure.",
+      description: "Showed TIC's talented team can deliver under pressure.",
       pills: ["National stage", "High-signal judging", "Talent spotlight"],
       metrics: [
         { k: "Placement", v: "Top 5" },
@@ -34,7 +33,7 @@ export function Wins() {
       eyebrow: "Venture Garden Group Hackathon",
       title: "2nd place (TIC-referred team)",
       description:
-        "A team referred from TIC placed 2nd—evidence of a repeatable pipeline for strong builders, not one-off luck.",
+        "A team referred from TIC placed 2nd, evidence of a repeatable pipeline for strong builders.",
       pills: ["Fintech solution", "Investor visibility", "Execution focus"],
       metrics: [
         { k: "Placement", v: "2nd" },
@@ -55,18 +54,19 @@ export function Wins() {
             From campus builds to competitive wins
           </h2>
           <p className="mt-5 text-lg text-foreground/70 leading-relaxed">
-            These aren’t generic club achievements—these are results in judged,
-            high-competition environments with real deliverables.
+            These are results from high-stakes competitions and real-world
+            product launches, outcomes judged by industry experts and delivered
+            by student teams.
           </p>
         </div>
 
-        <div className="mt-14 grid lg:grid-cols-3 gap-6 items-stretch">
+        <div className="mt-14 grid md:grid-cols-2 lg:grid-cols-2 gap-8 items-stretch">
           {wins.map((win, idx) => (
             <article
               key={idx}
               className={[
                 "relative rounded-2xl border border-border bg-white p-8 tic-shadow",
-                "hover:-translate-y-0.5 hover:shadow-[0_1px_0_rgba(16,1,76,0.06),_0_18px_50px_rgba(16,1,76,0.12)] transition-all",
+                "hover:-translate-y-0.5 hover:shadow-[0_1px_0_rgba(16,1,76,0.06),0_18px_50px_rgba(16,1,76,0.12)] transition-all",
                 win.featured ? "lg:col-span-1 ring-1 ring-secondary/35" : "",
               ].join(" ")}
               aria-label={`Win: ${win.title}`}
@@ -86,26 +86,22 @@ export function Wins() {
                     <p className="text-xs font-bold tracking-widest uppercase text-foreground/60">
                       {win.eyebrow}
                     </p>
-                    <h3 className="mt-1 text-xl font-extrabold text-primary">
+                    <h3 className="mt-1 text-xl font-normal text-primary font-poppins">
                       {win.title}
                     </h3>
                   </div>
                 </div>
-
-                <span className="inline-flex items-center rounded-full bg-secondary/15 text-primary px-3 py-1 text-xs font-bold border border-secondary/25">
-                  Verified result
-                </span>
               </div>
 
               <p className="mt-5 text-foreground/75 leading-relaxed">
                 {win.description}
               </p>
 
-              <div className="mt-6 flex flex-wrap gap-2">
+              <div className="mt-6 flex flex-wrap gap-2 justify-center">
                 {win.pills.map((p) => (
                   <span
                     key={p}
-                    className="inline-flex items-center rounded-full border border-border bg-muted px-3 py-1 text-xs font-semibold text-foreground/70"
+                    className="inline-flex items-center rounded-full border border-border bg-muted px-3 py-1 text-xs font-semibold text-foreground/70 justify-center"
                   >
                     {p}
                   </span>
@@ -118,7 +114,7 @@ export function Wins() {
                     <p className="text-[11px] font-bold uppercase tracking-widest text-foreground/50">
                       {m.k}
                     </p>
-                    <p className="mt-1 text-sm font-extrabold text-primary">
+                    <p className="mt-1 text-sm font-normal text-primary font-poppins">
                       {m.v}
                     </p>
                   </div>
@@ -135,13 +131,13 @@ export function Wins() {
           ))}
         </div>
 
-        <div className="mt-10 rounded-2xl border border-primary/15 bg-primary/[0.03] p-8">
-          <p className="text-primary font-extrabold text-lg">
-            What this signals to partners:
+        <div className="mt-10 rounded-2xl border border-primary/15 bg-primary/3 p-8">
+          <p className="text-primary font-bold font-poppins text-lg">
+            For partners and global leaders:
           </p>
           <p className="mt-2 text-foreground/75 leading-relaxed">
-            TIC is building a consistent pipeline of execution—teams that can
-            ship, present, and win under real constraints.
+            TIC delivers a reliable pipeline of student innovators who build,
+            present, and succeed in competitive, real-world environments.
           </p>
         </div>
       </div>

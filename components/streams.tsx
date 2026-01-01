@@ -9,8 +9,15 @@ import {
   Zap,
 } from "lucide-react";
 
+interface Stream {
+  name: string;
+  head: string;
+  description: string;
+  icon: React.ReactNode;
+}
+
 export function Streams() {
-  const streams = [
+  const streams: Stream[] = [
     {
       name: "Web Development",
       head: "Dumebi Duru",
@@ -77,7 +84,7 @@ export function Streams() {
           </h2>
           <p className="mt-5 text-lg text-foreground/70 leading-relaxed">
             Each stream is a community with mentors, projects, and structured
-            learning—built to ship.
+            learning that is built to ship.
           </p>
         </div>
 
@@ -91,12 +98,9 @@ export function Streams() {
                 <div className="w-12 h-12 rounded-2xl bg-secondary/15 border border-secondary/25 grid place-items-center text-primary">
                   {stream.icon}
                 </div>
-                <span className="inline-flex items-center rounded-full bg-muted border border-border px-3 py-1 text-xs font-bold text-foreground/70">
-                  Stream
-                </span>
               </div>
 
-              <h3 className="mt-5 text-xl font-extrabold text-primary">
+              <h3 className="mt-5 text-xl font-semibold text-primary font-poppins">
                 {stream.name}
               </h3>
               <p className="mt-2 text-sm text-foreground/70 leading-relaxed">
@@ -108,7 +112,7 @@ export function Streams() {
                   <p className="text-[11px] font-bold uppercase tracking-widest text-foreground/50">
                     Stream lead
                   </p>
-                  <p className="mt-1 text-sm font-extrabold text-primary">
+                  <p className="mt-1 text-sm font-semibold text-primary font-poppins">
                     {stream.head}
                   </p>
                 </div>

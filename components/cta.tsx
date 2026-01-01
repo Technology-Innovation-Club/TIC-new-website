@@ -6,16 +6,6 @@ export function Cta() {
       id="contact"
       className="w-full py-24 px-4 sm:px-6 lg:px-8 bg-primary text-white relative overflow-hidden"
     >
-      <div
-        className="absolute inset-0 opacity-25"
-        style={{
-          backgroundImage:
-            "radial-gradient(circle at 1px 1px, rgba(250,173,42,0.55) 1px, transparent 0)",
-          backgroundSize: "22px 22px",
-        }}
-        aria-hidden="true"
-      />
-
       <div className="relative max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           <div>
@@ -30,15 +20,15 @@ export function Cta() {
               Help fund the next wave of builders in Africa.
             </h2>
             <p className="mt-6 text-white/80 text-lg leading-relaxed">
-              Whether you’re a company, foundation, VC, or ecosystem partner—TIC
-              is a high-signal pipeline for talent and real product execution at
-              PAU.
+              Whether you're a company, foundation, VC, or ecosystem partner,
+              TIC is a high-signal pipeline for talent and real product
+              execution at PAU.
             </p>
 
             <div className="mt-10 flex flex-col sm:flex-row gap-3">
               <a
                 href="mailto:tic@pau.edu.ng"
-                className="px-7 py-3 rounded-xl bg-secondary text-secondary-foreground font-extrabold hover:brightness-[0.98] transition-colors inline-flex items-center justify-center gap-2"
+                className="px-7 py-3 rounded-xl bg-secondary text-secondary-foreground font-semibold hover:brightness-[0.98] transition-colors inline-flex items-center justify-center gap-2 font-poppins"
               >
                 Email TIC <Mail size={18} />
               </a>
@@ -73,11 +63,11 @@ export function Cta() {
           </div>
 
           <div className="rounded-2xl border border-white/15 bg-white/10 p-8">
-            <h3 className="text-2xl font-extrabold text-white">
+            <h3 className="text-2xl font-semibold text-white font-poppins">
               Ways to partner
             </h3>
             <p className="mt-3 text-white/80 leading-relaxed">
-              Pick a lane (or combine them). We’ll tailor packages and
+              Pick a lane (or combine them). We'll tailor packages and
               visibility around outcomes.
             </p>
 
@@ -85,7 +75,7 @@ export function Cta() {
               {[
                 {
                   t: "Sponsor hackathons & build sprints",
-                  d: "Fund prizes, tooling, mentors, and judging—directly tied to shipped output.",
+                  d: "Fund prizes, tooling, mentors, and judging, directly tied to shipped output.",
                 },
                 {
                   t: "Support MakerSpace labs",
@@ -104,7 +94,7 @@ export function Cta() {
                   key={x.t}
                   className="rounded-xl border border-white/10 bg-black/10 p-5"
                 >
-                  <p className="font-extrabold text-white">{x.t}</p>
+                  <p className="font-semibold text-white font-poppins">{x.t}</p>
                   <p className="mt-1 text-sm text-white/80 leading-relaxed">
                     {x.d}
                   </p>
@@ -113,10 +103,12 @@ export function Cta() {
             </div>
 
             <div className="mt-8 rounded-xl border border-secondary/35 bg-secondary/15 p-5">
-              <p className="text-sm font-extrabold text-white">Fast path</p>
+              <p className="text-sm font-semibold text-white font-poppins">
+                Fast path
+              </p>
               <p className="mt-1 text-sm text-white/90 leading-relaxed">
                 Email us what you want to support (sprints, labs, demo day,
-                internships) and we’ll respond with a clear scope + outcomes.
+                internships) and we'll respond with a clear scope + outcomes.
               </p>
             </div>
           </div>

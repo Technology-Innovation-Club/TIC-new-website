@@ -15,7 +15,7 @@ export function Mission() {
     {
       icon: <Rocket className="w-5 h-5" />,
       title: "Launch Culture",
-      desc: "From prototypes to pilots—students learn distribution, iteration, and real user impact.",
+      desc: "From prototypes to pilots, students learn distribution, iteration, and real user impact.",
     },
   ];
 
@@ -38,7 +38,7 @@ export function Mission() {
               Mission
             </p>
             <h2 className="mt-4 text-5xl sm:text-6xl text-balance">
-              Bridge theory and practice—at scale
+              Bridge theory and practice at scale
             </h2>
             <p className="mt-6 text-lg text-foreground/75 leading-relaxed">
               Tech Innovation Club (TIC) is PAU’s builder ecosystem: where
@@ -51,7 +51,7 @@ export function Mission() {
               {pillars.map((p) => (
                 <div
                   key={p.title}
-                  className="rounded-2xl border border-border bg-white p-5 tic-shadow"
+                  className="font-poppins font-normal rounded-2xl border border-border bg-white p-5 tic-shadow"
                 >
                   <div className="w-10 h-10 rounded-xl bg-secondary/15 border border-secondary/25 grid place-items-center text-primary">
                     {p.icon}
@@ -86,7 +86,7 @@ export function Mission() {
             <p className="text-xs font-bold tracking-widest uppercase text-foreground/60">
               How we execute
             </p>
-            <h3 className="mt-3 text-2xl font-extrabold text-primary">
+            <h3 className="mt-3 text-2xl font-semibold font-poppins text-primary">
               An ecosystem designed for results
             </h3>
             <p className="mt-4 text-foreground/70 leading-relaxed">
@@ -96,9 +96,9 @@ export function Mission() {
 
             <ul className="mt-6 space-y-4">
               {checks.map((c) => (
-                <li key={c} className="flex items-start gap-3">
-                  <span className="mt-0.5 w-9 h-9 rounded-xl bg-primary/5 border border-border grid place-items-center">
-                    <CheckCircle2 className="w-5 h-5 text-primary" />
+                <li key={c} className="flex items-center gap-3">
+                  <span className="w-7 h-7 rounded-xl bg-primary/5 border border-border grid place-items-center">
+                    <CheckCircle2 className="w-4 h-4 text-primary" />
                   </span>
                   <span className="text-sm text-foreground/75 leading-relaxed">
                     {c}
