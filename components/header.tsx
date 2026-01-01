@@ -1,5 +1,6 @@
 "use client";
 
+import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, Menu, X } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import { ImageLogo } from "./image-logo";
@@ -10,15 +11,16 @@ interface NavItem {
 }
 
 const navItems: NavItem[] = [
-  { label: "About", href: "#about" },
+  { label: "About", href: "/about" },
   { label: "Wins", href: "#wins" },
-  { label: "Streams", href: "#streams" },
-  { label: "Calendar", href: "#calendar" },
+  { label: "Programmes", href: "#programmes" },
+  { label: "Partners", href: "#partners" },
   { label: "Contact", href: "#contact" },
 ];
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const onKeyDown = (e: KeyboardEvent) => {
@@ -34,6 +36,14 @@ export function Header() {
       document.body.style.overflow = "";
     };
   }, [isOpen]);
+
+  useEffect(() => {
+    const onScroll = () => {
+      setScrolled(window.scrollY > 10);
+    };
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const links = useMemo(
     () =>
@@ -52,7 +62,16 @@ export function Header() {
   );
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-white/85 backdrop-blur border-b border-border">
+    <motion.header
+      initial={{ y: -20, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.4 }}
+      className={`sticky top-0 z-50 w-full backdrop-blur border-b transition-all duration-300 ${
+        scrolled
+          ? "bg-white/95 border-border shadow-sm"
+          : "bg-white/85 border-border"
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="h-16 flex items-center justify-between">
           <a href="#main" className="flex items-center gap-3 group">
@@ -100,30 +119,38 @@ export function Header() {
           </button>
         </div>
 
-        {isOpen && (
-          <div className="md:hidden pb-4">
-            <div className="rounded-xl border border-border bg-white tic-shadow animate-in fade-in slide-in-from-top-2 duration-200">
-              <div className="px-4 py-4 flex flex-col gap-4">{links}</div>
-              <div className="px-4 pb-4 grid gap-3">
-                <a
-                  href="#wins"
-                  onClick={() => setIsOpen(false)}
-                  className="w-full px-4 py-2 rounded-lg border border-border text-primary font-semibold hover:bg-muted transition-colors text-center"
-                >
-                  Explore wins
-                </a>
-                <a
-                  href="#contact"
-                  onClick={() => setIsOpen(false)}
-                  className="w-full px-4 py-2 rounded-lg bg-secondary text-secondary-foreground font-bold hover:brightness-[0.98] transition-colors text-center"
-                >
-                  Partner / Join
-                </a>
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              className="md:hidden pb-4"
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.2 }}
+            >
+              <div className="rounded-xl border border-border bg-white tic-shadow">
+                <div className="px-4 py-4 flex flex-col gap-4">{links}</div>
+                <div className="px-4 pb-4 grid gap-3">
+                  <a
+                    href="#wins"
+                    onClick={() => setIsOpen(false)}
+                    className="w-full px-4 py-2 rounded-lg border border-border text-primary font-semibold hover:bg-muted transition-colors text-center"
+                  >
+                    Explore wins
+                  </a>
+                  <a
+                    href="#contact"
+                    onClick={() => setIsOpen(false)}
+                    className="w-full px-4 py-2 rounded-lg bg-secondary text-secondary-foreground font-bold hover:brightness-[0.98] transition-colors text-center"
+                  >
+                    Partner / Join
+                  </a>
+                </div>
               </div>
-            </div>
-          </div>
-        )}
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
-    </header>
+    </motion.header>
   );
 }

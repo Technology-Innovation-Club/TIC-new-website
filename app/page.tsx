@@ -1,12 +1,11 @@
-import { Calendar } from "@/components/calendar";
-import { Cta } from "@/components/cta";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
+import { Cta } from "@/components/cta";
 import { Hero } from "@/components/hero";
 import { Mission } from "@/components/mission";
 import { Objectives } from "@/components/objectives";
-import { Streams } from "@/components/streams";
-import { Values } from "@/components/values";
+import { Partners } from "@/components/partners";
+import { Programmes } from "@/components/programmes";
 import { Wins } from "@/components/wins";
 
 export default function Home() {
@@ -15,12 +14,11 @@ export default function Home() {
       <Header />
       <main id="main">
         <Hero />
-        <Wins />
         <Mission />
-        <Values />
+        <Wins />
+        <Programmes />
         <Objectives />
-        <Calendar />
-        <Streams />
+        <Partners />
         <Cta />
       </main>
       <Footer />

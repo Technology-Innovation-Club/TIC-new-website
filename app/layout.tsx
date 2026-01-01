@@ -1,14 +1,7 @@
 import type React from "react";
 import type { Metadata, Viewport } from "next";
-import { Figtree } from "next/font/google";
-import { inter, poppins } from "../lib/fonts";
+import { figtree, inter, poppins } from "../lib/fonts";
 import "./globals.css";
-
-const figtree = Figtree({
-  subsets: ["latin"],
-  variable: "--font-sans",
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   title: "Tech Innovation Club | Pan-Atlantic University",
@@ -55,7 +48,7 @@ export default function RootLayout({
       lang="en"
       className={`${figtree.variable} ${inter.variable} ${poppins.variable}`}
     >
-      <body className="font-sans">
+      <body className="font-poppins">
         <a
           href="#main"
           className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-100 focus:rounded-lg focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-primary focus:shadow"
