@@ -91,8 +91,10 @@ export function Programmes() {
       <StackedCards
         items={programmes}
         className="px-4 sm:px-6 lg:px-8"
+        stageClassName="max-w-5xl mx-auto"
         topOffset={96}
         peek={18}
+        vhPerCard={90}
         renderCard={(p) => (
           <article className="relative rounded-2xl border border-border bg-white p-8 tic-shadow shadow-xl">
             <div
