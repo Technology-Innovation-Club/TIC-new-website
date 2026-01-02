@@ -80,17 +80,20 @@ export function Wins() {
   ];
 
   return (
-    <section id="wins" className="w-full bg-primary text-white">
+    <section
+      id="wins"
+      className="w-full bg-primary dark:bg-background text-white dark:text-foreground"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
         <AnimatedSection>
           <div className="max-w-3xl">
-            <p className="text-sm font-extrabold tracking-widest text-white/80 uppercase">
+            <p className="text-sm font-extrabold tracking-widest text-white/80 dark:text-foreground/80 uppercase">
               Credibility, demonstrated
             </p>
-            <h2 className="mt-4 text-5xl sm:text-6xl text-balance text-white">
+            <h2 className="mt-4 text-5xl sm:text-6xl text-balance text-white dark:text-foreground">
               From campus builds to competitive wins
             </h2>
-            <p className="mt-5 text-lg text-white/80 leading-relaxed">
+            <p className="mt-5 text-lg text-white/80 dark:text-foreground/80 leading-relaxed">
               These wins are proof points judged under real pressure, by real
               evaluators.
             </p>
@@ -108,9 +111,9 @@ export function Wins() {
         renderCard={(win) => (
           <article
             className={[
-              "relative rounded-2xl border border-white/20 bg-[#1a0a5c] p-8 tic-shadow",
-              "hover:bg-[#1f0d66] transition-colors",
-              win.featured ? "ring-1 ring-white/20" : "",
+              "relative rounded-2xl border border-white/20 dark:border-border bg-[#1a0a5c] dark:bg-card p-8 tic-shadow",
+              "hover:bg-[#1f0d66] dark:hover:bg-accent/5 transition-colors",
+              win.featured ? "ring-1 ring-white/20 dark:ring-border" : "",
             ].join(" ")}
           >
             <div
@@ -120,13 +123,13 @@ export function Wins() {
 
             <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-8 items-start">
               <div>
-                <p className="text-xs font-bold tracking-widest uppercase text-white/70">
+                <p className="text-xs font-bold tracking-widest uppercase text-white/70 dark:text-foreground/70">
                   {win.eyebrow}
                 </p>
-                <h3 className="mt-2 text-2xl sm:text-3xl font-semibold text-white font-poppins">
+                <h3 className="mt-2 text-2xl sm:text-3xl font-semibold text-white dark:text-primary font-poppins">
                   {win.title}
                 </h3>
-                <p className="mt-4 text-white/80 leading-relaxed">
+                <p className="mt-4 text-white/80 dark:text-foreground/80 leading-relaxed">
                   {win.description}
                 </p>
 
@@ -134,20 +137,20 @@ export function Wins() {
                   {win.pills.map((p) => (
                     <span
                       key={p}
-                      className="inline-flex items-center rounded-full border border-white/15 bg-black/10 px-3 py-1 text-xs font-semibold text-white/75"
+                      className="inline-flex items-center rounded-full border border-white/15 dark:border-border bg-black/10 dark:bg-muted px-3 py-1 text-xs font-semibold text-white/75 dark:text-foreground/70"
                     >
                       {p}
                     </span>
                   ))}
                 </div>
 
-                <div className="mt-7 pt-6 border-t border-white/15 grid grid-cols-3 gap-4">
+                <div className="mt-7 pt-6 border-t border-white/15 dark:border-border grid grid-cols-3 gap-4">
                   {win.metrics.map((m) => (
                     <div key={m.k}>
-                      <p className="text-[11px] font-bold uppercase tracking-widest text-white/60">
+                      <p className="text-[11px] font-bold uppercase tracking-widest text-white/60 dark:text-foreground/60">
                         {m.k}
                       </p>
-                      <p className="mt-1 text-sm font-semibold text-white font-poppins">
+                      <p className="mt-1 text-sm font-semibold text-white dark:text-foreground font-poppins">
                         {m.v}
                       </p>
                     </div>
@@ -156,7 +159,7 @@ export function Wins() {
 
                 <Link
                   href="/contact"
-                  className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-white hover:underline group"
+                  className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-white dark:text-primary hover:underline group"
                 >
                   Sponsor the next cohort{" "}
                   <ArrowRight
@@ -166,7 +169,7 @@ export function Wins() {
                 </Link>
               </div>
 
-              <div className="rounded-2xl overflow-hidden border border-white/10 bg-black/10">
+              <div className="rounded-2xl overflow-hidden border border-white/10 dark:border-border bg-black/10 dark:bg-muted">
                 <div className="aspect-4/3 w-full relative">
                   <Image
                     src={win.image.src}
@@ -184,11 +187,11 @@ export function Wins() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
         <AnimatedSection>
-          <div className="rounded-2xl border border-white/15 bg-white/10 p-8 hover:bg-white/12 transition-colors">
-            <p className="text-white font-semibold font-poppins text-lg">
+          <div className="rounded-2xl border border-white/15 dark:border-border bg-white/10 dark:bg-muted/50 p-8 hover:bg-white/12 dark:hover:bg-muted transition-colors">
+            <p className="text-white dark:text-primary font-semibold font-poppins text-lg">
               For partners and global leaders:
             </p>
-            <p className="mt-2 text-white/80 leading-relaxed">
+            <p className="mt-2 text-white/80 dark:text-foreground/80 leading-relaxed">
               TIC delivers a reliable pipeline of student innovators who build,
               present, and succeed in competitive, real-world environments.
             </p>

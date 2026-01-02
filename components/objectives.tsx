@@ -41,7 +41,7 @@ export function Objectives() {
   return (
     <section
       id="outcomes"
-      className="w-full py-24 px-4 sm:px-6 lg:px-8 bg-gray-50"
+      className="w-full py-24 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-muted/50"
     >
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-start">
@@ -101,7 +101,7 @@ export function Objectives() {
           >
             {objectives.map((o) => (
               <StaggerItem key={o.title}>
-                <div className="rounded-2xl border border-border bg-white p-7 tic-shadow h-full hover:-translate-y-1 transition-transform duration-200">
+                <div className="rounded-2xl border border-border bg-white dark:bg-card p-7 tic-shadow h-full hover:-translate-y-1 transition-transform duration-200">
                   <div className="w-11 h-11 rounded-2xl bg-primary/5 border border-border grid place-items-center text-primary">
                     {o.icon}
                   </div>
