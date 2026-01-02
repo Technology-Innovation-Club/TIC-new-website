@@ -141,7 +141,6 @@ export function Programmes() {
                     src={p.image.src}
                     alt={p.image.alt}
                     className="h-full w-full object-cover"
-                    loading="lazy"
                     width={800}
                     height={600}
                   />

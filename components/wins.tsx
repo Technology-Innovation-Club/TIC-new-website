@@ -171,7 +171,6 @@ export function Wins() {
                     src={win.image.src}
                     alt={win.image.alt}
                     className="h-full w-full object-cover"
-                    loading="lazy"
                     width={800}
                     height={600}
                   />
