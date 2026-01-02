@@ -109,13 +109,7 @@ export function Wins() {
         peek={18}
         vhPerCard={95}
         renderCard={(win) => (
-          <article
-            className={[
-              "relative rounded-2xl border border-white/20 dark:border-border bg-[#1a0a5c] dark:bg-card p-8 tic-shadow",
-              "hover:bg-[#1f0d66] dark:hover:bg-accent/5 transition-colors",
-              win.featured ? "ring-1 ring-white/20 dark:ring-border" : "",
-            ].join(" ")}
-          >
+          <article className="relative rounded-2xl border border-white/20 dark:border-border bg-[#1a0a5c] dark:bg-card p-8 tic-shadow shadow-xl hover:bg-[#1f0d66] dark:hover:bg-card/90 transition-colors">
             <div
               className="absolute inset-x-0 top-0 h-1.5 rounded-t-2xl bg-gold/90"
               aria-hidden="true"
@@ -187,7 +181,7 @@ export function Wins() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
         <AnimatedSection>
-          <div className="rounded-2xl border border-white/15 dark:border-border bg-white/10 dark:bg-muted/50 p-8 hover:bg-white/12 dark:hover:bg-muted transition-colors">
+          <div className="rounded-2xl border border-white/15 dark:border-border bg-white/10 dark:bg-card p-8 hover:bg-white/12 dark:hover:bg-muted transition-colors">
             <p className="text-white dark:text-primary font-semibold font-poppins text-lg">
               For partners and global leaders:
             </p>

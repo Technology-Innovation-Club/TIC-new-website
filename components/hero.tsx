@@ -87,7 +87,7 @@ export function Hero() {
             </Link>
             <Link
               href="/media"
-              className="w-full sm:w-auto px-7 py-3 rounded-xl border-2 border-white/70 dark:border-primary/70 text-white dark:text-foreground font-semibold hover:bg-white/10 dark:hover:bg-primary/10 transition-colors inline-flex items-center justify-center"
+              className="w-full sm:w-auto px-7 py-3 rounded-xl border-2 border-white/70 dark:border-white/20 text-white dark:text-foreground font-semibold hover:bg-white/10 dark:hover:bg-white/5 transition-colors inline-flex items-center justify-center"
             >
               See the wins
             </Link>

@@ -16,11 +16,11 @@
   --popover: #ffffff;
   --popover-foreground: #0b0b0f;
 
-  --primary: #10014c; /* Dark Indigo */
+  --primary: #10014c; /* Dark Indigo - Original Brand Color */
   --primary-foreground: #ffffff;
 
   /* Accent/CTA (Vivid Indigo) */
-  --secondary: #1e048b;
+  --secondary: #1e048b; /* Original Brand Color */
   --secondary-foreground: #ffffff;
 
   /* Gold (use sparingly for tiny accents only) */
@@ -42,27 +42,34 @@
   --radius: 0.9rem;
 }
 
-.dark {
-  --background: #0b0b0f;
-  --foreground: #f4f4f6;
-  --card: #161620;
-  --card-foreground: #f4f4f6;
-  --popover: #161620;
-  --popover-foreground: #f4f4f6;
-  --primary: #a78bfa;
-  --primary-foreground: #0b0b0f;
-  --secondary: #6d28d9;
+  .dark {
+  --background: #020617; /* slate-950 */
+  --foreground: #f8fafc; /* slate-50 */
+  --card: #0f172a; /* slate-900 */
+  --card-foreground: #f8fafc;
+  --popover: #0f172a;
+  --popover-foreground: #f8fafc;
+
+  /* Nice Light Blue for text/highlights in Dark Mode */
+  --primary: #bae6fd; /* sky-200 */
+  --primary-foreground: #020617;
+
+  /* Vibrant Blue for buttons in Dark Mode */
+  --secondary: #0284c7; /* sky-600 */
   --secondary-foreground: #ffffff;
+
   --gold: #faad2a;
-  --muted: #1e1e2a;
-  --muted-foreground: #9ca3af;
-  --accent: #6d28d9;
-  --accent-foreground: #ffffff;
+  --muted: #1e293b; /* slate-800 */
+  --muted-foreground: #94a3b8; /* slate-400 */
+  
+  --accent: #38bdf8; /* sky-400 */
+  --accent-foreground: #020617;
+  
   --destructive: #ef4444;
   --destructive-foreground: #ffffff;
-  --border: #2d2d3a;
-  --input: #1e1e2a;
-  --ring: #a78bfa;
+  --border: #334155; /* slate-700 */
+  --input: #1e293b;
+  --ring: #bae6fd;
   --radius: 0.9rem;
 }
 
