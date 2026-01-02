@@ -1,17 +1,21 @@
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 export function ImageLogo({ className }: { className?: string }) {
   return (
     <div
       className={cn(
-        "w-10 h-10 rounded-full overflow-hidden bg-white flex-shrink-0",
+        "w-10 h-10 rounded-full overflow-hidden bg-white flex-shrink-0 relative",
         className,
       )}
     >
-      <img
+      <Image
         src="/logo.jpeg"
         alt="TIC logo"
-        className="w-full h-full object-cover"
+        fill
+        className="object-cover"
+        sizes="40px"
+        priority
       />
     </div>
   );

@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { AnimatedSection } from "./ui/motion";
 import { StackedCards } from "./ui/stacked-cards";
@@ -59,7 +61,7 @@ export function Programmes() {
   ];
 
   return (
-    <section id="programmes" className="w-full bg-white">
+    <section id="programmes" className="w-full bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
         <AnimatedSection>
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
@@ -135,12 +137,13 @@ export function Programmes() {
               </div>
 
               <div className="rounded-2xl overflow-hidden border border-border bg-muted">
-                <div className="aspect-4/3 w-full grid place-items-center">
-                  <img
+                <div className="aspect-4/3 w-full relative">
+                  <Image
                     src={p.image.src}
                     alt={p.image.alt}
-                    className="h-full w-full object-cover"
-                    loading="lazy"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 45vw"
                   />
                 </div>
               </div>

@@ -1,6 +1,13 @@
 "use client";
 
-import { ArrowRight, BarChart3, Code2, Shield, Zap } from "lucide-react";
+import {
+  ArrowRight,
+  BarChart3,
+  Code2,
+  Cpu,
+  Gamepad2,
+  Shield,
+} from "lucide-react";
 import { AnimatedSection, StaggerContainer, StaggerItem } from "./ui/motion";
 
 interface Stream {
@@ -28,24 +35,31 @@ export function Streams() {
     },
     {
       name: "Cybersecurity",
-      head: "Marvelous Edoho",
+      head: "Kanayochukwu Onukwu",
       description:
         "Security fundamentals, secure engineering, and ethical hacking workflows.",
       icon: <Shield className="w-6 h-6" />,
     },
     {
+      name: "Game Development",
+      head: "Fawaz Salimanu",
+      description:
+        "Lively, production-ready, and well-crafted game experiences.",
+      icon: <Gamepad2 className="w-6 h-6" />,
+    },
+    {
       name: "Embedded Systems & Robotics",
-      head: "Victor Braimah and Ucheckukwu Nwafor",
+      head: "Victor Braimah and Uchechukwu Nwafor",
       description:
         "IoT, automation, and practical robotics prototyping in MakerSpace labs.",
-      icon: <Zap className="w-6 h-6" />,
+      icon: <Cpu className="w-6 h-6" />,
     },
   ];
 
   return (
     <section
       id="streams"
-      className="w-full py-24 px-4 sm:px-6 lg:px-8 bg-white"
+      className="w-full py-10 px-4 sm:px-6 lg:px-8 bg-background"
     >
       <div className="max-w-7xl mx-auto">
         <AnimatedSection>
@@ -69,7 +83,7 @@ export function Streams() {
         >
           {streams.map((stream) => (
             <StaggerItem key={stream.name}>
-              <article className="group rounded-2xl border border-border bg-white p-8 tic-shadow h-full hover:-translate-y-1 transition-transform duration-200">
+              <article className="group rounded-2xl border border-border bg-card p-8 tic-shadow h-full hover:-translate-y-1 transition-transform duration-200">
                 <div className="flex items-start justify-between gap-4">
                   <div className="w-12 h-12 rounded-2xl bg-secondary/10 border border-secondary/20 grid place-items-center text-primary">
                     {stream.icon}
@@ -100,49 +114,6 @@ export function Streams() {
             </StaggerItem>
           ))}
         </StaggerContainer>
-
-        <div className="mt-16 rounded-2xl border border-border bg-gray-50 p-8">
-          <p className="text-sm font-semibold text-primary font-poppins">
-            Leadership
-          </p>
-          <p className="mt-2 text-foreground/70 leading-relaxed">
-            Head of Web: Oghenetejirin Owumi. Creative: Kamdi. Protocol:
-            Munachim.
-          </p>
-
-          <div className="mt-8 grid sm:grid-cols-3 gap-6">
-            {[
-              {
-                name: "Oghenetejirin Owumi",
-                role: "Head of Web",
-                src: "/excos/oghenetejirin-owumi.jpg",
-              },
-              { name: "Kamdi", role: "Creative", src: "/excos/kamdi.jpg" },
-              {
-                name: "Munachim",
-                role: "Protocol",
-                src: "/excos/munachim.jpg",
-              },
-            ].map((x) => (
-              <div
-                key={x.name}
-                className="rounded-2xl border border-border bg-white p-6 tic-shadow"
-              >
-                <div className="w-16 h-16 rounded-full overflow-hidden border border-border bg-muted">
-                  <img
-                    src={x.src}
-                    alt={`${x.name} headshot placeholder`}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <p className="mt-4 font-semibold text-primary font-poppins">
-                  {x.name}
-                </p>
-                <p className="mt-1 text-sm text-foreground/70">{x.role}</p>
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
     </section>
   );

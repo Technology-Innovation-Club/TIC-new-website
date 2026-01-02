@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { cn } from "../lib/utils";
@@ -77,19 +78,19 @@ export function Hero() {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3"
           >
-            <a
-              href="#contact"
+            <Link
+              href="/contact"
               className="w-full sm:w-auto px-7 py-3 rounded-xl bg-white text-primary font-semibold hover:bg-white/90 active:translate-y-px transition-all inline-flex items-center justify-center gap-2"
             >
               Join the Community
               <ArrowRight size={18} />
-            </a>
-            <a
-              href="#wins"
+            </Link>
+            <Link
+              href="/media"
               className="w-full sm:w-auto px-7 py-3 rounded-xl border-2 border-white/70 text-white font-semibold hover:bg-white/10 transition-colors inline-flex items-center justify-center"
             >
               See the wins
-            </a>
+            </Link>
           </motion.div>
 
           {/* Credibility strip */}

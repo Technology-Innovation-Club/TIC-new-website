@@ -25,8 +25,8 @@ export function Partners() {
                 Backed by leaders who value execution
               </h2>
               <p className="mt-5 text-lg text-white/80 leading-relaxed">
-                We will publish logos after we have written permission. Until
-                then, we list partners by name.
+                Here are some top Companies and organizations currently
+                supporting our mission:
               </p>
             </div>
 

@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { AnimatedSection } from "./ui/motion";
 import { StackedCards } from "./ui/stacked-cards";
@@ -152,8 +154,8 @@ export function Wins() {
                   ))}
                 </div>
 
-                <a
-                  href="#contact"
+                <Link
+                  href="/contact"
                   className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-white hover:underline group"
                 >
                   Sponsor the next cohort{" "}
@@ -161,16 +163,17 @@ export function Wins() {
                     size={16}
                     className="group-hover:translate-x-1 transition-transform"
                   />
-                </a>
+                </Link>
               </div>
 
               <div className="rounded-2xl overflow-hidden border border-white/10 bg-black/10">
-                <div className="aspect-4/3 w-full grid place-items-center">
-                  <img
+                <div className="aspect-4/3 w-full relative">
+                  <Image
                     src={win.image.src}
                     alt={win.image.alt}
-                    className="h-full w-full object-cover"
-                    loading="lazy"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 45vw"
                   />
                 </div>
               </div>
