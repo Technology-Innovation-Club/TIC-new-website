@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { BriefcaseBusiness, CheckCircle2, Rocket, Wrench } from "lucide-react";
 import { SlideIn, StaggerContainer, StaggerItem } from "./ui/motion";
 
@@ -30,10 +31,7 @@ export function Mission() {
   ];
 
   return (
-    <section
-      id="about"
-      className="w-full py-24 px-4 sm:px-6 lg:px-8 bg-gray-50"
-    >
+    <section id="about" className="w-full py-24 px-4 sm:px-6 lg:px-8 bg-muted">
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           <SlideIn direction="left">
@@ -56,7 +54,7 @@ export function Mission() {
               >
                 {pillars.map((p) => (
                   <StaggerItem key={p.title}>
-                    <div className="font-poppins font-normal rounded-2xl border border-border bg-white p-5 tic-shadow h-full hover:-translate-y-1 transition-transform duration-200">
+                    <div className="font-poppins font-normal rounded-2xl border border-border bg-card p-5 tic-shadow h-full hover:-translate-y-1 transition-transform duration-200">
                       <div className="w-10 h-10 rounded-xl bg-secondary/15 border border-secondary/25 grid place-items-center text-primary">
                         {p.icon}
                       </div>
@@ -72,24 +70,24 @@ export function Mission() {
               </StaggerContainer>
 
               <div className="mt-10 flex flex-col sm:flex-row gap-3">
-                <a
-                  href="#wins"
+                <Link
+                  href="/media"
                   className="px-6 py-3 rounded-xl border-2 border-primary text-primary font-semibold hover:bg-primary/5 transition-colors text-center"
                 >
                   See the wins
-                </a>
-                <a
-                  href="#contact"
+                </Link>
+                <Link
+                  href="/contact"
                   className="px-6 py-3 rounded-xl bg-secondary text-secondary-foreground font-semibold hover:brightness-[0.98] transition-colors text-center"
                 >
                   Join the Community
-                </a>
+                </Link>
               </div>
             </div>
           </SlideIn>
 
           <SlideIn direction="right" delay={0.15}>
-            <div className="rounded-2xl border border-border bg-white p-8 tic-shadow hover:shadow-[0_1px_0_rgba(16,1,76,0.06),0_18px_50px_rgba(16,1,76,0.12)] transition-shadow duration-300">
+            <div className="rounded-2xl border border-border bg-card p-8 tic-shadow hover:shadow-[0_1px_0_rgba(16,1,76,0.06),0_18px_50px_rgba(16,1,76,0.12)] transition-shadow duration-300">
               <p className="text-xs font-bold tracking-widest uppercase text-foreground/60">
                 How it works
               </p>

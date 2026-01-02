@@ -1,6 +1,7 @@
 import type React from "react";
 import type { Metadata, Viewport } from "next";
 import { figtree, inter, poppins } from "../lib/fonts";
+import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -27,7 +28,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Tech Innovation Club | Pan-Atlantic University",
     description:
-      "Real products. Real wins. Real impact. Meet PAU’s student builders competing on national stages and shipping practical tech.",
+      "Real products. Real wins. Real impact. Meet PAU's student builders competing on national stages and shipping practical tech.",
     type: "website",
   },
 };
@@ -49,13 +50,20 @@ export default function RootLayout({
       className={`${figtree.variable} ${inter.variable} ${poppins.variable}`}
     >
       <body className="font-poppins">
-        <a
-          href="#main"
-          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-100 focus:rounded-lg focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-primary focus:shadow"
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
         >
-          Skip to content
-        </a>
-        {children}
+          <a
+            href="#main"
+            className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-100 focus:rounded-lg focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-primary focus:shadow dark:focus:bg-gray-900"
+          >
+            Skip to content
+          </a>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

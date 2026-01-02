@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useMemo } from "react";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Calendar as CalIcon, ChevronDown } from "lucide-react";
 import { AnimatedSection, StaggerContainer, StaggerItem } from "./ui/motion";
@@ -151,20 +152,20 @@ export function Calendar() {
                           clean while still letting leaders scan quickly.
                         </p>
                         <div className="mt-4 flex flex-wrap gap-3">
-                          <a
-                            href="#contact"
+                          <Link
+                            href="/contact"
                             className="px-4 py-2 rounded-lg bg-secondary text-secondary-foreground font-bold hover:brightness-[0.98] transition-colors"
                             onClick={(e) => e.stopPropagation()}
                           >
                             Sponsor this event
-                          </a>
-                          <a
-                            href="#contact"
+                          </Link>
+                          <Link
+                            href="/contact"
                             className="px-4 py-2 rounded-lg border border-border text-primary font-semibold hover:bg-muted transition-colors"
                             onClick={(e) => e.stopPropagation()}
                           >
                             Become a guest mentor
-                          </a>
+                          </Link>
                         </div>
                       </div>
                     </motion.div>

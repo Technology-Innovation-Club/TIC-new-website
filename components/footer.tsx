@@ -1,21 +1,24 @@
 "use client";
 
-import { Linkedin, Mail, Twitter } from "lucide-react";
+import Link from "next/link";
+import { FaLinkedin, FaInstagram, FaGithub } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import { Mail } from "lucide-react";
 import { ImageLogo } from "./image-logo";
 import { AnimatedSection } from "./ui/motion";
 
 export function Footer() {
   const quickLinks = [
     { label: "About", href: "/about" },
-    { label: "Wins", href: "#wins" },
+    { label: "Media", href: "/media" },
     { label: "Programmes", href: "/programmes" },
     { label: "Partners", href: "/partners" },
   ];
 
   const communityLinks = [
-    { label: "Partner / Sponsor", href: "#contact" },
-    { label: "Mentor with TIC", href: "#contact" },
-    { label: "Join TIC", href: "#contact" },
+    { label: "Partner / Sponsor", href: "/contact" },
+    { label: "Mentor with TIC", href: "/contact" },
+    { label: "Join TIC", href: "/contact" },
     { label: "Email", href: "mailto:tic@pau.edu.ng" },
   ];
 
@@ -25,12 +28,30 @@ export function Footer() {
       href: "mailto:tic@pau.edu.ng",
       label: "Email TIC",
     },
-    { icon: <Linkedin size={18} />, href: "#", label: "TIC LinkedIn" },
-    { icon: <Twitter size={18} />, href: "#", label: "TIC Twitter/X" },
+    {
+      icon: <FaLinkedin size={18} />,
+      href: "https://www.linkedin.com/company/technology-innovation-club/",
+      label: "TIC LinkedIn",
+    },
+    {
+      icon: <FaXTwitter size={18} />,
+      href: "https://x.com/tic_pau/",
+      label: "TIC Twitter/X",
+    },
+    {
+      icon: <FaInstagram size={18} />,
+      href: "https://www.instagram.com/tic_pau/",
+      label: "TIC Instagram",
+    },
+    {
+      icon: <FaGithub size={18} />,
+      href: "https://github.com/Technology-Innovation-Club/",
+      label: "TIC GitHub",
+    },
   ];
 
   return (
-    <footer className="w-full bg-white border-t border-border">
+    <footer className="w-full bg-card border-t border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <AnimatedSection>
           <div className="grid md:grid-cols-4 gap-10 mb-10">
@@ -42,13 +63,13 @@ export function Footer() {
                     Tech Innovation Club
                   </p>
                   <p className="text-xs text-foreground/60">
-                    Pan-Atlantic University • Lagos
+                    Pan-Atlantic University
                   </p>
                 </div>
               </div>
 
               <p className="mt-4 text-sm text-foreground/70 leading-relaxed">
-                Building Africa’s next generation of world-class tech leaders
+                Building Africa's next generation of world-class tech leaders
                 through real products, real wins, and real impact.
               </p>
             </div>
@@ -60,12 +81,12 @@ export function Footer() {
               <ul className="space-y-2 text-sm text-foreground/70">
                 {quickLinks.map((link) => (
                   <li key={link.label}>
-                    <a
+                    <Link
                       href={link.href}
                       className="hover:text-primary transition-colors"
                     >
                       {link.label}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -78,12 +99,12 @@ export function Footer() {
               <ul className="space-y-2 text-sm text-foreground/70">
                 {communityLinks.map((link) => (
                   <li key={link.label}>
-                    <a
+                    <Link
                       href={link.href}
                       className="hover:text-primary transition-colors"
                     >
                       {link.label}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -93,11 +114,13 @@ export function Footer() {
               <h4 className="font-semibold text-primary mb-4 font-poppins">
                 Connect
               </h4>
-              <div className="flex gap-3">
+              <div className="flex flex-wrap gap-3">
                 {socialLinks.map((social) => (
                   <a
                     key={social.label}
                     href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-11 h-11 rounded-xl border border-border bg-muted grid place-items-center text-foreground/70 hover:text-primary hover:bg-primary/5 transition-colors"
                     aria-label={social.label}
                   >
@@ -120,19 +143,28 @@ export function Footer() {
 
         <div className="border-t border-border pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-sm text-foreground/55">
-            © 2025 Tech Innovation Club, Pan-Atlantic University. All rights
-            reserved.
+            {new Date().getFullYear()} Tech Innovation Club, Pan-Atlantic
+            University. All rights reserved.
           </p>
           <div className="flex gap-6 text-sm text-foreground/55">
-            <a href="#" className="hover:text-primary transition-colors">
-              Privacy
-            </a>
-            <a href="#" className="hover:text-primary transition-colors">
-              Terms
-            </a>
-            <a href="#contact" className="hover:text-primary transition-colors">
+            <Link
+              href="/about"
+              className="hover:text-primary transition-colors"
+            >
+              About
+            </Link>
+            <Link
+              href="/partners"
+              className="hover:text-primary transition-colors"
+            >
+              Partners
+            </Link>
+            <Link
+              href="/contact"
+              className="hover:text-primary transition-colors"
+            >
               Contact
-            </a>
+            </Link>
           </div>
         </div>
       </div>

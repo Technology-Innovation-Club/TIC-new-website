@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { ArrowRight, BookOpen, Globe, Rocket, Users } from "lucide-react";
 import { SlideIn, StaggerContainer, StaggerItem } from "./ui/motion";
 
@@ -58,18 +59,18 @@ export function Objectives() {
               </p>
 
               <div className="mt-8 flex flex-col sm:flex-row gap-3">
-                <a
-                  href="#contact"
+                <Link
+                  href="/contact"
                   className="px-6 py-3 rounded-xl bg-secondary text-secondary-foreground font-semibold hover:brightness-[0.98] transition-colors text-center inline-flex items-center justify-center gap-2"
                 >
                   Join the Community <ArrowRight size={18} />
-                </a>
-                <a
+                </Link>
+                <Link
                   href="/about"
                   className="px-6 py-3 rounded-xl border-2 border-primary text-primary font-semibold hover:bg-primary/5 transition-colors text-center"
                 >
                   Explore our Streams
-                </a>
+                </Link>
               </div>
 
               <div className="mt-8 rounded-2xl border border-secondary/25 bg-secondary/10 p-7">
@@ -80,8 +81,8 @@ export function Objectives() {
                   can the team deliver outcomes repeatedly? TICs structure
                   optimizes for repeatable execution.
                 </p>
-                <a
-                  href="#contact"
+                <Link
+                  href="/contact"
                   className="mt-4 inline-flex items-center gap-2 text-sm font-extrabold text-primary hover:underline group"
                 >
                   Support the pipeline{" "}
@@ -89,7 +90,7 @@ export function Objectives() {
                     size={16}
                     className="group-hover:translate-x-1 transition-transform"
                   />
-                </a>
+                </Link>
               </div>
             </div>
           </SlideIn>

@@ -2,8 +2,10 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, Menu, X } from "lucide-react";
+import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { ImageLogo } from "./image-logo";
+import { ModeToggle } from "./mode-toggle";
 
 interface NavItem {
   label: string;
@@ -12,10 +14,10 @@ interface NavItem {
 
 const navItems: NavItem[] = [
   { label: "About", href: "/about" },
-  { label: "Wins", href: "#wins" },
-  { label: "Programmes", href: "#programmes" },
-  { label: "Partners", href: "#partners" },
-  { label: "Contact", href: "#contact" },
+  { label: "Programmes", href: "/programmes" },
+  { label: "Media", href: "/media" },
+  { label: "Partners", href: "/partners" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export function Header() {
@@ -48,7 +50,7 @@ export function Header() {
   const links = useMemo(
     () =>
       navItems.map((item) => (
-        <a
+        <Link
           key={item.href}
           href={item.href}
           onClick={() => setIsOpen(false)}
@@ -56,7 +58,7 @@ export function Header() {
         >
           {item.label}
           <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
-        </a>
+        </Link>
       )),
     [],
   );
@@ -68,13 +70,13 @@ export function Header() {
       transition={{ duration: 0.4 }}
       className={`sticky top-0 z-50 w-full backdrop-blur border-b transition-all duration-300 ${
         scrolled
-          ? "bg-white/95 border-border shadow-sm"
-          : "bg-white/85 border-border"
+          ? "bg-background/95 border-border shadow-sm"
+          : "bg-background/85 border-border"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="h-16 flex items-center justify-between">
-          <a href="#main" className="flex items-center gap-3 group">
+          <Link href="/" className="flex items-center gap-3 group">
             <div className="relative">
               <div className="absolute -inset-1 rounded-xl bg-secondary/25 blur-sm opacity-0 group-hover:opacity-100 transition-opacity" />
               <ImageLogo className="w-10 h-10" />
@@ -89,34 +91,38 @@ export function Header() {
               </div>
               <p className="text-xs text-foreground/60">Lagos, Nigeria</p>
             </div>
-          </a>
+          </Link>
 
           <nav className="hidden md:flex items-center gap-10">{links}</nav>
 
           <div className="hidden md:flex items-center gap-3">
-            <a
-              href="#wins"
+            <ModeToggle />
+            <Link
+              href="/media"
               className="px-4 py-2 rounded-lg border border-border text-primary font-semibold hover:bg-muted transition-colors"
             >
               Explore wins
-            </a>
-            <a
-              href="#contact"
+            </Link>
+            <Link
+              href="/contact"
               className="px-5 py-2 rounded-lg bg-secondary text-secondary-foreground font-semibold hover:brightness-[0.98] active:translate-y-px transition-all inline-flex items-center gap-2 font-poppins"
             >
               Partner / Join
               <ArrowRight size={16} />
-            </a>
+            </Link>
           </div>
 
-          <button
-            className="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-border text-primary hover:bg-muted transition-colors"
-            onClick={() => setIsOpen((v) => !v)}
-            aria-label="Toggle navigation menu"
-            aria-expanded={isOpen}
-          >
-            {isOpen ? <X size={20} /> : <Menu size={20} />}
-          </button>
+          <div className="flex md:hidden items-center gap-2">
+            <ModeToggle />
+            <button
+              className="inline-flex items-center justify-center w-10 h-10 rounded-lg border border-border text-primary hover:bg-muted transition-colors"
+              onClick={() => setIsOpen((v) => !v)}
+              aria-label="Toggle navigation menu"
+              aria-expanded={isOpen}
+            >
+              {isOpen ? <X size={20} /> : <Menu size={20} />}
+            </button>
+          </div>
         </div>
 
         <AnimatePresence>
@@ -128,23 +134,23 @@ export function Header() {
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.2 }}
             >
-              <div className="rounded-xl border border-border bg-white tic-shadow">
+              <div className="rounded-xl border border-border bg-card tic-shadow">
                 <div className="px-4 py-4 flex flex-col gap-4">{links}</div>
                 <div className="px-4 pb-4 grid gap-3">
-                  <a
-                    href="#wins"
+                  <Link
+                    href="/media"
                     onClick={() => setIsOpen(false)}
                     className="w-full px-4 py-2 rounded-lg border border-border text-primary font-semibold hover:bg-muted transition-colors text-center"
                   >
                     Explore wins
-                  </a>
-                  <a
-                    href="#contact"
+                  </Link>
+                  <Link
+                    href="/contact"
                     onClick={() => setIsOpen(false)}
                     className="w-full px-4 py-2 rounded-lg bg-secondary text-secondary-foreground font-bold hover:brightness-[0.98] transition-colors text-center"
                   >
                     Partner / Join
-                  </a>
+                  </Link>
                 </div>
               </div>
             </motion.div>

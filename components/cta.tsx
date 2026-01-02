@@ -1,7 +1,8 @@
 "use client";
 
+import Link from "next/link";
 import { ArrowRight, Mail, Sparkles } from "lucide-react";
-import { SlideIn, CountUp, StaggerContainer, StaggerItem } from "./ui/motion";
+import { CountUp, SlideIn, StaggerContainer, StaggerItem } from "./ui/motion";
 
 export function Cta() {
   const stats = [
@@ -65,12 +66,12 @@ export function Cta() {
                 >
                   Email TIC <Mail size={18} />
                 </a>
-                <a
-                  href="#main"
+                <Link
+                  href="/contact"
                   className="px-7 py-3 rounded-xl border-2 border-white/70 text-white font-bold hover:bg-white/10 transition-colors inline-flex items-center justify-center gap-2"
                 >
                   Join the Community <ArrowRight size={18} />
-                </a>
+                </Link>
               </div>
 
               <StaggerContainer
@@ -117,7 +118,7 @@ export function Cta() {
                 ))}
               </div>
 
-              <div className="mt-8 rounded-xl border border-secondary/35 bg-secondary/15 p-5">
+              <div className="mt-8 rounded-xl border border-secondary/35 bg-secondary/80 p-5">
                 <p className="text-sm font-semibold text-white font-poppins">
                   Fast path
                 </p>
