@@ -26,7 +26,6 @@ export function StackedCards<T>({
         <StackedCardLayer
           key={index}
           index={index}
-          totalItems={items.length}
           peek={peek}
           topOffset={topOffset}
         >
@@ -45,7 +44,6 @@ function StackedCardLayer({
 }: {
   children: ReactNode;
   index: number;
-  totalItems: number;
   peek: number;
   topOffset: number;
 }) {
@@ -68,7 +66,7 @@ function StackedCardLayer({
   const smoothProgress = useSpring(scrollYProgress, {
     stiffness: 50,
     damping: 20,
-    mass: 1
+    mass: 1,
   });
 
   // Use smoothProgress instead of scrollYProgress

@@ -92,7 +92,7 @@ export function Calendar() {
             <div className="flex items-center gap-2">
               <span className="inline-flex items-center gap-2 rounded-full border border-border bg-muted px-4 py-2 text-sm font-semibold text-foreground/75">
                 <CalIcon className="w-4 h-4 text-primary" />
-                Mock schedule (editable)
+                Upcoming Events
               </span>
             </div>
           </div>
@@ -143,12 +143,11 @@ export function Calendar() {
                     >
                       <div className="mt-6 pt-6 border-t border-border">
                         <p className="text-sm font-bold text-primary">
-                          Details (placeholder)
+                          Event Details
                         </p>
                         <p className="mt-2 text-sm text-foreground/70 leading-relaxed">
-                          Add location, speakers, registration, and partner
-                          slots here. This expandable layout keeps the section
-                          clean while still letting leaders scan quickly.
+                          Join us for this exciting event featuring workshops, presentations,
+                          and networking opportunities with industry leaders and fellow students.
                         </p>
                         <div className="mt-4 flex flex-wrap gap-3">
                           <a
