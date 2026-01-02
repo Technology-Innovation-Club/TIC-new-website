@@ -1,6 +1,7 @@
 "use client";
 
 import { ArrowRight, BarChart3, Code2, Shield, Zap } from "lucide-react";
+import Image from "next/image";
 import { AnimatedSection, StaggerContainer, StaggerItem } from "./ui/motion";
 
 interface Stream {
@@ -129,10 +130,12 @@ export function Streams() {
                 className="rounded-2xl border border-border bg-white p-6 tic-shadow"
               >
                 <div className="w-16 h-16 rounded-full overflow-hidden border border-border bg-muted">
-                  <img
+                  <Image
                     src={x.src}
                     alt={`${x.name} headshot placeholder`}
                     className="w-full h-full object-cover"
+                    width={64}
+                    height={64}
                   />
                 </div>
                 <p className="mt-4 font-semibold text-primary font-poppins">

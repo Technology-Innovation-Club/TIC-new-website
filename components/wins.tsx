@@ -1,6 +1,7 @@
 "use client";
 
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 import { AnimatedSection } from "./ui/motion";
 import { StackedCards } from "./ui/stacked-cards";
 
@@ -166,11 +167,13 @@ export function Wins() {
 
               <div className="rounded-2xl overflow-hidden border border-white/10 bg-black/10">
                 <div className="aspect-4/3 w-full grid place-items-center">
-                  <img
+                  <Image
                     src={win.image.src}
                     alt={win.image.alt}
                     className="h-full w-full object-cover"
                     loading="lazy"
+                    width={800}
+                    height={600}
                   />
                 </div>
               </div>

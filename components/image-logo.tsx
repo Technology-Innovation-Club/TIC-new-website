@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 export function ImageLogo({ className }: { className?: string }) {
   return (
@@ -8,10 +9,12 @@ export function ImageLogo({ className }: { className?: string }) {
         className,
       )}
     >
-      <img
+      <Image
         src="/logo.jpeg"
         alt="TIC logo"
         className="w-full h-full object-cover"
+        width={40}
+        height={40}
       />
     </div>
   );
