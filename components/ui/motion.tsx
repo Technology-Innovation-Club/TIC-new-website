@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useInView, useSpring, useTransform } from "framer-motion";
+import { motion, useInView, useSpring, useMotionValueEvent } from "framer-motion";
 import { useRef, useEffect, ReactNode } from "react";
 
 // Subtle fade up animation for sections
@@ -100,39 +100,44 @@ export function CountUp({
   prefix = "",
   suffix = "",
   className = "",
-  duration = 2,
 }: {
   target: number;
   prefix?: string;
   suffix?: string;
   className?: string;
-  duration?: number;
 }) {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const hasAnimatedRef = useRef(false);
-
+  const ref = useRef<HTMLSpanElement>(null);
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
+  
+  // Physics setup
   const spring = useSpring(0, {
-    stiffness: 120,
-    damping: 20,
+    stiffness: 80,
+    damping: 24,
   });
 
-  const display = useTransform(spring, (current) =>
-    Math.round(current).toLocaleString(),
-  );
+  // THE FIX: Listen to the spring and update the DOM directly
+  useMotionValueEvent(spring, "change", (latest) => {
+    if (ref.current) {
+      ref.current.textContent = `${prefix}${Math.round(latest).toLocaleString()}${suffix}`;
+    }
+  });
 
   useEffect(() => {
-    if (isInView && !hasAnimatedRef.current) {
-      spring.set(target);
-      hasAnimatedRef.current = true;
+    if (isInView) {
+      // Small delay ensures the ref is definitely painted before the spring starts
+      const timeout = setTimeout(() => {
+        spring.set(target);
+      }, 50);
+      return () => clearTimeout(timeout);
     }
   }, [isInView, spring, target]);
 
   return (
-    <span ref={ref} className={className}>
-      {prefix}
-      <motion.span>{display}</motion.span>
-      {suffix}
+    <span
+      ref={ref}
+      className={className}
+    >
+      {prefix}0{suffix}
     </span>
   );
 }

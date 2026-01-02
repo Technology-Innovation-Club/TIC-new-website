@@ -66,7 +66,7 @@ export function Cta() {
                   Email TIC <Mail size={18} />
                 </a>
                 <a
-                  href="#main"
+                  href="/"
                   className="px-7 py-3 rounded-xl border-2 border-white/70 text-white font-bold hover:bg-white/10 transition-colors inline-flex items-center justify-center gap-2"
                 >
                   Join the Community <ArrowRight size={18} />

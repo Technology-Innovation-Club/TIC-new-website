@@ -99,10 +99,8 @@ export function Wins() {
       <StackedCards
         items={wins}
         className="px-4 sm:px-6 lg:px-8"
-        stageClassName="max-w-5xl mx-auto"
         topOffset={96}
         peek={18}
-        vhPerCard={95}
         renderCard={(win) => (
           <article
             className={[
@@ -153,7 +151,7 @@ export function Wins() {
                 </div>
 
                 <a
-                  href="#contact"
+                  href="/#contact"
                   className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-white hover:underline group"
                 >
                   Sponsor the next cohort{" "}

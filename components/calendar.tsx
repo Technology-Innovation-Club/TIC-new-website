@@ -152,14 +152,14 @@ export function Calendar() {
                         </p>
                         <div className="mt-4 flex flex-wrap gap-3">
                           <a
-                            href="#contact"
+                            href="/#contact"
                             className="px-4 py-2 rounded-lg bg-secondary text-secondary-foreground font-bold hover:brightness-[0.98] transition-colors"
                             onClick={(e) => e.stopPropagation()}
                           >
                             Sponsor this event
                           </a>
                           <a
-                            href="#contact"
+                            href="/#contact"
                             className="px-4 py-2 rounded-lg border border-border text-primary font-semibold hover:bg-muted transition-colors"
                             onClick={(e) => e.stopPropagation()}
                           >

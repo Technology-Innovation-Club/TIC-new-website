@@ -73,13 +73,13 @@ export function Mission() {
 
               <div className="mt-10 flex flex-col sm:flex-row gap-3">
                 <a
-                  href="#wins"
+                  href="/#wins"
                   className="px-6 py-3 rounded-xl border-2 border-primary text-primary font-semibold hover:bg-primary/5 transition-colors text-center"
                 >
                   See the wins
                 </a>
                 <a
-                  href="#contact"
+                  href="/#contact"
                   className="px-6 py-3 rounded-xl bg-secondary text-secondary-foreground font-semibold hover:brightness-[0.98] transition-colors text-center"
                 >
                   Join the Community

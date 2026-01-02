@@ -59,7 +59,7 @@ export function Objectives() {
 
               <div className="mt-8 flex flex-col sm:flex-row gap-3">
                 <a
-                  href="#contact"
+                  href="/#contact"
                   className="px-6 py-3 rounded-xl bg-secondary text-secondary-foreground font-semibold hover:brightness-[0.98] transition-colors text-center inline-flex items-center justify-center gap-2"
                 >
                   Join the Community <ArrowRight size={18} />
@@ -81,7 +81,7 @@ export function Objectives() {
                   optimizes for repeatable execution.
                 </p>
                 <a
-                  href="#contact"
+                  href="/#contact"
                   className="mt-4 inline-flex items-center gap-2 text-sm font-extrabold text-primary hover:underline group"
                 >
                   Support the pipeline{" "}

@@ -78,14 +78,14 @@ export function Hero() {
             className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3"
           >
             <a
-              href="#contact"
+              href="/#contact"
               className="w-full sm:w-auto px-7 py-3 rounded-xl bg-white text-primary font-semibold hover:bg-white/90 active:translate-y-px transition-all inline-flex items-center justify-center gap-2"
             >
               Join the Community
               <ArrowRight size={18} />
             </a>
             <a
-              href="#wins"
+              href="/#wins"
               className="w-full sm:w-auto px-7 py-3 rounded-xl border-2 border-white/70 text-white font-semibold hover:bg-white/10 transition-colors inline-flex items-center justify-center"
             >
               See the wins

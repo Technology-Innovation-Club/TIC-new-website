@@ -12,10 +12,10 @@ interface NavItem {
 
 const navItems: NavItem[] = [
   { label: "About", href: "/about" },
-  { label: "Wins", href: "#wins" },
-  { label: "Programmes", href: "#programmes" },
-  { label: "Partners", href: "#partners" },
-  { label: "Contact", href: "#contact" },
+  { label: "Wins", href: "/#wins" },
+  { label: "Programmes", href: "/programmes" },
+  { label: "Partners", href: "/partners" },
+  { label: "Media", href: "/media" },
 ];
 
 export function Header() {
@@ -74,7 +74,7 @@ export function Header() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="h-16 flex items-center justify-between">
-          <a href="#main" className="flex items-center gap-3 group">
+          <a href="/" className="flex items-center gap-3 group">
             <div className="relative">
               <div className="absolute -inset-1 rounded-xl bg-secondary/25 blur-sm opacity-0 group-hover:opacity-100 transition-opacity" />
               <ImageLogo className="w-10 h-10" />
@@ -95,13 +95,13 @@ export function Header() {
 
           <div className="hidden md:flex items-center gap-3">
             <a
-              href="#wins"
+              href="/#wins"
               className="px-4 py-2 rounded-lg border border-border text-primary font-semibold hover:bg-muted transition-colors"
             >
               Explore wins
             </a>
             <a
-              href="#contact"
+              href="/#contact"
               className="px-5 py-2 rounded-lg bg-secondary text-secondary-foreground font-semibold hover:brightness-[0.98] active:translate-y-px transition-all inline-flex items-center gap-2 font-poppins"
             >
               Partner / Join
@@ -132,14 +132,14 @@ export function Header() {
                 <div className="px-4 py-4 flex flex-col gap-4">{links}</div>
                 <div className="px-4 pb-4 grid gap-3">
                   <a
-                    href="#wins"
+                    href="/#wins"
                     onClick={() => setIsOpen(false)}
                     className="w-full px-4 py-2 rounded-lg border border-border text-primary font-semibold hover:bg-muted transition-colors text-center"
                   >
                     Explore wins
                   </a>
                   <a
-                    href="#contact"
+                    href="/#contact"
                     onClick={() => setIsOpen(false)}
                     className="w-full px-4 py-2 rounded-lg bg-secondary text-secondary-foreground font-bold hover:brightness-[0.98] transition-colors text-center"
                   >

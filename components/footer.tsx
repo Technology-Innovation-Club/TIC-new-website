@@ -7,15 +7,15 @@ import { AnimatedSection } from "./ui/motion";
 export function Footer() {
   const quickLinks = [
     { label: "About", href: "/about" },
-    { label: "Wins", href: "#wins" },
+    { label: "Wins", href: "/#wins" },
     { label: "Programmes", href: "/programmes" },
     { label: "Partners", href: "/partners" },
   ];
 
   const communityLinks = [
-    { label: "Partner / Sponsor", href: "#contact" },
-    { label: "Mentor with TIC", href: "#contact" },
-    { label: "Join TIC", href: "#contact" },
+    { label: "Partner / Sponsor", href: "/#contact" },
+    { label: "Mentor with TIC", href: "/#contact" },
+    { label: "Join TIC", href: "/#contact" },
     { label: "Email", href: "mailto:tic@pau.edu.ng" },
   ];
 
@@ -130,7 +130,7 @@ export function Footer() {
             <a href="#" className="hover:text-primary transition-colors">
               Terms
             </a>
-            <a href="#contact" className="hover:text-primary transition-colors">
+            <a href="/#contact" className="hover:text-primary transition-colors">
               Contact
             </a>
           </div>
