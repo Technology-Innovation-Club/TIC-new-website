@@ -120,11 +120,11 @@ export function Cta() {
                 ))}
               </div>
 
-              <div className="mt-8 rounded-xl border border-secondary/35 bg-secondary/80 p-5">
-                <p className="text-sm font-semibold text-white font-poppins">
+              <div className="mt-8 rounded-xl border border-secondary/35 bg-secondary/80 dark:bg-card/80 p-5">
+                <p className="text-sm font-semibold text-white dark:text-card-foreground font-poppins">
                   Fast path
                 </p>
-                <p className="mt-1 text-sm text-white/90 leading-relaxed">
+                <p className="mt-1 text-sm text-white/90 dark:text-card-foreground/90 leading-relaxed">
                   Email us what you want to support (sprints, labs, demo day,
                   internships) and we will respond with a clear scope +
                   outcomes.

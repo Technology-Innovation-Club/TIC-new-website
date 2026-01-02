@@ -43,33 +43,40 @@
 }
 
   .dark {
-  --background: #020617; /* slate-950 */
-  --foreground: #f8fafc; /* slate-50 */
-  --card: #0f172a; /* slate-900 */
-  --card-foreground: #f8fafc;
-  --popover: #0f172a;
-  --popover-foreground: #f8fafc;
+  /* User requested color closer to #1e048b. 
+     We use a very deep midnight blue for the main background to ensure text legibility,
+     and use the requested indigo for UI elements/cards. */
+  --background: #10014c; /* rgb(16, 1, 76) */
+  --foreground: #eef2ff; /* indigo-50 */
+  
+  --card: #10014c; /* rgb(16, 1, 76) */
+  --card-foreground: #eef2ff;
+  
+  --popover: #10014c; /* rgb(16, 1, 76) */
+  --popover-foreground: #eef2ff;
 
-  /* Nice Light Blue for text/highlights in Dark Mode */
-  --primary: #bae6fd; /* sky-200 */
+  /* Light text for contrast against the deep blue background */
+  --primary: #e0e7ff; /* indigo-100 */
   --primary-foreground: #020617;
 
-  /* Vibrant Blue for buttons in Dark Mode */
-  --secondary: #0284c7; /* sky-600 */
+  /* Vibrant Blue for buttons */
+  --secondary: #3b82f6; /* blue-500 */
   --secondary-foreground: #ffffff;
 
   --gold: #faad2a;
-  --muted: #1e293b; /* slate-800 */
-  --muted-foreground: #94a3b8; /* slate-400 */
   
-  --accent: #38bdf8; /* sky-400 */
-  --accent-foreground: #020617;
+  /* The user's requested #1e048b is used here for muted/secondary backgrounds */
+  --muted: #1e048b; 
+  --muted-foreground: #cbd5e1;
+  
+  --accent: #1e048b;
+  --accent-foreground: #ffffff;
   
   --destructive: #ef4444;
   --destructive-foreground: #ffffff;
-  --border: #334155; /* slate-700 */
-  --input: #1e293b;
-  --ring: #bae6fd;
+  --border: #1e048b; /* Blue border */
+  --input: #1e048b;
+  --ring: #e0e7ff;
   --radius: 0.9rem;
 }
 

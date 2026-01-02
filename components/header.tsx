@@ -103,7 +103,7 @@ export function Header() {
             </Link>
             <Link
               href="/contact"
-              className="px-5 py-2 rounded-lg bg-secondary text-secondary-foreground font-semibold hover:brightness-[0.98] active:translate-y-px transition-all inline-flex items-center gap-2 font-poppins dark:bg-primary dark:text-primary-foreground"
+              className="px-5 py-2 rounded-lg bg-secondary text-secondary-foreground font-semibold hover:brightness-[0.98] active:translate-y-px transition-all inline-flex items-center gap-2 font-poppins dark:bg-card dark:text-card-foreground dark:border dark:border-border"
             >
               Partner / Join
               <ArrowRight size={16} />

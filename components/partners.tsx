@@ -36,7 +36,7 @@ export function Partners() {
             <div className="flex flex-col sm:flex-row gap-3">
               <a
                 href="/partners"
-                className="px-6 py-3 rounded-xl bg-white dark:bg-primary text-primary dark:text-primary-foreground font-semibold hover:bg-white/90 dark:hover:bg-primary/90 transition-colors text-center"
+                className="px-6 py-3 rounded-xl bg-white dark:bg-card text-primary dark:text-card-foreground font-semibold hover:bg-white/90 dark:hover:bg-card/90 transition-colors text-center"
               >
                 View full partner list
               </a>

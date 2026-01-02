@@ -83,7 +83,7 @@ export function Streams() {
         >
           {streams.map((stream) => (
             <StaggerItem key={stream.name}>
-              <article className="group rounded-2xl border border-border bg-card p-8 tic-shadow h-full hover:-translate-y-1 transition-transform duration-200">
+              <article className="group rounded-2xl border border-border bg-white dark:bg-card p-8 tic-shadow h-full hover:-translate-y-1 transition-transform duration-200">
                 <div className="flex items-start justify-between gap-4">
                   <div className="w-12 h-12 rounded-2xl bg-secondary/10 border border-secondary/20 grid place-items-center text-primary">
                     {stream.icon}
