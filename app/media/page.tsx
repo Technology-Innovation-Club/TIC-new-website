@@ -27,7 +27,7 @@ export default function MediaPage() {
       category: "hackathon",
       description:
         "TIC representatives secured a top finish at the prestigious Zenith Bank Zecathon, demonstrating exceptional problem-solving abilities and product delivery under intense competition pressure.",
-      date: "2024",
+      date: "2025",
       prize: "N10M",
       images: [
         {
@@ -71,9 +71,9 @@ export default function MediaPage() {
       title: "Lagos Impact Hackathon",
       category: "hackathon",
       description:
-        "TIC's representatives won $200 at the Lagos Impact Hackathon by building SupaMart, an offline-first POS and inventory system designed for small retailers in areas with unreliable internet connectivity.",
-      date: "2024",
-      prize: "$200",
+        "TIC's representatives won $2,000 at the Lagos Impact Hackathon by building SupaMart, an offline-first POS and inventory system designed for small retailers in areas with unreliable internet connectivity.",
+      date: "2025",
+      prize: "$2,000",
       images: [
         {
           src: "/media/lagos-impact-1.jpg",
@@ -93,7 +93,7 @@ export default function MediaPage() {
       category: "hackathon",
       description:
         "Our team built Pius, a prototype that earned recognition at the PowerTech Hackathon, showcasing our ability to ship demo-ready products under tight competition timelines.",
-      date: "2024",
+      date: "2025",
       images: [
         { src: "/media/powertech-1.jpg", alt: "PowerTech Hackathon team" },
         { src: "/media/powertech-2.jpg", alt: "Pius product demonstration" },
@@ -113,7 +113,7 @@ export default function MediaPage() {
       category: "workshop",
       description:
         "An enriching session where ServiceNow professionals shared industry insights on enterprise software, career pathways, and the future of workflow automation with TIC members.",
-      date: "2024",
+      date: "2025",
       images: [
         {
           src: "/media/servicenow-session-1.jpg",
@@ -136,7 +136,7 @@ export default function MediaPage() {
       category: "event",
       description:
         "A vibrant showcase where student builders demonstrated their CodeSpark projects to peers, faculty, and industry partners. The Tech Fair highlighted the practical outcomes of our intensive build sprints.",
-      date: "2024",
+      date: "2025",
       images: [
         {
           src: "/media/codespark-fair-1.jpg",
@@ -160,7 +160,7 @@ export default function MediaPage() {
       category: "hackathon",
       description:
         "Our flagship internal hackathon brought together student builders from all streams for 48 hours of intensive building, mentorship, and innovation. Teams tackled real-world challenges and shipped working prototypes.",
-      date: "2024",
+      date: "2025",
       images: [
         {
           src: "/media/tic-hackathon-1.jpg",

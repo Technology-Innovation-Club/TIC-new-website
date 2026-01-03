@@ -51,9 +51,15 @@ export default function PartnersPage() {
     },
     {
       name: "NoOnes",
-      type: "community",
+      type: "sponsor",
       description:
         "Community partner supporting fintech innovation and student development.",
+    },
+    {
+      name: "Your Company",
+      type: "sponsor",
+      description:
+        "Join these industry leaders in shaping the future of African tech talent.",
     },
   ];
 
@@ -95,7 +101,7 @@ export default function PartnersPage() {
         "Demo day presence",
       ],
     },
-    {
+    /* {
       name: "MakerSpace Supporter",
       description:
         "Provide hardware, kits, and equipment for our robotics and embedded systems labs. Enable hands-on prototyping for the next generation of hardware builders.",
@@ -104,7 +110,7 @@ export default function PartnersPage() {
         "Hardware showcases",
         "Student project features",
       ],
-    },
+    }, */
     {
       name: "Programme Partner",
       description:

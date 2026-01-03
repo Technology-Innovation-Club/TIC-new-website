@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { AnimatedSection } from "./ui/motion";
 import { StackedCards } from "./ui/stacked-cards";
@@ -18,7 +17,7 @@ export function Programmes() {
       },
       tags: ["Build sprint", "Mentors", "Demo-ready output"],
     },
-    {
+    /* {
       name: "MakerSpace",
       description:
         "Hands-on prototyping for embedded systems, robotics, and practical hardware builds.",
@@ -27,7 +26,7 @@ export function Programmes() {
         alt: "MakerSpace programme placeholder",
       },
       tags: ["Hardware", "Prototyping", "Robotics"],
-    },
+    }, */
     {
       name: "Demo Day",
       description:

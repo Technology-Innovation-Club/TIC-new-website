@@ -8,8 +8,8 @@ import { Footer } from "@/components/footer";
 import { ArrowRight, Calendar, Clock, Users } from "lucide-react";
 import {
   AnimatedSection,
-  StaggerContainer,
-  StaggerItem,
+  // StaggerContainer,
+  // StaggerItem,
 } from "@/components/ui/motion";
 
 interface Programme {
@@ -37,7 +37,7 @@ export default function ProgrammesPage() {
       duration: "1-2 weeks",
       capacity: "20-30 participants",
     },
-    {
+    /* {
       name: "MakerSpace",
       description:
         "Hands-on prototyping for embedded systems, robotics, and practical hardware builds.",
@@ -48,7 +48,7 @@ export default function ProgrammesPage() {
       schedule: "Ongoing",
       duration: "Semester-long",
       capacity: "15-20 members",
-    },
+    }, */
     {
       name: "Demo Day",
       description:

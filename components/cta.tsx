@@ -6,7 +6,7 @@ import { CountUp, SlideIn, StaggerContainer, StaggerItem } from "./ui/motion";
 
 export function Cta() {
   const stats = [
-    { value: 500, suffix: "+", label: "members across faculties" },
+    { value: 100, suffix: "+", label: "members across faculties" },
     { value: 7, suffix: "", label: "structured tech streams" },
     { value: 3, suffix: "", label: "major competition results" },
   ];
@@ -16,10 +16,10 @@ export function Cta() {
       t: "Sponsor hackathons & build sprints",
       d: "Fund prizes, tooling, mentors, and judging, directly tied to shipped output.",
     },
-    {
+    /* {
       t: "Support MakerSpace labs",
       d: "Hardware, kits, and build materials for robotics/embedded prototyping.",
-    },
+    }, */
     {
       t: "Host challenges & internships",
       d: "Bring real company problems; identify top performers for roles and internships.",
