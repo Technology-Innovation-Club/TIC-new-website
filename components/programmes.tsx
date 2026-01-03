@@ -103,7 +103,7 @@ export function Programmes() {
               aria-hidden="true"
             />
 
-            <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-8 items-start">
+            <div className="grid lg:grid-cols-[1fr_1.1fr] gap-8 items-start">
               <div>
                 <h3 className="text-2xl sm:text-3xl font-semibold text-primary font-poppins">
                   {p.name}
@@ -135,14 +135,14 @@ export function Programmes() {
                 </a>
               </div>
 
-              <div className="rounded-2xl overflow-hidden border border-border bg-muted">
-                <div className="aspect-4/3 w-full relative">
+              <div className="rounded-2xl overflow-hidden border border-border bg-muted h-full min-h-[300px]">
+                <div className="relative h-full w-full min-h-[300px]">
                   <Image
                     src={p.image.src}
                     alt={p.image.alt}
                     fill
                     className="object-cover"
-                    sizes="(max-width: 1024px) 100vw, 45vw"
+                    sizes="(max-width: 1024px) 100vw, 55vw"
                   />
                 </div>
               </div>
