@@ -67,17 +67,17 @@ export default function ContactPage() {
     <div className="min-h-screen bg-background">
       <Header />
       <main id="main">
-        <section className="w-full bg-primary text-white py-20">
+        <section className="w-full bg-primary dark:bg-background text-white dark:text-foreground py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <AnimatedSection>
               <div className="max-w-3xl">
-                <p className="text-sm font-extrabold tracking-widest uppercase text-white/80">
+                <p className="text-sm font-extrabold tracking-widest uppercase text-white/80 dark:text-foreground/80">
                   Get in Touch
                 </p>
-                <h1 className="mt-4 text-5xl sm:text-6xl text-balance text-white">
+                <h1 className="mt-4 text-5xl sm:text-6xl text-balance text-white dark:text-foreground">
                   Connect with TIC
                 </h1>
-                <p className="mt-5 text-lg text-white/80 leading-relaxed">
+                <p className="mt-5 text-lg text-white/80 dark:text-foreground/80 leading-relaxed">
                   Whether you want to partner, join our community, or mentor the
                   next generation of tech builders, we would love to hear from
                   you.

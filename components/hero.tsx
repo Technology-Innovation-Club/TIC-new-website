@@ -13,7 +13,7 @@ export function Hero() {
   };
 
   return (
-    <section className="relative overflow-hidden bg-primary text-white">
+    <section className="relative overflow-hidden bg-primary dark:bg-background text-white">
       <div className="absolute inset-0 tic-grid opacity-[0.10]" />
 
       <div
@@ -39,7 +39,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2"
+            className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 dark:border-white/10 dark:bg-white/5 px-4 py-2"
           >
             <span
               className="w-2 h-2 rounded-full bg-gold animate-pulse"
@@ -55,7 +55,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="mt-8 text-5xl sm:text-6xl lg:text-7xl leading-[1.02] text-balance text-white"
+            className="mt-8 text-5xl sm:text-6xl lg:text-7xl leading-[1.02] text-balance text-white dark:text-foreground"
           >
             Building Africa’s Next Generation of World-Class Tech Leaders.
           </motion.h1>
@@ -65,7 +65,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="mt-6 text-lg sm:text-xl text-white/80 leading-relaxed text-pretty"
+            className="mt-6 text-lg sm:text-xl text-white/80 dark:text-foreground/70 leading-relaxed text-pretty"
           >
             We build elite tech teams for companies and develop student builders
             through real projects, structured programmes, and competitive wins.
@@ -80,14 +80,14 @@ export function Hero() {
           >
             <Link
               href="/contact"
-              className="w-full sm:w-auto px-7 py-3 rounded-xl bg-white text-primary font-semibold hover:bg-white/90 active:translate-y-px transition-all inline-flex items-center justify-center gap-2"
+              className="w-full sm:w-auto px-7 py-3 rounded-xl bg-white dark:bg-primary text-primary dark:text-primary-foreground font-semibold hover:bg-white/90 dark:hover:bg-primary/90 active:translate-y-px transition-all inline-flex items-center justify-center gap-2"
             >
               Join the Community
               <ArrowRight size={18} />
             </Link>
             <Link
               href="/media"
-              className="w-full sm:w-auto px-7 py-3 rounded-xl border-2 border-white/70 text-white font-semibold hover:bg-white/10 transition-colors inline-flex items-center justify-center"
+              className="w-full sm:w-auto px-7 py-3 rounded-xl border-2 border-white/70 dark:border-white/20 text-white dark:text-foreground font-semibold hover:bg-white/10 dark:hover:bg-white/5 transition-colors inline-flex items-center justify-center"
             >
               See the wins
             </Link>
@@ -98,30 +98,30 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="mt-10 rounded-2xl border border-white/15 bg-white/10 backdrop-blur"
+            className="mt-10 rounded-2xl border border-white/15 bg-white/10 dark:bg-white/5 backdrop-blur"
           >
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-0 divide-y sm:divide-y-0 sm:divide-x divide-border">
               <div className="p-6">
-                <p className="text-xs font-bold uppercase tracking-widest text-white/70">
+                <p className="text-xs font-bold uppercase tracking-widest text-white/70 dark:text-foreground/60">
                   Active members
                 </p>
-                <p className="mt-2 text-3xl font-extrabold text-white">
+                <p className="mt-2 text-3xl font-extrabold text-white dark:text-foreground">
                   <CountUp target={100} suffix="+" />
                 </p>
               </div>
               <div className="p-6">
-                <p className="text-xs font-bold uppercase tracking-widest text-white/70">
+                <p className="text-xs font-bold uppercase tracking-widest text-white/70 dark:text-foreground/60">
                   Live projects
                 </p>
-                <p className="mt-2 text-3xl font-extrabold text-white">
+                <p className="mt-2 text-3xl font-extrabold text-white dark:text-foreground">
                   <CountUp target={10} suffix="+" />
                 </p>
               </div>
               <div className="p-6">
-                <p className="text-xs font-bold uppercase tracking-widest text-white/70">
+                <p className="text-xs font-bold uppercase tracking-widest text-white/70 dark:text-foreground/60">
                   Won in prizes
                 </p>
-                <p className="mt-2 text-3xl font-extrabold text-white">
+                <p className="mt-2 text-3xl font-extrabold text-white dark:text-foreground">
                   $<CountUp target={14000} suffix="+" />
                 </p>
               </div>
@@ -133,7 +133,7 @@ export function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.5 }}
-            className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs font-semibold text-white/70"
+            className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs font-semibold text-white/70 dark:text-foreground/60"
           >
             <span className="inline-flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-gold" /> 100+ Active
@@ -155,7 +155,7 @@ export function Hero() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.4, delay: 0.6 }}
             onClick={() => scrollTo("wins")}
-            className="mt-12 inline-flex items-center justify-center w-11 h-11 rounded-full border border-white/20 bg-white/10 hover:bg-white/15 transition-colors text-white"
+            className="mt-12 inline-flex items-center justify-center w-11 h-11 rounded-full border border-white/20 bg-white/10 dark:bg-white/5 hover:bg-white/15 dark:hover:bg-white/10 transition-colors text-white dark:text-foreground"
             aria-label="Scroll to wins section"
           >
             <ChevronDown size={20} className="animate-bounce" />

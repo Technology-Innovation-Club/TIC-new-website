@@ -92,17 +92,17 @@ export default function ProgrammesPage() {
       <Header />
       <main id="main">
         {/* Hero Section */}
-        <section className="w-full bg-primary text-white py-20">
+        <section className="w-full bg-primary dark:bg-background text-white dark:text-foreground py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <AnimatedSection>
               <div className="max-w-3xl">
-                <p className="text-sm font-extrabold tracking-widest uppercase text-white/80">
+                <p className="text-sm font-extrabold tracking-widest uppercase text-white/80 dark:text-foreground/80">
                   Programmes
                 </p>
-                <h1 className="mt-4 text-5xl sm:text-6xl text-balance text-white">
+                <h1 className="mt-4 text-5xl sm:text-6xl text-balance text-white dark:text-foreground">
                   Structured for Real Delivery
                 </h1>
-                <p className="mt-5 text-lg text-white/80 leading-relaxed">
+                <p className="mt-5 text-lg text-white/80 dark:text-foreground/80 leading-relaxed">
                   Each programme is designed to produce shipped work, stronger
                   portfolios, and reliable execution habits. Join a programme
                   and start building.
@@ -250,27 +250,27 @@ export default function ProgrammesPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="w-full py-16 px-4 sm:px-6 lg:px-8 bg-primary text-white">
+        <section className="w-full py-16 px-4 sm:px-6 lg:px-8 bg-primary dark:bg-background text-white dark:text-foreground">
           <div className="max-w-7xl mx-auto">
             <AnimatedSection>
               <div className="text-center">
-                <h2 className="text-3xl font-semibold text-white font-poppins">
+                <h2 className="text-3xl font-semibold text-white dark:text-foreground font-poppins">
                   Ready to Join a Programme?
                 </h2>
-                <p className="mt-4 text-white/80 max-w-2xl mx-auto">
+                <p className="mt-4 text-white/80 dark:text-foreground/80 max-w-2xl mx-auto">
                   Whether you are a beginner or experienced builder, there is a
                   programme for you. Reach out to join the next cohort.
                 </p>
                 <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
                   <Link
                     href="/contact"
-                    className="px-7 py-3 rounded-xl bg-white text-primary font-semibold hover:bg-white/90 transition-colors inline-flex items-center gap-2"
+                    className="px-7 py-3 rounded-xl bg-white dark:bg-primary text-primary dark:text-primary-foreground font-semibold hover:bg-white/90 dark:hover:bg-primary/90 transition-colors inline-flex items-center gap-2"
                   >
                     Get Started <ArrowRight size={18} />
                   </Link>
                   <Link
                     href="/about"
-                    className="px-7 py-3 rounded-xl border-2 border-white/70 text-white font-semibold hover:bg-white/10 transition-colors"
+                    className="px-7 py-3 rounded-xl border-2 border-white/70 dark:border-white/20 text-white dark:text-foreground font-semibold hover:bg-white/10 dark:hover:bg-white/5 transition-colors"
                   >
                     Learn About TIC
                   </Link>

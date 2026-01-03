@@ -31,7 +31,10 @@ export function Mission() {
   ];
 
   return (
-    <section id="about" className="w-full py-24 px-4 sm:px-6 lg:px-8 bg-muted">
+    <section
+      id="about"
+      className="w-full py-24 px-4 sm:px-6 lg:px-8 bg-muted dark:bg-muted/10"
+    >
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           <SlideIn direction="left">
@@ -72,7 +75,7 @@ export function Mission() {
               <div className="mt-10 flex flex-col sm:flex-row gap-3">
                 <Link
                   href="/media"
-                  className="px-6 py-3 rounded-xl border-2 border-primary text-primary font-semibold hover:bg-primary/5 transition-colors text-center"
+                  className="px-6 py-3 rounded-xl border-2 border-primary text-primary font-semibold hover:bg-primary/5 dark:hover:bg-primary/10 transition-colors text-center"
                 >
                   See the wins
                 </Link>

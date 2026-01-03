@@ -72,7 +72,7 @@ export function Calendar() {
   return (
     <section
       id="calendar"
-      className="w-full py-24 px-4 sm:px-6 lg:px-8 bg-white"
+      className="w-full py-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-card"
     >
       <div className="max-w-7xl mx-auto">
         <AnimatedSection>
@@ -106,7 +106,7 @@ export function Calendar() {
           {displayedEvents.map((event) => (
             <StaggerItem key={event.title}>
               <div
-                className="group rounded-2xl border border-border bg-white p-7 tic-shadow cursor-pointer hover:-translate-y-1 transition-transform duration-200"
+                className="group rounded-2xl border border-border bg-white dark:bg-card p-7 tic-shadow cursor-pointer hover:-translate-y-1 transition-transform duration-200"
                 onClick={() =>
                   setOpenEvent(openEvent === event.title ? null : event.title)
                 }

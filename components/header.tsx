@@ -13,6 +13,7 @@ interface NavItem {
 }
 
 const navItems: NavItem[] = [
+  { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Programmes", href: "/programmes" },
   { label: "Media", href: "/media" },
@@ -85,17 +86,14 @@ export function Header() {
             <div className="leading-tight">
               <div className="flex items-center gap-2">
                 <span className="font-bold text-primary font-poppins">TIC</span>
-                <span className="text-[10px] font-bold uppercase tracking-widest text-secondary">
-                  Pan-Atlantic University
-                </span>
               </div>
               <p className="text-xs text-foreground/60">Lagos, Nigeria</p>
             </div>
           </Link>
 
-          <nav className="hidden md:flex items-center gap-10">{links}</nav>
+          <nav className="hidden lg:flex items-center gap-8">{links}</nav>
 
-          <div className="hidden md:flex items-center gap-3">
+          <div className="hidden lg:flex items-center gap-4">
             <ModeToggle />
             <Link
               href="/media"
@@ -105,14 +103,14 @@ export function Header() {
             </Link>
             <Link
               href="/contact"
-              className="px-5 py-2 rounded-lg bg-secondary text-secondary-foreground font-semibold hover:brightness-[0.98] active:translate-y-px transition-all inline-flex items-center gap-2 font-poppins"
+              className="px-5 py-2 rounded-lg bg-secondary text-secondary-foreground font-semibold hover:brightness-[0.98] active:translate-y-px transition-all inline-flex items-center gap-2 font-poppins dark:bg-card dark:text-card-foreground dark:border dark:border-border"
             >
               Partner / Join
               <ArrowRight size={16} />
             </Link>
           </div>
 
-          <div className="flex md:hidden items-center gap-2">
+          <div className="flex lg:hidden items-center gap-2">
             <ModeToggle />
             <button
               className="inline-flex items-center justify-center w-10 h-10 rounded-lg border border-border text-primary hover:bg-muted transition-colors"
@@ -128,7 +126,7 @@ export function Header() {
         <AnimatePresence>
           {isOpen && (
             <motion.div
-              className="md:hidden pb-4"
+              className="lg:hidden pb-4"
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}

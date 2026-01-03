@@ -33,7 +33,7 @@ export function Values() {
   ];
 
   return (
-    <section className="w-full py-24 px-4 sm:px-6 lg:px-8 bg-white">
+    <section className="w-full py-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-card">
       <div className="max-w-7xl mx-auto">
         <AnimatedSection>
           <div className="max-w-3xl">
@@ -57,7 +57,7 @@ export function Values() {
         >
           {values.map((v) => (
             <StaggerItem key={v.title}>
-              <div className="rounded-2xl border border-border bg-white p-7 text-center tic-shadow font-poppins h-full hover:-translate-y-1 transition-transform duration-200">
+              <div className="rounded-2xl border border-border bg-white dark:bg-card p-7 text-center tic-shadow font-poppins h-full hover:-translate-y-1 transition-transform duration-200">
                 <div className="mx-auto w-12 h-12 rounded-2xl bg-secondary/15 border border-secondary/25 grid place-items-center text-primary">
                   {v.icon}
                 </div>

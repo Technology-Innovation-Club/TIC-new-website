@@ -140,17 +140,17 @@ export default function PartnersPage() {
       <Header />
       <main id="main">
         {/* Hero Section */}
-        <section className="w-full bg-primary text-white py-20">
+        <section className="w-full bg-primary dark:bg-background text-white dark:text-foreground py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <AnimatedSection>
               <div className="max-w-3xl">
-                <p className="text-sm font-extrabold tracking-widest uppercase text-white/80">
+                <p className="text-sm font-extrabold tracking-widest uppercase text-white/80 dark:text-foreground/80">
                   Partners
                 </p>
-                <h1 className="mt-4 text-5xl sm:text-6xl text-balance text-white">
+                <h1 className="mt-4 text-5xl sm:text-6xl text-balance text-white dark:text-foreground">
                   Backed by Leaders Who Value Execution
                 </h1>
-                <p className="mt-5 text-lg text-white/80 leading-relaxed">
+                <p className="mt-5 text-lg text-white/80 dark:text-foreground/80 leading-relaxed">
                   Top companies and organizations support TIC because they
                   believe in developing Africa's next generation of world-class
                   tech talent.
@@ -285,16 +285,16 @@ export default function PartnersPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="w-full py-16 px-4 sm:px-6 lg:px-8 bg-primary text-white">
+        <section className="w-full py-16 px-4 sm:px-6 lg:px-8 bg-primary dark:bg-background text-white dark:text-foreground">
           <div className="max-w-7xl mx-auto">
             <AnimatedSection>
-              <div className="rounded-2xl border border-white/15 bg-white/10 p-8 md:p-12">
+              <div className="rounded-2xl border border-white/15 dark:border-border bg-white/10 dark:bg-muted/50 p-8 md:p-12">
                 <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
                   <div className="max-w-2xl">
-                    <h2 className="text-3xl font-semibold text-white font-poppins">
+                    <h2 className="text-3xl font-semibold text-white dark:text-foreground font-poppins">
                       Want to Partner with Us?
                     </h2>
-                    <p className="mt-4 text-white/80 leading-relaxed">
+                    <p className="mt-4 text-white/80 dark:text-foreground/80 leading-relaxed">
                       Email us what you want to support and we will respond with
                       a clear scope and outcomes. Whether it is hackathons,
                       labs, demo days, or internships, we make partnership
@@ -304,13 +304,13 @@ export default function PartnersPage() {
                   <div className="flex flex-col sm:flex-row gap-4 shrink-0">
                     <Link
                       href="/contact"
-                      className="px-7 py-3 rounded-xl bg-white text-primary font-semibold hover:bg-white/90 transition-colors inline-flex items-center justify-center gap-2"
+                      className="px-7 py-3 rounded-xl bg-white dark:bg-primary text-primary dark:text-primary-foreground font-semibold hover:bg-white/90 dark:hover:bg-primary/90 transition-colors inline-flex items-center justify-center gap-2"
                     >
                       Contact Us <ArrowRight size={18} />
                     </Link>
                     <a
                       href="mailto:tic@pau.edu.ng?subject=Partnership%20Inquiry"
-                      className="px-7 py-3 rounded-xl border-2 border-white/70 text-white font-semibold hover:bg-white/10 transition-colors inline-flex items-center justify-center"
+                      className="px-7 py-3 rounded-xl border-2 border-white/70 dark:border-white/20 text-white dark:text-foreground font-semibold hover:bg-white/10 dark:hover:bg-white/5 transition-colors inline-flex items-center justify-center"
                     >
                       Email Directly
                     </a>

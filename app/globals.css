@@ -16,11 +16,11 @@
   --popover: #ffffff;
   --popover-foreground: #0b0b0f;
 
-  --primary: #10014c; /* Dark Indigo */
+  --primary: #10014c; /* Dark Indigo - Original Brand Color */
   --primary-foreground: #ffffff;
 
   /* Accent/CTA (Vivid Indigo) */
-  --secondary: #1e048b;
+  --secondary: #1e048b; /* Original Brand Color */
   --secondary-foreground: #ffffff;
 
   /* Gold (use sparingly for tiny accents only) */
@@ -42,27 +42,41 @@
   --radius: 0.9rem;
 }
 
-.dark {
-  --background: #0b0b0f;
-  --foreground: #f4f4f6;
-  --card: #161620;
-  --card-foreground: #f4f4f6;
-  --popover: #161620;
-  --popover-foreground: #f4f4f6;
-  --primary: #a78bfa;
-  --primary-foreground: #0b0b0f;
-  --secondary: #6d28d9;
+  .dark {
+  /* User requested color closer to #1e048b. 
+     We use a very deep midnight blue for the main background to ensure text legibility,
+     and use the requested indigo for UI elements/cards. */
+  --background: #10014c; /* rgb(16, 1, 76) */
+  --foreground: #eef2ff; /* indigo-50 */
+  
+  --card: #10014c; /* rgb(16, 1, 76) */
+  --card-foreground: #eef2ff;
+  
+  --popover: #10014c; /* rgb(16, 1, 76) */
+  --popover-foreground: #eef2ff;
+
+  /* Light text for contrast against the deep blue background */
+  --primary: #e0e7ff; /* indigo-100 */
+  --primary-foreground: #020617;
+
+  /* Vibrant Blue for buttons */
+  --secondary: #3b82f6; /* blue-500 */
   --secondary-foreground: #ffffff;
+
   --gold: #faad2a;
-  --muted: #1e1e2a;
-  --muted-foreground: #9ca3af;
-  --accent: #6d28d9;
+  
+  /* The user's requested #1e048b is used here for muted/secondary backgrounds */
+  --muted: #1e048b; 
+  --muted-foreground: #cbd5e1;
+  
+  --accent: #1e048b;
   --accent-foreground: #ffffff;
+  
   --destructive: #ef4444;
   --destructive-foreground: #ffffff;
-  --border: #2d2d3a;
-  --input: #1e1e2a;
-  --ring: #a78bfa;
+  --border: #1e048b; /* Blue border */
+  --input: #1e048b;
+  --ring: #e0e7ff;
   --radius: 0.9rem;
 }
 

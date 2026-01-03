@@ -33,27 +33,27 @@ export function Cta() {
   return (
     <section
       id="contact"
-      className="w-full py-24 px-4 sm:px-6 lg:px-8 bg-primary text-white relative overflow-hidden"
+      className="w-full py-24 px-4 sm:px-6 lg:px-8 bg-primary dark:bg-background text-white dark:text-foreground relative overflow-hidden"
     >
       {/* Ambient backgrounds */}
       <div className="absolute -top-40 -left-40 w-80 h-80 rounded-full bg-gold/10 blur-3xl animate-blob-slow" />
-      <div className="absolute -bottom-40 -right-40 w-96 h-96 rounded-full bg-white/5 blur-3xl animate-blob" />
+      <div className="absolute -bottom-40 -right-40 w-96 h-96 rounded-full bg-white/5 dark:bg-primary/5 blur-3xl animate-blob" />
 
       <div className="relative max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           <SlideIn direction="left">
             <div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2">
+              <div className="inline-flex items-center gap-2 rounded-full border border-white/15 dark:border-border bg-white/10 dark:bg-muted px-4 py-2">
                 <Sparkles className="w-4 h-4 text-gold" />
-                <span className="text-xs font-extrabold tracking-widest uppercase">
+                <span className="text-xs font-extrabold tracking-widest uppercase text-white dark:text-foreground">
                   Partner-ready
                 </span>
               </div>
 
-              <h2 className="mt-6 text-5xl sm:text-6xl font-semibold text-white text-balance">
+              <h2 className="mt-6 text-5xl sm:text-6xl font-semibold text-white dark:text-foreground text-balance">
                 Help fund the next wave of builders in Africa.
               </h2>
-              <p className="mt-6 text-white/80 text-lg leading-relaxed">
+              <p className="mt-6 text-white/80 dark:text-foreground/80 text-lg leading-relaxed">
                 Whether you are a company, foundation, VC, or ecosystem partner,
                 TIC is a high-signal pipeline for talent and real product
                 execution at PAU.
@@ -62,13 +62,13 @@ export function Cta() {
               <div className="mt-10 flex flex-col sm:flex-row gap-3">
                 <a
                   href="mailto:tic@pau.edu.ng"
-                  className="px-7 py-3 rounded-xl bg-white text-primary font-semibold hover:bg-white/90 transition-colors inline-flex items-center justify-center gap-2 font-poppins"
+                  className="px-7 py-3 rounded-xl bg-white dark:bg-primary text-primary dark:text-primary-foreground font-semibold hover:bg-white/90 dark:hover:bg-primary/90 transition-colors inline-flex items-center justify-center gap-2 font-poppins"
                 >
                   Email TIC <Mail size={18} />
                 </a>
                 <Link
                   href="/contact"
-                  className="px-7 py-3 rounded-xl border-2 border-white/70 text-white font-bold hover:bg-white/10 transition-colors inline-flex items-center justify-center gap-2"
+                  className="px-7 py-3 rounded-xl border-2 border-white/70 dark:border-primary/70 text-white dark:text-foreground font-bold hover:bg-white/10 dark:hover:bg-primary/10 transition-colors inline-flex items-center justify-center gap-2"
                 >
                   Join the Community <ArrowRight size={18} />
                 </Link>
@@ -80,11 +80,13 @@ export function Cta() {
               >
                 {stats.map((stat) => (
                   <StaggerItem key={stat.label}>
-                    <div className="rounded-2xl border border-white/15 bg-white/10 p-6 backdrop-blur-sm hover:bg-white/15 transition-colors">
-                      <p className="text-3xl font-extrabold text-white">
+                    <div className="rounded-2xl border border-white/15 dark:border-border bg-white/10 dark:bg-muted p-6 backdrop-blur-sm hover:bg-white/15 dark:hover:bg-muted/80 transition-colors">
+                      <p className="text-3xl font-extrabold text-white dark:text-foreground">
                         <CountUp target={stat.value} suffix={stat.suffix} />
                       </p>
-                      <p className="mt-1 text-sm text-white/80">{stat.label}</p>
+                      <p className="mt-1 text-sm text-white/80 dark:text-foreground/80">
+                        {stat.label}
+                      </p>
                     </div>
                   </StaggerItem>
                 ))}
@@ -93,11 +95,11 @@ export function Cta() {
           </SlideIn>
 
           <SlideIn direction="right" delay={0.1}>
-            <div className="rounded-2xl border border-white/15 bg-white/10 p-8 backdrop-blur-sm">
-              <h3 className="text-2xl font-semibold text-white font-poppins">
+            <div className="rounded-2xl border border-white/15 dark:border-border bg-white/10 dark:bg-muted p-8 backdrop-blur-sm">
+              <h3 className="text-2xl font-semibold text-white dark:text-foreground font-poppins">
                 Ways to partner
               </h3>
-              <p className="mt-3 text-white/80 leading-relaxed">
+              <p className="mt-3 text-white/80 dark:text-foreground/80 leading-relaxed">
                 Pick a lane (or combine them). We will tailor packages and
                 visibility around outcomes.
               </p>
@@ -106,23 +108,23 @@ export function Cta() {
                 {partnerOptions.map((x) => (
                   <div
                     key={x.t}
-                    className="rounded-xl border border-white/10 bg-black/10 p-5 hover:bg-black/20 transition-colors"
+                    className="rounded-xl border border-white/10 dark:border-border bg-black/10 dark:bg-background/50 p-5 hover:bg-black/20 dark:hover:bg-background/80 transition-colors"
                   >
-                    <p className="font-semibold text-white font-poppins">
+                    <p className="font-semibold text-white dark:text-foreground font-poppins">
                       {x.t}
                     </p>
-                    <p className="mt-1 text-sm text-white/80 leading-relaxed">
+                    <p className="mt-1 text-sm text-white/80 dark:text-foreground/80 leading-relaxed">
                       {x.d}
                     </p>
                   </div>
                 ))}
               </div>
 
-              <div className="mt-8 rounded-xl border border-secondary/35 bg-secondary/80 p-5">
-                <p className="text-sm font-semibold text-white font-poppins">
+              <div className="mt-8 rounded-xl border border-secondary/35 bg-secondary/80 dark:bg-card/80 p-5">
+                <p className="text-sm font-semibold text-white dark:text-card-foreground font-poppins">
                   Fast path
                 </p>
-                <p className="mt-1 text-sm text-white/90 leading-relaxed">
+                <p className="mt-1 text-sm text-white/90 dark:text-card-foreground/90 leading-relaxed">
                   Email us what you want to support (sprints, labs, demo day,
                   internships) and we will respond with a clear scope +
                   outcomes.

@@ -96,9 +96,9 @@ export function Programmes() {
         stageClassName="max-w-5xl mx-auto"
         topOffset={96}
         peek={18}
-        vhPerCard={90}
+        vhPerCard={95}
         renderCard={(p) => (
-          <article className="relative rounded-2xl border border-border bg-white p-8 tic-shadow shadow-xl">
+          <article className="relative rounded-2xl border border-border bg-white dark:bg-card p-8 tic-shadow shadow-xl">
             <div
               className="absolute inset-x-0 top-0 h-1.5 rounded-t-2xl bg-gold/70"
               aria-hidden="true"
