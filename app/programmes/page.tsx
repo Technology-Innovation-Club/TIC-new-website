@@ -8,8 +8,8 @@ import { Footer } from "@/components/footer";
 import { ArrowRight, Calendar, Clock, Users } from "lucide-react";
 import {
   AnimatedSection,
-  StaggerContainer,
-  StaggerItem,
+  // StaggerContainer,
+  // StaggerItem,
 } from "@/components/ui/motion";
 
 interface Programme {

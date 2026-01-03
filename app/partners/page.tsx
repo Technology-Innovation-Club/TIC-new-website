@@ -61,6 +61,9 @@ export default function PartnersPage() {
       description:
         "Join these industry leaders in shaping the future of African tech talent.",
     },
+  ];
+
+  const partnershipBenefits = [
     {
       icon: <Users className="w-6 h-6" />,
       title: "Talent Pipeline Access",
