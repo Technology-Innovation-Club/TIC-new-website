@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+// some next config
 
 const nextConfig: NextConfig = {
   experimental: {
