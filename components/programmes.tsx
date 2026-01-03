@@ -18,7 +18,7 @@ export function Programmes() {
       },
       tags: ["Build sprint", "Mentors", "Demo-ready output"],
     },
-    {
+    /* {
       name: "MakerSpace",
       description:
         "Hands-on prototyping for embedded systems, robotics, and practical hardware builds.",
@@ -27,7 +27,7 @@ export function Programmes() {
         alt: "MakerSpace programme placeholder",
       },
       tags: ["Hardware", "Prototyping", "Robotics"],
-    },
+    }, */
     {
       name: "Demo Day",
       description:

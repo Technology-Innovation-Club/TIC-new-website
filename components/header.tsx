@@ -54,6 +54,7 @@ export function Header() {
         <Link
           key={item.href}
           href={item.href}
+          prefetch={true}
           onClick={() => setIsOpen(false)}
           className="text-sm font-semibold text-foreground/80 font-poppins relative group"
         >

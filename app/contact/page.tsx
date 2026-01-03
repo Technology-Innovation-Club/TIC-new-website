@@ -43,7 +43,7 @@ export default function ContactPage() {
     {
       title: "Partner with TIC",
       description:
-        "Sponsor hackathons, support MakerSpace labs, or host internship challenges with access to our talent pipeline.",
+        "Sponsor hackathons or host internship challenges with access to our talent pipeline.",
       cta: "Email partnerships",
       href: "mailto:tic@pau.edu.ng?subject=Partnership%20Inquiry",
     },

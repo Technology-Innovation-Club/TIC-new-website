@@ -132,7 +132,8 @@
   }
 
   ::selection {
-    background: color-mix(in oklab, var(--secondary) 30%, white);
+    background: #1e048b;
+    color: white;
   }
 
   h1,

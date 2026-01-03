@@ -244,9 +244,9 @@ export default function AboutPage() {
                 <StaggerItem key={exec.name}>
                   <motion.div
                     whileHover={{ y: -4 }}
-                    className="rounded-2xl border border-border bg-background p-6 tic-shadow transition-shadow hover:shadow-lg"
+                    className="rounded-2xl border border-border bg-background p-6 tic-shadow transition-shadow hover:shadow-lg h-full flex flex-col"
                   >
-                    <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-border bg-muted relative mx-auto">
+                    <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-border bg-muted relative mx-auto shrink-0">
                       <Image
                         src={exec.image}
                         alt={exec.name}
@@ -255,22 +255,24 @@ export default function AboutPage() {
                         sizes="80px"
                       />
                     </div>
-                    <div className="mt-4 text-center">
-                      <p className="font-semibold text-primary font-poppins">
+                    <div className="mt-4 text-center flex-1 flex flex-col">
+                      <p className="font-semibold text-primary font-poppins min-h-[3rem] flex items-center justify-center">
                         {exec.name}
                       </p>
-                      <p className="mt-1 text-sm text-foreground/70">
+                      <p className="mt-1 text-sm text-foreground/70 min-h-[2.5rem]">
                         {exec.role}
                       </p>
-                      <a
-                        href={exec.linkedin}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="mt-3 inline-flex items-center justify-center w-8 h-8 rounded-lg border border-border bg-muted text-foreground/60 hover:text-primary hover:bg-primary/5 transition-colors"
-                        aria-label={`${exec.name}'s LinkedIn`}
-                      >
-                        <FaLinkedin size={16} />
-                      </a>
+                      <div className="mt-auto pt-3">
+                        <a
+                          href={exec.linkedin}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center justify-center w-8 h-8 rounded-lg border border-border bg-muted text-foreground/60 hover:text-primary hover:bg-primary/5 transition-colors"
+                          aria-label={`${exec.name}'s LinkedIn`}
+                        >
+                          <FaLinkedin size={16} />
+                        </a>
+                      </div>
                     </div>
                   </motion.div>
                 </StaggerItem>
@@ -291,9 +293,9 @@ export default function AboutPage() {
                 <StaggerItem key={exec.name}>
                   <motion.div
                     whileHover={{ y: -4 }}
-                    className="rounded-2xl border border-border bg-background p-6 tic-shadow transition-shadow hover:shadow-lg"
+                    className="rounded-2xl border border-border bg-background p-6 tic-shadow transition-shadow hover:shadow-lg h-full flex flex-col"
                   >
-                    <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-border bg-muted relative mx-auto">
+                    <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-border bg-muted relative mx-auto shrink-0">
                       <Image
                         src={exec.image}
                         alt={exec.name}
@@ -302,22 +304,24 @@ export default function AboutPage() {
                         sizes="80px"
                       />
                     </div>
-                    <div className="mt-4 text-center">
-                      <p className="font-semibold text-primary font-poppins">
+                    <div className="mt-4 text-center flex-1 flex flex-col">
+                      <p className="font-semibold text-primary font-poppins min-h-[3rem] flex items-center justify-center">
                         {exec.name}
                       </p>
-                      <p className="mt-1 text-sm text-foreground/70">
+                      <p className="mt-1 text-sm text-foreground/70 min-h-[2.5rem]">
                         {exec.role}
                       </p>
-                      <a
-                        href={exec.linkedin}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="mt-3 inline-flex items-center justify-center w-8 h-8 rounded-lg border border-border bg-muted text-foreground/60 hover:text-primary hover:bg-primary/5 transition-colors"
-                        aria-label={`${exec.name}'s LinkedIn`}
-                      >
-                        <FaLinkedin size={16} />
-                      </a>
+                      <div className="mt-auto pt-3">
+                        <a
+                          href={exec.linkedin}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center justify-center w-8 h-8 rounded-lg border border-border bg-muted text-foreground/60 hover:text-primary hover:bg-primary/5 transition-colors"
+                          aria-label={`${exec.name}'s LinkedIn`}
+                        >
+                          <FaLinkedin size={16} />
+                        </a>
+                      </div>
                     </div>
                   </motion.div>
                 </StaggerItem>
