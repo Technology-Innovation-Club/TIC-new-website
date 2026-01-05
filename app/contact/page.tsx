@@ -101,7 +101,7 @@ export default function ContactPage() {
                         <p className="text-sm font-bold uppercase tracking-widest text-primary/70">
                           Primary Contact
                         </p>
-                        <p className="text-xl font-semibold text-primary font-poppins">
+                        <p className="text-xl font-semibold text-primary font-poppins break-all md:break-normal">
                           tech.innovation.club@pau.edu.ng
                         </p>
                       </div>
