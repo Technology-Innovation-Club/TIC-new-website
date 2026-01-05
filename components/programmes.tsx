@@ -59,6 +59,16 @@ export function Programmes() {
       tags: ["Showcase", "Feedback", "Partner-facing"],
     },
     {
+      name: "Demo Day",
+      description:
+        "A day for student builders to pitch their solutions, demo them and get feedback",
+      image: {
+        src: "/programmes/demo-day.jpg",
+        alt: "Tech Fair programme placeholder",
+      },
+      tags: ["Showcase", "Feedback", "Partner-facing"],
+    },
+    {
       name: "AI/ML Lab",
       description:
         "Applied AI learning and project execution focused on real use-cases and portfolios.",

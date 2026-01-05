@@ -21,7 +21,7 @@ export function Partners() {
       id="partners"
       className="w-full bg-primary dark:bg-background text-white dark:text-foreground"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <AnimatedSection>
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
             <div className="max-w-3xl">
