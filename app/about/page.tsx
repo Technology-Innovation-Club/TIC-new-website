@@ -22,6 +22,7 @@ interface Executive {
 }
 
 export default function AboutPage() {
+  // TODO: Add Kamdi, Owumi, Kenechuckwu, and Victor's images when ready
   const executives: Executive[] = [
     {
       name: "Prosperity Olorunfemi",
@@ -49,7 +50,7 @@ export default function AboutPage() {
     },
     {
       name: "Jason Nwaeze",
-      role: "Operations Manager",
+      role: "External Relations & Partnerships Manager",
       linkedin: "https://www.linkedin.com/in/jacey77n/",
       image: "/excos/jason-nwaeze.jpg",
     },
