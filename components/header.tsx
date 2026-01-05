@@ -115,7 +115,7 @@ export function Header() {
             <ModeToggle />
             <button
               className="inline-flex items-center justify-center w-10 h-10 rounded-lg border border-border text-primary hover:bg-muted transition-colors"
-              onClick={() => setIsOpen((v) => !v)}
+              onClick={() => setIsOpen((previous) => !previous)}
               aria-label="Toggle navigation menu"
               aria-expanded={isOpen}
             >

@@ -4,14 +4,25 @@ import Link from "next/link";
 import { ArrowRight, Mail, Sparkles } from "lucide-react";
 import { CountUp, SlideIn, StaggerContainer, StaggerItem } from "./ui/motion";
 
+interface Stat {
+  value: number;
+  suffix: string;
+  label: string;
+}
+
+interface PartnerOption {
+  t: string;
+  d: string;
+}
+
 export function Cta() {
-  const stats = [
+  const stats: Stat[] = [
     { value: 100, suffix: "+", label: "members across faculties" },
     { value: 7, suffix: "", label: "structured tech streams" },
     { value: 3, suffix: "", label: "major competition results" },
   ];
 
-  const partnerOptions = [
+  const partnerOptions: PartnerOption[] = [
     {
       t: "Sponsor hackathons & build sprints",
       d: "Fund prizes, tooling, mentors, and judging, directly tied to shipped output.",
@@ -105,16 +116,16 @@ export function Cta() {
               </p>
 
               <div className="mt-8 space-y-4">
-                {partnerOptions.map((x) => (
+                {partnerOptions.map((option) => (
                   <div
-                    key={x.t}
+                    key={option.t}
                     className="rounded-xl border border-white/10 dark:border-border bg-black/10 dark:bg-background/50 p-5 hover:bg-black/20 dark:hover:bg-background/80 transition-colors"
                   >
                     <p className="font-semibold text-white dark:text-foreground font-poppins">
-                      {x.t}
+                      {option.t}
                     </p>
                     <p className="mt-1 text-sm text-white/80 dark:text-foreground/80 leading-relaxed">
-                      {x.d}
+                      {option.d}
                     </p>
                   </div>
                 ))}

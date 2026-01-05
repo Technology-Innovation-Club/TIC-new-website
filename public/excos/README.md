@@ -4,6 +4,7 @@ Drop headshot images here with the following naming conventions.
 Use square images where possible; the UI will crop to a circle.
 
 ## Core Leadership
+
 - `prosperity-olorunfemi.jpg` - President
 - `omotayo-ayeni.jpg` - Vice President
 - `bernice-awodeyi.jpg` - Project Manager
@@ -13,6 +14,7 @@ Use square images where possible; the UI will crop to a circle.
 - `kamdi.jpg` - Media Lead (Kamdilichukwu Bobby-Umeano)
 
 ## Stream Leads and Technical Team
+
 - `abasiono-mbat.jpg` - Software Lead
 - `tobani-esan-george.jpg` - Software Advisory/Consultant
 - `oghenetejirin-owumi.jpg` - Web Dev Stream Lead
@@ -24,6 +26,7 @@ Use square images where possible; the UI will crop to a circle.
 - `uchechukwu-nwafor.jpg` - Robotics & Embedded Systems Co-Lead
 
 ## Recommended Image Specifications
+
 - Format: JPG or WebP
 - Aspect ratio: 1:1 (square)
 - Minimum resolution: 400x400px
