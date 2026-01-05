@@ -1,7 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 import { AnimatedSection } from "./ui/motion";
 import { StackedCards } from "./ui/stacked-cards";
 
@@ -124,7 +124,7 @@ export function Programmes() {
         items={programmes}
         className="px-4 sm:px-6 lg:px-8"
         stageClassName="max-w-5xl mx-auto"
-        topOffset={48}
+        topOffset={96}
         peek={18}
         vhPerCard={95}
         renderCard={(programme) => (
@@ -166,8 +166,8 @@ export function Programmes() {
                 </a>
               </div>
 
-              <div className="rounded-2xl overflow-hidden border border-border bg-muted h-full min-h-[300px]">
-                <div className="relative h-full w-full min-h-[300px]">
+              <div className="rounded-2xl overflow-hidden border border-border bg-muted h-full min-h-75">
+                <div className="relative h-full w-full min-h-75">
                   <Image
                     src={programme.image.src}
                     alt={programme.image.alt}
