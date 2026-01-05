@@ -155,7 +155,7 @@ export function Hero() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.4, delay: 0.6 }}
             onClick={() => scrollTo("wins")}
-            className="mt-6 inline-flex items-center justify-center w-11 h-11 rounded-full border border-white/20 bg-white/10 dark:bg-white/5 hover:bg-white/15 dark:hover:bg-white/10 transition-colors text-white dark:text-foreground"
+            className="mt-6 mb-8 inline-flex items-center justify-center w-11 h-11 rounded-full border border-white/20 bg-white/10 dark:bg-white/5 hover:bg-white/15 dark:hover:bg-white/10 transition-colors text-white dark:text-foreground"
             aria-label="Scroll to wins section"
           >
             <ChevronDown size={20} className="animate-bounce" />

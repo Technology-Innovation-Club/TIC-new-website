@@ -45,21 +45,21 @@ export default function ContactPage() {
       description:
         "Sponsor hackathons or host internship challenges with access to our talent pipeline.",
       cta: "Email partnerships",
-      href: "mailto:tic@pau.edu.ng?subject=Partnership%20Inquiry",
+      href: "mailto:tech.innovation.club@pau.edu.ng?subject=Partnership%20Inquiry",
     },
     {
       title: "Join as a Member",
       description:
         "PAU students can join any of our five technical streams to build real projects and compete in hackathons.",
       cta: "Apply to join",
-      href: "mailto:tic@pau.edu.ng?subject=Membership%20Application",
+      href: "mailto:tech.innovation.club@pau.edu.ng?subject=Membership%20Application",
     },
     {
       title: "Mentor with Us",
       description:
         "Industry professionals can mentor our student builders and share expertise in structured programmes.",
       cta: "Become a mentor",
-      href: "mailto:tic@pau.edu.ng?subject=Mentorship%20Inquiry",
+      href: "mailto:tech.innovation.club@pau.edu.ng?subject=Mentorship%20Inquiry",
     },
   ];
 
@@ -101,8 +101,8 @@ export default function ContactPage() {
                         <p className="text-sm font-bold uppercase tracking-widest text-primary/70">
                           Primary Contact
                         </p>
-                        <p className="text-xl font-semibold text-primary font-poppins">
-                          tic@pau.edu.ng
+                        <p className="text-xl font-semibold text-primary font-poppins break-all md:break-normal">
+                          tech.innovation.club@pau.edu.ng
                         </p>
                       </div>
                     </div>
@@ -113,7 +113,7 @@ export default function ContactPage() {
                     </p>
                   </div>
                   <a
-                    href="mailto:tic@pau.edu.ng"
+                    href="mailto:tech.innovation.club@pau.edu.ng"
                     className="px-7 py-3 rounded-xl bg-secondary text-secondary-foreground font-semibold hover:brightness-[0.98] transition-colors inline-flex items-center justify-center gap-2 font-poppins shrink-0"
                   >
                     Send Email <ArrowRight size={18} />

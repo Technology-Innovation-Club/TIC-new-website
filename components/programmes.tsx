@@ -136,10 +136,10 @@ export function Programmes() {
 
             <div className="grid lg:grid-cols-[1fr_1.1fr] gap-8 items-start">
               <div>
-                <h3 className="text-2xl sm:text-3xl font-semibold text-primary font-poppins">
+                <h3 className="text-xl sm:text-3xl font-semibold text-primary font-poppins">
                   {programme.name}
                 </h3>
-                <p className="mt-4 text-foreground/75 leading-relaxed">
+                <p className="mt-4 text-sm sm:text-base text-foreground/75 leading-relaxed">
                   {programme.description}
                 </p>
 
@@ -156,7 +156,7 @@ export function Programmes() {
 
                 <a
                   href="/programmes"
-                  className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline group"
+                  className="mt-7 inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-primary hover:underline group"
                 >
                   Explore programme details{" "}
                   <ArrowRight

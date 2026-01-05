@@ -48,6 +48,7 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${figtree.variable} ${inter.variable} ${poppins.variable}`}
+      suppressHydrationWarning
     >
       <body className="font-poppins">
         <ThemeProvider

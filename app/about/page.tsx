@@ -79,18 +79,6 @@ export default function AboutPage() {
       image: "/excos/tobani-esan-george.jpg",
     },
     {
-      name: "Owumi Oghenetejirin",
-      role: "Web Dev Stream Lead",
-      linkedin: "https://www.linkedin.com/in/owumi-oghenetejirin-0b586233a",
-      image: "/excos/oghenetejirin-owumi.jpg",
-    },
-    {
-      name: "Kenechukwu Justin-Ijeh",
-      role: "Data Science and AI Co-Lead",
-      linkedin: "https://www.linkedin.com/in/kenechukwu-justin-ijeh/",
-      image: "/excos/kenechukwu-justin-ijeh.jpg",
-    },
-    {
       name: "Ameerah Adisa",
       role: "Data Science and AI Co-Lead",
       linkedin: "https://www.linkedin.com/in/ameerah-adisa-oladapo/",
@@ -109,16 +97,28 @@ export default function AboutPage() {
       image: "/excos/fawaz-salimanu.jpg",
     },
     {
-      name: "Victor Braimah",
-      role: "Robotics & Embedded Systems Co-Lead",
-      linkedin: "https://www.linkedin.com/in/victor-braimah-874a4b289/",
-      image: "/excos/victor-braimah.jpg",
-    },
-    {
       name: "Uchechukwu Nwafor",
       role: "Robotics & Embedded Systems Co-Lead",
       linkedin: "https://www.linkedin.com/in/uchechukwu-nwafor-264160331/",
       image: "/excos/uchechukwu-nwafor.jpg",
+    },
+    {
+      name: "Owumi Oghenetejirin",
+      role: "Web Dev Stream Lead",
+      linkedin: "https://www.linkedin.com/in/owumi-oghenetejirin-0b586233a",
+      image: "/excos/oghenetejirin-owumi.jpg",
+    },
+    {
+      name: "Kenechukwu Justin-Ijeh",
+      role: "Data Science and AI Co-Lead",
+      linkedin: "https://www.linkedin.com/in/kenechukwu-justin-ijeh/",
+      image: "/excos/kenechukwu-justin-ijeh.jpg",
+    },
+    {
+      name: "Victor Braimah",
+      role: "Robotics & Embedded Systems Co-Lead",
+      linkedin: "https://www.linkedin.com/in/victor-braimah-874a4b289/",
+      image: "/excos/victor-braimah.jpg",
     },
   ];
 
