@@ -39,10 +39,10 @@ export function Mission() {
   return (
     <section
       id="about"
-      className="w-full py-24 px-4 sm:px-6 lg:px-8 bg-muted dark:bg-muted/10"
+      className="w-full py-16 px-4 sm:px-6 lg:px-8 bg-muted dark:bg-muted/10"
     >
       <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+        <div className="grid lg:grid-cols-2 gap-8 items-start">
           <SlideIn direction="left">
             <div>
               <p className="text-sm font-extrabold tracking-widest uppercase text-primary">

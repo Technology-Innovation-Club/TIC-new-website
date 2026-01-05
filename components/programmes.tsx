@@ -1,7 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 import { AnimatedSection } from "./ui/motion";
 import { StackedCards } from "./ui/stacked-cards";
 
@@ -59,6 +59,16 @@ export function Programmes() {
       tags: ["Showcase", "Feedback", "Partner-facing"],
     },
     {
+      name: "Demo Day",
+      description:
+        "A day for student builders to pitch their solutions, demo them and get feedback",
+      image: {
+        src: "/programmes/demo-day.jpg",
+        alt: "Tech Fair programme placeholder",
+      },
+      tags: ["Showcase", "Feedback", "Partner-facing"],
+    },
+    {
       name: "AI/ML Lab",
       description:
         "Applied AI learning and project execution focused on real use-cases and portfolios.",
@@ -82,9 +92,9 @@ export function Programmes() {
 
   return (
     <section id="programmes" className="w-full bg-background">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <AnimatedSection>
-          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
             <div className="max-w-3xl">
               <p className="text-sm font-extrabold tracking-widest text-primary uppercase">
                 Programmes
@@ -156,8 +166,8 @@ export function Programmes() {
                 </a>
               </div>
 
-              <div className="rounded-2xl overflow-hidden border border-border bg-muted h-full min-h-[300px]">
-                <div className="relative h-full w-full min-h-[300px]">
+              <div className="rounded-2xl overflow-hidden border border-border bg-muted h-full min-h-75">
+                <div className="relative h-full w-full min-h-75">
                   <Image
                     src={programme.image.src}
                     alt={programme.image.alt}
@@ -172,7 +182,7 @@ export function Programmes() {
         )}
       />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <AnimatedSection>
           <div className="rounded-2xl border border-border bg-muted p-8">
             <p className="text-primary font-semibold font-poppins text-lg">

@@ -31,11 +31,11 @@ export function StackedCards<T>({
       ref={containerRef}
       className={cn("relative w-full", className)}
       /**
-       * We add +1 to the items.length so that after the last card
+       * We add +1.25 to the items.length so that after the last card
        * reaches its "sticky" spot, the user can still scroll a bit
        * before the section ends. This prevents the "overlap" bug.
        */
-      style={{ height: `${(items.length + 1) * vhPerCard}vh` }}
+      style={{ height: `${(items.length + 1.25) * vhPerCard}vh` }}
     >
       <div
         className={cn("sticky flex flex-col items-center", stageClassName)}
@@ -74,20 +74,20 @@ function StackedCardLayer({
 
   const { scrollYProgress } = useScroll({
     target: cardRef,
-    // We extend the start of the "watch zone" by 20% so it picks up the
+    // We extend the start of the "watch zone" by 10% so it picks up the
     // card movement earlier, making it feel more gradual.
-    offset: ["start 120%", `start ${stickyPoint}px`],
+    offset: ["start 110%", `start ${stickyPoint}px`],
   });
 
   /**
    * FIX: Added useSpring to the local progress.
-   * stiffness: 50 (Lower = slower/softer)
-   * damping: 20 (Higher = less bounce)
+   * stiffness: 80 (Higher = faster/snappier)
+   * damping: 25 (Higher = less bounce)
    * mass: 1 (Heavier feel)
    */
   const smoothProgress = useSpring(scrollYProgress, {
-    stiffness: 50,
-    damping: 20,
+    stiffness: 80,
+    damping: 25,
     mass: 1,
   });
 
@@ -106,7 +106,7 @@ function StackedCardLayer({
         opacity,
         top: index * peek + topOffset,
         zIndex: index,
-        marginBottom: "30vh", // Increased margin for a more relaxed scroll feel
+        marginBottom: "5vh", // Reduced margin for tighter layout
       }}
     >
       {children}

@@ -32,7 +32,7 @@ export function Hero() {
         aria-hidden="true"
       />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-16 sm:pt-14 sm:pb-20">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-0 sm:pt-14 sm:pb-0">
         <div className="max-w-6xl mx-auto text-center">
           {/* Badge */}
           <motion.div
@@ -155,7 +155,7 @@ export function Hero() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.4, delay: 0.6 }}
             onClick={() => scrollTo("wins")}
-            className="mt-12 inline-flex items-center justify-center w-11 h-11 rounded-full border border-white/20 bg-white/10 dark:bg-white/5 hover:bg-white/15 dark:hover:bg-white/10 transition-colors text-white dark:text-foreground"
+            className="mt-6 inline-flex items-center justify-center w-11 h-11 rounded-full border border-white/20 bg-white/10 dark:bg-white/5 hover:bg-white/15 dark:hover:bg-white/10 transition-colors text-white dark:text-foreground"
             aria-label="Scroll to wins section"
           >
             <ChevronDown size={20} className="animate-bounce" />

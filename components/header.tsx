@@ -72,7 +72,7 @@ export function Header() {
       transition={{ duration: 0.4 }}
       className={`sticky top-0 z-50 w-full backdrop-blur border-b transition-all duration-300 ${
         scrolled
-          ? "bg-background/95 border-border shadow-sm"
+          ? "bg-background/80 border-border shadow-md"
           : "bg-background/85 border-border"
       }`}
     >

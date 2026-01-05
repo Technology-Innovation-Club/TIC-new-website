@@ -44,14 +44,14 @@ export function Cta() {
   return (
     <section
       id="contact"
-      className="w-full py-24 px-4 sm:px-6 lg:px-8 bg-primary dark:bg-background text-white dark:text-foreground relative overflow-hidden"
+      className="w-full py-16 px-4 sm:px-6 lg:px-8 bg-primary dark:bg-background text-white dark:text-foreground relative overflow-hidden"
     >
       {/* Ambient backgrounds */}
       <div className="absolute -top-40 -left-40 w-80 h-80 rounded-full bg-gold/10 blur-3xl animate-blob-slow" />
       <div className="absolute -bottom-40 -right-40 w-96 h-96 rounded-full bg-white/5 dark:bg-primary/5 blur-3xl animate-blob" />
 
       <div className="relative max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+        <div className="grid lg:grid-cols-2 gap-8 items-start">
           <SlideIn direction="left">
             <div>
               <div className="inline-flex items-center gap-2 rounded-full border border-white/15 dark:border-border bg-white/10 dark:bg-muted px-4 py-2">
