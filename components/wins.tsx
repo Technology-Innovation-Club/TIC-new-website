@@ -102,9 +102,9 @@ export function Wins() {
       id="wins"
       className="w-full bg-primary dark:bg-background text-white dark:text-foreground"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <AnimatedSection>
-          <div className="max-w-3xl">
+          <div className="max-w-3xl mx-auto text-center">
             <p className="text-sm font-extrabold tracking-widest text-white/80 dark:text-foreground/80 uppercase">
               Credibility, demonstrated
             </p>
@@ -123,7 +123,7 @@ export function Wins() {
         items={wins}
         className="px-4 sm:px-6 lg:px-8"
         stageClassName="max-w-5xl mx-auto"
-        topOffset={96}
+        topOffset={48}
         peek={18}
         vhPerCard={95}
         renderCard={(win) => (
@@ -197,7 +197,7 @@ export function Wins() {
         )}
       />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <AnimatedSection>
           <div className="rounded-2xl border border-white/15 dark:border-border bg-white/10 dark:bg-card p-8 hover:bg-white/12 dark:hover:bg-muted transition-colors">
             <p className="text-white dark:text-primary font-semibold font-poppins text-lg">

@@ -92,9 +92,9 @@ export function Programmes() {
 
   return (
     <section id="programmes" className="w-full bg-background">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <AnimatedSection>
-          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
             <div className="max-w-3xl">
               <p className="text-sm font-extrabold tracking-widest text-primary uppercase">
                 Programmes
@@ -124,7 +124,7 @@ export function Programmes() {
         items={programmes}
         className="px-4 sm:px-6 lg:px-8"
         stageClassName="max-w-5xl mx-auto"
-        topOffset={96}
+        topOffset={48}
         peek={18}
         vhPerCard={95}
         renderCard={(programme) => (
@@ -182,7 +182,7 @@ export function Programmes() {
         )}
       />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <AnimatedSection>
           <div className="rounded-2xl border border-border bg-muted p-8">
             <p className="text-primary font-semibold font-poppins text-lg">

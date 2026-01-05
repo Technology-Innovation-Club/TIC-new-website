@@ -14,7 +14,7 @@ interface MediaEvent {
   category: "hackathon" | "event" | "workshop";
   description: string;
   date: string;
-  images: { src: string; alt: string }[];
+  image: { src: string; alt: string };
   highlights?: string[];
   prize?: string;
 }
@@ -29,16 +29,10 @@ export default function MediaPage() {
         "TIC representatives secured a top finish at the prestigious Zenith Bank Zecathon, demonstrating exceptional problem-solving abilities and product delivery under intense competition pressure.",
       date: "2025",
       prize: "N10M",
-      images: [
-        {
-          src: "/media/zenith-zecathon-1.jpg",
-          alt: "Zenith Zecathon team presentation",
-        },
-        {
-          src: "/media/zenith-zecathon-2.jpg",
-          alt: "Zenith Zecathon award ceremony",
-        },
-      ],
+      image: {
+        src: "/wins/zenith-zecathon.jpg",
+        alt: "Zenith Zecathon team presentation",
+      },
       highlights: [
         "National stage competition",
         "High-signal judging panel",
@@ -53,13 +47,10 @@ export default function MediaPage() {
         "Our team won $5,000 at the Payaza Hackathon by building a fintech solution that impressed judges with its practical approach to real-world payment challenges.",
       date: "2024",
       prize: "$5,000",
-      images: [
-        {
-          src: "/media/payaza-hackathon-1.jpg",
-          alt: "Payaza Hackathon winning team",
-        },
-        { src: "/media/payaza-hackathon-2.jpg", alt: "Payaza Hackathon demo" },
-      ],
+      image: {
+        src: "/wins/payaza-5000.jpg",
+        alt: "Payaza Hackathon winning team",
+      },
       highlights: [
         "$5,000 cash prize",
         "Fintech innovation",
@@ -74,13 +65,10 @@ export default function MediaPage() {
         "TIC's representatives won $2,000 at the Lagos Impact Hackathon by building SupaMart, an offline-first POS and inventory system designed for small retailers in areas with unreliable internet connectivity.",
       date: "2025",
       prize: "$2,000",
-      images: [
-        {
-          src: "/media/lagos-impact-1.jpg",
-          alt: "Lagos Impact Hackathon team building",
-        },
-        { src: "/media/lagos-impact-2.jpg", alt: "SupaMart product demo" },
-      ],
+      image: {
+        src: "/wins/lagos-impact-supamart.jpg",
+        alt: "Lagos Impact Hackathon team building",
+      },
       highlights: [
         "Offline-first architecture",
         "Real retail constraints",
@@ -92,12 +80,12 @@ export default function MediaPage() {
       title: "PowerTech Hackathon",
       category: "hackathon",
       description:
-        "Our team built Pius, a prototype that earned recognition at the PowerTech Hackathon, showcasing our ability to ship demo-ready products under tight competition timelines.",
+        "Our team built Kriitor, a prototype that earned recognition at the PowerTech Hackathon, showcasing our ability to ship demo-ready products under tight competition timelines.",
       date: "2025",
-      images: [
-        { src: "/media/powertech-1.jpg", alt: "PowerTech Hackathon team" },
-        { src: "/media/powertech-2.jpg", alt: "Pius product demonstration" },
-      ],
+      image: {
+        src: "/wins/powertech-pius.jpg",
+        alt: "PowerTech Hackathon team",
+      },
       highlights: [
         "Rapid prototyping",
         "Team execution",
@@ -114,16 +102,10 @@ export default function MediaPage() {
       description:
         "An enriching session where ServiceNow professionals shared industry insights on enterprise software, career pathways, and the future of workflow automation with TIC members.",
       date: "2025",
-      images: [
-        {
-          src: "/media/servicenow-session-1.jpg",
-          alt: "ServiceNow session presentation",
-        },
-        {
-          src: "/media/servicenow-session-2.jpg",
-          alt: "ServiceNow Q&A session",
-        },
-      ],
+      image: {
+        src: "/media/servicenow-session-1.jpg",
+        alt: "ServiceNow session presentation",
+      },
       highlights: [
         "Industry mentorship",
         "Career guidance",
@@ -137,17 +119,10 @@ export default function MediaPage() {
       description:
         "A vibrant showcase where student builders demonstrated their CodeSpark projects to peers, faculty, and industry partners. The Tech Fair highlighted the practical outcomes of our intensive build sprints.",
       date: "2025",
-      images: [
-        {
-          src: "/media/codespark-fair-1.jpg",
-          alt: "CodeSpark project demonstrations",
-        },
-        { src: "/media/codespark-fair-2.jpg", alt: "Tech Fair attendees" },
-        {
-          src: "/media/codespark-fair-3.jpg",
-          alt: "Student presenting project",
-        },
-      ],
+      image: {
+        src: "/media/codespark-fair-1.jpg",
+        alt: "CodeSpark project demonstrations",
+      },
       highlights: [
         "Project showcases",
         "Industry networking",
@@ -161,21 +136,10 @@ export default function MediaPage() {
       description:
         "Our flagship internal hackathon brought together student builders from all streams for 48 hours of intensive building, mentorship, and innovation. Teams tackled real-world challenges and shipped working prototypes.",
       date: "2025",
-      images: [
-        {
-          src: "/media/tic-hackathon-1.jpg",
-          alt: "TIC Hackathon 2.0 opening ceremony",
-        },
-        {
-          src: "/media/tic-hackathon-2.jpg",
-          alt: "Teams building at TIC Hackathon",
-        },
-        {
-          src: "/media/tic-hackathon-3.jpg",
-          alt: "TIC Hackathon project presentations",
-        },
-        { src: "/media/tic-hackathon-4.jpg", alt: "TIC Hackathon winners" },
-      ],
+      image: {
+        src: "/media/tic-hackathon-1.jpg",
+        alt: "TIC Hackathon 2.0 opening ceremony",
+      },
       highlights: [
         "48-hour build sprint",
         "Cross-stream collaboration",
@@ -291,31 +255,20 @@ export default function MediaPage() {
                       )}
                     </div>
 
-                    <div className="grid grid-cols-2 gap-3">
-                      {event.images.map((image, imgIndex) => (
-                        <div
-                          key={imgIndex}
-                          className={`rounded-xl overflow-hidden border border-border bg-muted relative ${
-                            imgIndex === 0 && event.images.length > 1
-                              ? "col-span-2 aspect-video"
-                              : "aspect-square"
-                          }`}
-                        >
-                          <Image
-                            src={image.src}
-                            alt={image.alt}
-                            fill
-                            className="object-cover"
-                            sizes="(max-width: 1024px) 100vw, 50vw"
-                          />
-                          {/* Placeholder overlay - remove when images are added */}
-                          <div className="absolute inset-0 bg-linear-to-br from-primary/5 to-secondary/5 flex items-center justify-center">
-                            <p className="text-xs text-foreground/40 text-center px-4">
-                              {image.alt}
-                            </p>
-                          </div>
-                        </div>
-                      ))}
+                    <div className="rounded-xl overflow-hidden border border-border bg-muted relative aspect-video">
+                      <Image
+                        src={event.image.src}
+                        alt={event.image.alt}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 1024px) 100vw, 50vw"
+                      />
+                      {/* Placeholder overlay - remove when images are added */}
+                      <div className="absolute inset-0 bg-linear-to-br from-primary/5 to-secondary/5 flex items-center justify-center">
+                        <p className="text-xs text-foreground/40 text-center px-4">
+                          {event.image.alt}
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </motion.article>
@@ -388,37 +341,20 @@ export default function MediaPage() {
                       )}
                     </div>
 
-                    <div
-                      className={`grid gap-3 ${
-                        event.images.length > 2 ? "grid-cols-2" : "grid-cols-1"
-                      }`}
-                    >
-                      {event.images.map((image, imgIndex) => (
-                        <div
-                          key={imgIndex}
-                          className={`rounded-xl overflow-hidden border border-border bg-muted relative ${
-                            imgIndex === 0 && event.images.length > 2
-                              ? "col-span-2 aspect-video"
-                              : event.images.length === 1
-                                ? "aspect-video"
-                                : "aspect-square"
-                          }`}
-                        >
-                          <Image
-                            src={image.src}
-                            alt={image.alt}
-                            fill
-                            className="object-cover"
-                            sizes="(max-width: 1024px) 100vw, 50vw"
-                          />
-                          {/* Placeholder overlay - remove when images are added */}
-                          <div className="absolute inset-0 bg-linear-to-br from-primary/5 to-secondary/5 flex items-center justify-center">
-                            <p className="text-xs text-foreground/40 text-center px-4">
-                              {image.alt}
-                            </p>
-                          </div>
-                        </div>
-                      ))}
+                    <div className="rounded-xl overflow-hidden border border-border bg-muted relative aspect-video">
+                      <Image
+                        src={event.image.src}
+                        alt={event.image.alt}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 1024px) 100vw, 50vw"
+                      />
+                      {/* Placeholder overlay - remove when images are added */}
+                      <div className="absolute inset-0 bg-linear-to-br from-primary/5 to-secondary/5 flex items-center justify-center">
+                        <p className="text-xs text-foreground/40 text-center px-4">
+                          {event.image.alt}
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </motion.article>
