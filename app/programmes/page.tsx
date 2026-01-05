@@ -37,6 +37,18 @@ export default function ProgrammesPage() {
       duration: "1-2 weeks",
       capacity: "20-30 participants",
     },
+    {
+      name: "TIC Hackathon",
+      description:
+        "Annual flagship hackathon where students compete, build innovative solutions, and win prizes.",
+      longDescription:
+        "TIC Hackathon is our premier competitive event where students form teams and build solutions to real-world challenges within 48 hours. With mentorship, prizes, and industry judges, participants experience the intensity of shipping under pressure while competing for recognition and rewards.",
+      image: "/programmes/tic-hackathon.jpg",
+      tags: ["Competition", "Prizes", "48-hour build", "Industry judges"],
+      schedule: "Annually",
+      duration: "48 hours",
+      capacity: "50-100 participants",
+    },
     /* {
       name: "MakerSpace",
       description:
@@ -50,12 +62,12 @@ export default function ProgrammesPage() {
       capacity: "15-20 members",
     }, */
     {
-      name: "Demo Day",
+      name: "Tech Fair",
       description:
         "A showcase where teams pitch, demo, and get feedback from operators and partners.",
       longDescription:
-        "Demo Day is the culmination of our build programmes. Teams present their projects to industry partners, faculty, and fellow students. This is where our members practice pitch skills and receive critical feedback.",
-      image: "/programmes/demo-day.jpg",
+        "Tech Fair is the culmination of our build programmes. Teams present their projects to industry partners, faculty, and fellow students. This is where our members practice pitch skills and receive critical feedback.",
+      image: "/programmes/tech-fair.jpg",
       tags: ["Showcase", "Feedback", "Partner-facing", "Pitching"],
       schedule: "End of each semester",
       duration: "Full day event",

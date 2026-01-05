@@ -27,6 +27,16 @@ export function Programmes() {
       },
       tags: ["Build sprint", "Mentors", "Demo-ready output"],
     },
+    {
+      name: "TIC Hackathon",
+      description:
+        "Annual flagship hackathon where students compete, build innovative solutions, and win prizes.",
+      image: {
+        src: "/programmes/tic-hackathon.jpg",
+        alt: "TIC Hackathon programme placeholder",
+      },
+      tags: ["Competition", "Prizes", "48-hour build"],
+    },
     /* {
       name: "MakerSpace",
       description:
@@ -38,12 +48,12 @@ export function Programmes() {
       tags: ["Hardware", "Prototyping", "Robotics"],
     }, */
     {
-      name: "Demo Day",
+      name: "Tech Fair",
       description:
         "A showcase where teams pitch, demo, and get feedback from operators and partners.",
       image: {
-        src: "/programmes/demo-day.jpg",
-        alt: "Demo Day programme placeholder",
+        src: "/programmes/tech-fair.jpg",
+        alt: "Tech Fair programme placeholder",
       },
       tags: ["Showcase", "Feedback", "Partner-facing"],
     },
