@@ -47,6 +47,7 @@ export function Programmes() {
       },
       tags: ["Hardware", "Prototyping", "Robotics"],
     }, */
+    // TODO: Update Tech Fair Image when ready
     {
       name: "Tech Fair",
       description:
