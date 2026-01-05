@@ -135,13 +135,13 @@ export function Wins() {
 
             <div className="grid lg:grid-cols-[1fr_1.1fr] gap-8 items-start">
               <div>
-                <p className="text-xs font-bold tracking-widest uppercase text-white/70 dark:text-foreground/70">
+                <p className="text-[11px] font-bold tracking-widest uppercase text-white/70 dark:text-foreground/70">
                   {win.eyebrow}
                 </p>
-                <h3 className="mt-2 text-2xl sm:text-3xl font-semibold text-white dark:text-primary font-poppins">
+                <h3 className="mt-2 text-xl sm:text-3xl font-semibold text-white dark:text-primary font-poppins">
                   {win.title}
                 </h3>
-                <p className="mt-4 text-white/80 dark:text-foreground/80 leading-relaxed">
+                <p className="mt-4 text-sm sm:text-base text-white/80 dark:text-foreground/80 leading-relaxed">
                   {win.description}
                 </p>
 
@@ -162,7 +162,7 @@ export function Wins() {
                       <p className="text-[11px] font-bold uppercase tracking-widest text-white/60 dark:text-foreground/60">
                         {metric.k}
                       </p>
-                      <p className="mt-1 text-sm font-semibold text-white dark:text-foreground font-poppins">
+                      <p className="mt-1 text-xs sm:text-sm font-semibold text-white dark:text-foreground font-poppins">
                         {metric.v}
                       </p>
                     </div>
@@ -171,7 +171,7 @@ export function Wins() {
 
                 <Link
                   href="/contact"
-                  className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-white dark:text-primary hover:underline group"
+                  className="mt-7 inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-white dark:text-primary hover:underline group"
                 >
                   Sponsor the next cohort{" "}
                   <ArrowRight

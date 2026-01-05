@@ -3,9 +3,10 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, Menu, X } from "lucide-react";
 import Link from "next/link";
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { ImageLogo } from "./image-logo";
 import { ModeToggle } from "./mode-toggle";
+import { usePathname } from "next/navigation";
 
 interface NavItem {
   label: string;
@@ -24,6 +25,7 @@ const navItems: NavItem[] = [
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const onKeyDown = (e: KeyboardEvent) => {
@@ -48,6 +50,14 @@ export function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const isActive = useCallback(
+    (href: string) => {
+      if (href === "/") return pathname === "/";
+      return pathname === href || pathname.startsWith(`${href}/`);
+    },
+    [pathname],
+  );
+
   const links = useMemo(
     () =>
       navItems.map((item) => (
@@ -56,13 +66,19 @@ export function Header() {
           href={item.href}
           prefetch={true}
           onClick={() => setIsOpen(false)}
-          className="text-sm font-semibold text-foreground/80 font-poppins relative group inline-flex"
+          className={`text-sm font-semibold font-poppins relative group inline-flex ${
+            isActive(item.href) ? "text-primary" : "text-foreground/80"
+          }`}
         >
           {item.label}
-          <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
+          <span
+            className={`absolute bottom-0 left-0 h-0.5 bg-primary transition-all duration-300 ${
+              isActive(item.href) ? "w-full" : "w-0 group-hover:w-full"
+            }`}
+          />
         </Link>
       )),
-    [],
+    [isActive],
   );
 
   return (
@@ -141,10 +157,20 @@ export function Header() {
                       href={item.href}
                       prefetch={true}
                       onClick={() => setIsOpen(false)}
-                      className="text-sm font-semibold text-foreground/80 font-poppins relative group inline-flex"
+                      className={`text-sm font-semibold font-poppins relative group inline-flex ${
+                        isActive(item.href)
+                          ? "text-primary"
+                          : "text-foreground/80"
+                      }`}
                     >
                       {item.label}
-                      <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
+                      <span
+                        className={`absolute bottom-0 left-0 h-0.5 bg-primary transition-all duration-300 ${
+                          isActive(item.href)
+                            ? "w-full"
+                            : "w-0 group-hover:w-full"
+                        }`}
+                      />
                     </Link>
                   ))}
                 </div>
