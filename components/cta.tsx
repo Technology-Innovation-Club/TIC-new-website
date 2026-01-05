@@ -72,7 +72,7 @@ export function Cta() {
 
               <div className="mt-10 flex flex-col sm:flex-row gap-3">
                 <a
-                  href="mailto:tic@pau.edu.ng"
+                  href="mailto:tech.innovation.club@pau.edu.ng"
                   className="px-7 py-3 rounded-xl bg-white dark:bg-primary text-primary dark:text-primary-foreground font-semibold hover:bg-white/90 dark:hover:bg-primary/90 transition-colors inline-flex items-center justify-center gap-2 font-poppins"
                 >
                   Email TIC <Mail size={18} />

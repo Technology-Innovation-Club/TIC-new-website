@@ -315,7 +315,7 @@ export default function PartnersPage() {
                       Contact Us <ArrowRight size={18} />
                     </Link>
                     <a
-                      href="mailto:tic@pau.edu.ng?subject=Partnership%20Inquiry"
+                      href="mailto:tech.innovation.club@pau.edu.ng?subject=Partnership%20Inquiry"
                       className="px-7 py-3 rounded-xl border-2 border-white/70 dark:border-white/20 text-white dark:text-foreground font-semibold hover:bg-white/10 dark:hover:bg-white/5 transition-colors inline-flex items-center justify-center"
                     >
                       Email Directly

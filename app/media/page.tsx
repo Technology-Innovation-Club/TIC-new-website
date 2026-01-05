@@ -120,7 +120,7 @@ export default function MediaPage() {
         "A vibrant showcase where student builders demonstrated their CodeSpark projects to peers, faculty, and industry partners. The Tech Fair highlighted the practical outcomes of our intensive build sprints.",
       date: "2025",
       image: {
-        src: "/media/codespark-fair-1.jpg",
+        src: "/programmes/codespark.jpg",
         alt: "CodeSpark project demonstrations",
       },
       highlights: [
@@ -137,7 +137,7 @@ export default function MediaPage() {
         "Our flagship internal hackathon brought together student builders from all streams for 48 hours of intensive building, mentorship, and innovation. Teams tackled real-world challenges and shipped working prototypes.",
       date: "2025",
       image: {
-        src: "/media/tic-hackathon-1.jpg",
+        src: "/programmes/tic-hackathon.jpg",
         alt: "TIC Hackathon 2.0 opening ceremony",
       },
       highlights: [

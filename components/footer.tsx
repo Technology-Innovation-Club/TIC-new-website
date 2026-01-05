@@ -19,13 +19,13 @@ export function Footer() {
     { label: "Partner / Sponsor", href: "/contact" },
     { label: "Mentor with TIC", href: "/contact" },
     { label: "Join TIC", href: "/contact" },
-    { label: "Email", href: "mailto:tic@pau.edu.ng" },
+    { label: "Email", href: "mailto:tech.innovation.club@pau.edu.ng" },
   ];
 
   const socialLinks = [
     {
       icon: <Mail size={18} />,
-      href: "mailto:tic@pau.edu.ng",
+      href: "mailto:tech.innovation.club@pau.edu.ng",
       label: "Email TIC",
     },
     {
@@ -134,7 +134,7 @@ export function Footer() {
                   Partner inbox
                 </p>
                 <p className="mt-1 text-sm text-foreground/70">
-                  tic@pau.edu.ng
+                  tech.innovation.club@pau.edu.ng
                 </p>
               </div>
             </div>
