@@ -99,17 +99,17 @@ export function Objectives() {
             className="grid sm:grid-cols-2 gap-5"
             staggerDelay={0.08}
           >
-            {objectives.map((o) => (
-              <StaggerItem key={o.title}>
+            {objectives.map((objective) => (
+              <StaggerItem key={objective.title}>
                 <div className="rounded-2xl border border-border bg-white dark:bg-card p-7 tic-shadow h-full hover:-translate-y-1 transition-transform duration-200">
                   <div className="w-11 h-11 rounded-2xl bg-primary/5 border border-border grid place-items-center text-primary">
-                    {o.icon}
+                    {objective.icon}
                   </div>
                   <h3 className="mt-4 text-lg font-semibold text-primary font-poppins">
-                    {o.title}
+                    {objective.title}
                   </h3>
                   <p className="mt-2 text-sm text-foreground/70 leading-relaxed">
-                    {o.description}
+                    {objective.description}
                   </p>
                 </div>
               </StaggerItem>

@@ -178,7 +178,7 @@ export function Calendar() {
 
         <div className="mt-10 flex justify-center">
           <button
-            onClick={() => setShowAll((v) => !v)}
+            onClick={() => setShowAll((previous) => !previous)}
             className="px-6 py-3 rounded-xl border-2 border-primary text-primary font-semibold hover:bg-primary/5 transition-colors font-poppins"
           >
             {showAll ? "Show fewer events" : "View all events"}

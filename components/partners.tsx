@@ -2,8 +2,12 @@
 
 import { AnimatedSection, StaggerContainer, StaggerItem } from "./ui/motion";
 
+interface Partner {
+  name: string;
+}
+
 export function Partners() {
-  const partners = [
+  const partners: string[] = [
     "NVIDIA",
     "ServiceNow",
     "Cloudplexo",

@@ -6,8 +6,26 @@ import { ArrowRight } from "lucide-react";
 import { AnimatedSection } from "./ui/motion";
 import { StackedCards } from "./ui/stacked-cards";
 
+interface WinMetric {
+  k: string;
+  v: string;
+}
+
+interface Win {
+  eyebrow: string;
+  title: string;
+  description: string;
+  pills: string[];
+  metrics: WinMetric[];
+  featured?: boolean;
+  image: {
+    src: string;
+    alt: string;
+  };
+}
+
 export function Wins() {
-  const wins = [
+  const wins: Win[] = [
     {
       eyebrow: "Zenith Bank Zecathon",
       title: "₦10M",
@@ -63,18 +81,18 @@ export function Wins() {
     },
     {
       eyebrow: "PowerTech Hackathon",
-      title: "Pius",
+      title: "Kriitor",
       description:
         "A build that demonstrates our ability to prototype and ship under competition timelines.",
       pills: ["Prototyping", "Team execution", "Demo-ready delivery"],
       metrics: [
-        { k: "Product", v: "Pius" },
+        { k: "Product", v: "Kriitor" },
         { k: "Result", v: "Recognition" },
         { k: "Signal", v: "Repeatable output" },
       ],
       image: {
-        src: "/wins/powertech-pius.jpg",
-        alt: "PowerTech Pius placeholder",
+        src: "/wins/kriitor.jpg",
+        alt: "PowerTech Kriitor placeholder",
       },
     },
   ];
@@ -115,7 +133,7 @@ export function Wins() {
               aria-hidden="true"
             />
 
-            <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-8 items-start">
+            <div className="grid lg:grid-cols-[1fr_1.1fr] gap-8 items-start">
               <div>
                 <p className="text-xs font-bold tracking-widest uppercase text-white/70 dark:text-foreground/70">
                   {win.eyebrow}
@@ -128,24 +146,24 @@ export function Wins() {
                 </p>
 
                 <div className="mt-6 flex flex-wrap gap-2">
-                  {win.pills.map((p) => (
+                  {win.pills.map((pill) => (
                     <span
-                      key={p}
+                      key={pill}
                       className="inline-flex items-center rounded-full border border-white/15 dark:border-border bg-black/10 dark:bg-muted px-3 py-1 text-xs font-semibold text-white/75 dark:text-foreground/70"
                     >
-                      {p}
+                      {pill}
                     </span>
                   ))}
                 </div>
 
                 <div className="mt-7 pt-6 border-t border-white/15 dark:border-border grid grid-cols-3 gap-4">
-                  {win.metrics.map((m) => (
-                    <div key={m.k}>
+                  {win.metrics.map((metric) => (
+                    <div key={metric.k}>
                       <p className="text-[11px] font-bold uppercase tracking-widest text-white/60 dark:text-foreground/60">
-                        {m.k}
+                        {metric.k}
                       </p>
                       <p className="mt-1 text-sm font-semibold text-white dark:text-foreground font-poppins">
-                        {m.v}
+                        {metric.v}
                       </p>
                     </div>
                   ))}
@@ -163,14 +181,14 @@ export function Wins() {
                 </Link>
               </div>
 
-              <div className="rounded-2xl overflow-hidden border border-white/10 dark:border-border bg-black/10 dark:bg-muted">
-                <div className="aspect-4/3 w-full relative">
+              <div className="rounded-2xl overflow-hidden border border-white/10 dark:border-border bg-black/10 dark:bg-muted h-full min-h-75">
+                <div className="relative h-full w-full min-h-75">
                   <Image
                     src={win.image.src}
                     alt={win.image.alt}
                     fill
                     className="object-cover"
-                    sizes="(max-width: 1024px) 100vw, 45vw"
+                    sizes="(max-width: 1024px) 100vw, 55vw"
                   />
                 </div>
               </div>

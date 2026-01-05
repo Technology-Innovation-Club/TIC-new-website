@@ -36,22 +36,22 @@
   --destructive-foreground: #ffffff;
 
   --border: #e7e7ee;
-  --input: #eeeeF5;
+  --input: #eeeef5;
   --ring: #10014c;
 
   --radius: 0.9rem;
 }
 
-  .dark {
+.dark {
   /* User requested color closer to #1e048b. 
      We use a very deep midnight blue for the main background to ensure text legibility,
      and use the requested indigo for UI elements/cards. */
   --background: #10014c; /* rgb(16, 1, 76) */
   --foreground: #eef2ff; /* indigo-50 */
-  
+
   --card: #10014c; /* rgb(16, 1, 76) */
   --card-foreground: #eef2ff;
-  
+
   --popover: #10014c; /* rgb(16, 1, 76) */
   --popover-foreground: #eef2ff;
 
@@ -64,14 +64,14 @@
   --secondary-foreground: #ffffff;
 
   --gold: #faad2a;
-  
+
   /* The user's requested #1e048b is used here for muted/secondary backgrounds */
-  --muted: #1e048b; 
+  --muted: #1e048b;
   --muted-foreground: #cbd5e1;
-  
+
   --accent: #1e048b;
   --accent-foreground: #ffffff;
-  
+
   --destructive: #ef4444;
   --destructive-foreground: #ffffff;
   --border: #1e048b; /* Blue border */
@@ -150,8 +150,11 @@
 
 @layer utilities {
   .tic-grid {
-    background-image:
-      radial-gradient(circle at 1px 1px, color-mix(in oklab, var(--primary) 10%, transparent) 1px, transparent 0);
+    background-image: radial-gradient(
+      circle at 1px 1px,
+      color-mix(in oklab, var(--primary) 10%, transparent) 1px,
+      transparent 0
+    );
     background-size: 18px 18px;
   }
 
@@ -177,8 +180,15 @@
 
   /* Poppins utility */
   .font-poppins {
-    font-family: var(--font-poppins), ui-sans-serif, system-ui, -apple-system,
-      "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    font-family:
+      var(--font-poppins),
+      ui-sans-serif,
+      system-ui,
+      -apple-system,
+      "Segoe UI",
+      Roboto,
+      "Helvetica Neue",
+      Arial;
   }
 
   /* Ambient floating blob animations */
@@ -223,7 +233,8 @@
 }
 
 @keyframes blob {
-  0%, 100% {
+  0%,
+  100% {
     transform: translate(0, 0) scale(1);
   }
   25% {
@@ -238,7 +249,8 @@
 }
 
 @keyframes float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0);
   }
   50% {
@@ -247,7 +259,8 @@
 }
 
 @keyframes pulse-soft {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 1;
     transform: scale(1);
   }
@@ -267,7 +280,8 @@
 }
 
 @keyframes glow {
-  0%, 100% {
+  0%,
+  100% {
     box-shadow: 0 0 20px rgba(250, 173, 42, 0.3);
   }
   50% {

@@ -4,8 +4,14 @@ import Link from "next/link";
 import { BriefcaseBusiness, CheckCircle2, Rocket, Wrench } from "lucide-react";
 import { SlideIn, StaggerContainer, StaggerItem } from "./ui/motion";
 
+interface Pillar {
+  icon: React.ReactNode;
+  title: string;
+  desc: string;
+}
+
 export function Mission() {
-  const pillars = [
+  const pillars: Pillar[] = [
     {
       icon: <Wrench className="w-5 h-5" />,
       title: "Experiential learning, structured",
@@ -55,17 +61,17 @@ export function Mission() {
                 className="mt-10 grid sm:grid-cols-3 gap-4"
                 staggerDelay={0.1}
               >
-                {pillars.map((p) => (
-                  <StaggerItem key={p.title}>
+                {pillars.map((pillar) => (
+                  <StaggerItem key={pillar.title}>
                     <div className="font-poppins font-normal rounded-2xl border border-border bg-card p-5 tic-shadow h-full hover:-translate-y-1 transition-transform duration-200">
                       <div className="w-10 h-10 rounded-xl bg-secondary/15 border border-secondary/25 grid place-items-center text-primary">
-                        {p.icon}
+                        {pillar.icon}
                       </div>
                       <h3 className="mt-4 font-semibold font-poppins text-primary">
-                        {p.title}
+                        {pillar.title}
                       </h3>
                       <p className="mt-2 text-sm text-foreground/70 leading-relaxed">
-                        {p.desc}
+                        {pillar.desc}
                       </p>
                     </div>
                   </StaggerItem>
@@ -104,13 +110,13 @@ export function Mission() {
               </p>
 
               <ul className="mt-6 space-y-4">
-                {checks.map((c) => (
-                  <li key={c} className="flex items-center gap-3">
+                {checks.map((check) => (
+                  <li key={check} className="flex items-center gap-3">
                     <span className="w-7 h-7 rounded-xl bg-primary/5 border border-border grid place-items-center">
                       <CheckCircle2 className="w-4 h-4 text-primary" />
                     </span>
                     <span className="text-sm text-foreground/75 leading-relaxed">
-                      {c}
+                      {check}
                     </span>
                   </li>
                 ))}

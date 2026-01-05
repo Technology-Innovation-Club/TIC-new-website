@@ -56,7 +56,7 @@ export function Header() {
           href={item.href}
           prefetch={true}
           onClick={() => setIsOpen(false)}
-          className="text-sm font-semibold text-foreground/80 font-poppins relative group"
+          className="text-sm font-semibold text-foreground/80 font-poppins relative group inline-flex"
         >
           {item.label}
           <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
@@ -115,7 +115,7 @@ export function Header() {
             <ModeToggle />
             <button
               className="inline-flex items-center justify-center w-10 h-10 rounded-lg border border-border text-primary hover:bg-muted transition-colors"
-              onClick={() => setIsOpen((v) => !v)}
+              onClick={() => setIsOpen((previous) => !previous)}
               aria-label="Toggle navigation menu"
               aria-expanded={isOpen}
             >
@@ -134,11 +134,25 @@ export function Header() {
               transition={{ duration: 0.2 }}
             >
               <div className="rounded-xl border border-border bg-card tic-shadow">
-                <div className="px-4 py-4 flex flex-col gap-4">{links}</div>
+                <div className="px-4 py-4 flex flex-col gap-4 items-start">
+                  {navItems.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      prefetch={true}
+                      onClick={() => setIsOpen(false)}
+                      className="text-sm font-semibold text-foreground/80 font-poppins relative group inline-flex"
+                    >
+                      {item.label}
+                      <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
+                    </Link>
+                  ))}
+                </div>
                 <div className="px-4 pb-4 grid gap-3">
                   <Link
                     href="/media"
                     onClick={() => setIsOpen(false)}
+                    prefetch={true}
                     className="w-full px-4 py-2 rounded-lg border border-border text-primary font-semibold hover:bg-muted transition-colors text-center"
                   >
                     Explore wins
@@ -146,6 +160,7 @@ export function Header() {
                   <Link
                     href="/contact"
                     onClick={() => setIsOpen(false)}
+                    prefetch={true}
                     className="w-full px-4 py-2 rounded-lg bg-secondary text-secondary-foreground font-bold hover:brightness-[0.98] transition-colors text-center"
                   >
                     Partner / Join

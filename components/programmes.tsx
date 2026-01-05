@@ -5,8 +5,18 @@ import { ArrowRight } from "lucide-react";
 import { AnimatedSection } from "./ui/motion";
 import { StackedCards } from "./ui/stacked-cards";
 
+interface Programme {
+  name: string;
+  description: string;
+  image: {
+    src: string;
+    alt: string;
+  };
+  tags: string[];
+}
+
 export function Programmes() {
-  const programmes = [
+  const programmes: Programme[] = [
     {
       name: "CodeSpark",
       description:
@@ -16,6 +26,16 @@ export function Programmes() {
         alt: "CodeSpark programme placeholder",
       },
       tags: ["Build sprint", "Mentors", "Demo-ready output"],
+    },
+    {
+      name: "TIC Hackathon",
+      description:
+        "Annual flagship hackathon where students compete, build innovative solutions, and win prizes.",
+      image: {
+        src: "/programmes/tic-hackathon.jpg",
+        alt: "TIC Hackathon programme placeholder",
+      },
+      tags: ["Competition", "Prizes", "48-hour build"],
     },
     /* {
       name: "MakerSpace",
@@ -27,13 +47,14 @@ export function Programmes() {
       },
       tags: ["Hardware", "Prototyping", "Robotics"],
     }, */
+    // TODO: Update Tech Fair Image when ready
     {
-      name: "Demo Day",
+      name: "Tech Fair",
       description:
         "A showcase where teams pitch, demo, and get feedback from operators and partners.",
       image: {
-        src: "/programmes/demo-day.jpg",
-        alt: "Demo Day programme placeholder",
+        src: "/programmes/tech-fair.jpg",
+        alt: "Tech Fair programme placeholder",
       },
       tags: ["Showcase", "Feedback", "Partner-facing"],
     },
@@ -96,29 +117,29 @@ export function Programmes() {
         topOffset={96}
         peek={18}
         vhPerCard={95}
-        renderCard={(p) => (
+        renderCard={(programme) => (
           <article className="relative rounded-2xl border border-border bg-white dark:bg-card p-8 tic-shadow shadow-xl">
             <div
               className="absolute inset-x-0 top-0 h-1.5 rounded-t-2xl bg-gold/70"
               aria-hidden="true"
             />
 
-            <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-8 items-start">
+            <div className="grid lg:grid-cols-[1fr_1.1fr] gap-8 items-start">
               <div>
                 <h3 className="text-2xl sm:text-3xl font-semibold text-primary font-poppins">
-                  {p.name}
+                  {programme.name}
                 </h3>
                 <p className="mt-4 text-foreground/75 leading-relaxed">
-                  {p.description}
+                  {programme.description}
                 </p>
 
                 <div className="mt-6 flex flex-wrap gap-2">
-                  {p.tags.map((t) => (
+                  {programme.tags.map((tag) => (
                     <span
-                      key={t}
+                      key={tag}
                       className="inline-flex items-center rounded-full border border-border bg-muted px-3 py-1 text-xs font-semibold text-foreground/70"
                     >
-                      {t}
+                      {tag}
                     </span>
                   ))}
                 </div>
@@ -135,14 +156,14 @@ export function Programmes() {
                 </a>
               </div>
 
-              <div className="rounded-2xl overflow-hidden border border-border bg-muted">
-                <div className="aspect-4/3 w-full relative">
+              <div className="rounded-2xl overflow-hidden border border-border bg-muted h-full min-h-[300px]">
+                <div className="relative h-full w-full min-h-[300px]">
                   <Image
-                    src={p.image.src}
-                    alt={p.image.alt}
+                    src={programme.image.src}
+                    alt={programme.image.alt}
                     fill
                     className="object-cover"
-                    sizes="(max-width: 1024px) 100vw, 45vw"
+                    sizes="(max-width: 1024px) 100vw, 55vw"
                   />
                 </div>
               </div>

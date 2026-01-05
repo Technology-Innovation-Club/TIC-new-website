@@ -94,14 +94,14 @@ function StackedCardLayer({
   // Use smoothProgress instead of scrollYProgress
   const scale = useTransform(smoothProgress, [0, 1], [0.9, 1]);
   const opacity = useTransform(smoothProgress, [0, 0.4], [0, 1]);
-  const y = useTransform(smoothProgress, [0, 1], [150, 0]);
+  const yPosition = useTransform(smoothProgress, [0, 1], [150, 0]);
 
   return (
     <motion.div
       ref={cardRef}
       className="w-full sticky will-change-transform"
       style={{
-        y,
+        y: yPosition,
         scale,
         opacity,
         top: index * peek + topOffset,

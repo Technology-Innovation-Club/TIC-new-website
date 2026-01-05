@@ -3,8 +3,14 @@
 import { Lightbulb, Star, Target, Users, Zap } from "lucide-react";
 import { AnimatedSection, StaggerContainer, StaggerItem } from "./ui/motion";
 
+interface Value {
+  title: string;
+  description: string;
+  icon: React.ReactNode;
+}
+
 export function Values() {
-  const values = [
+  const values: Value[] = [
     {
       title: "Innovation",
       description: "Build, experiment, break boundaries.",
@@ -55,17 +61,17 @@ export function Values() {
           className="mt-14 grid md:grid-cols-5 gap-5"
           staggerDelay={0.06}
         >
-          {values.map((v) => (
-            <StaggerItem key={v.title}>
+          {values.map((value) => (
+            <StaggerItem key={value.title}>
               <div className="rounded-2xl border border-border bg-white dark:bg-card p-7 text-center tic-shadow font-poppins h-full hover:-translate-y-1 transition-transform duration-200">
                 <div className="mx-auto w-12 h-12 rounded-2xl bg-secondary/15 border border-secondary/25 grid place-items-center text-primary">
-                  {v.icon}
+                  {value.icon}
                 </div>
                 <h3 className="mt-5 text-lg font-normal text-primary">
-                  {v.title}
+                  {value.title}
                 </h3>
                 <p className="mt-2 text-sm text-foreground/70 leading-relaxed">
-                  {v.description}
+                  {value.description}
                 </p>
               </div>
             </StaggerItem>
