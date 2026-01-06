@@ -83,7 +83,7 @@ export default function MediaPage() {
         "Our team built Kriitor, a prototype that earned recognition at the PowerTech Hackathon, showcasing our ability to ship demo-ready products under tight competition timelines.",
       date: "2025",
       image: {
-        src: "/wins/powertech-pius.webp",
+        src: "/wins/kriitor.webp",
         alt: "PowerTech Hackathon team",
       },
       highlights: [
@@ -114,6 +114,23 @@ export default function MediaPage() {
       ],
     },
     {
+      id: "nvidia-workshop",
+      title: "NVIDIA Workshop",
+      category: "workshop",
+      description:
+        "A hands-on workshop sponsored by NVIDIA, training students to build AI-powered applications using cutting-edge tools and frameworks from the leading AI hardware company.",
+      date: "2025",
+      image: {
+        src: "/media/nvidia-workshop.webp",
+        alt: "NVIDIA Workshop session",
+      },
+      highlights: [
+        "AI application development",
+        "NVIDIA-sponsored training",
+        "Hands-on learning",
+      ],
+    },
+    {
       id: "codespark-tech-fair",
       title: "CodeSpark and TIC Tech Fair",
       category: "event",
@@ -128,6 +145,23 @@ export default function MediaPage() {
         "Project showcases",
         "Industry networking",
         "Student demonstrations",
+      ],
+    },
+    {
+      id: "tic-hackathon-1",
+      title: "TIC Hackathon 1.0",
+      category: "hackathon",
+      description:
+        "The inaugural TIC internal hackathon that kicked off our tradition of intensive build sprints. Students formed teams, tackled real challenges, and delivered working prototypes in a high-energy 48-hour event.",
+      date: "2024",
+      image: {
+        src: "/media/tic-hackathon-1.webp",
+        alt: "TIC Hackathon 1.0 event",
+      },
+      highlights: [
+        "First internal hackathon",
+        "48-hour build sprint",
+        "Foundation for future events",
       ],
     },
     {

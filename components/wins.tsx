@@ -125,7 +125,7 @@ export function Wins() {
         stageClassName="max-w-5xl mx-auto"
         topOffset={96}
         peek={18}
-        vhPerCard={95}
+        vhPerCard={75}
         renderCard={(win) => (
           <article className="relative rounded-2xl border border-white/20 dark:border-border bg-[#1a0a5c] dark:bg-card p-8 tic-shadow shadow-xl hover:bg-[#1f0d66] dark:hover:bg-card/90 transition-colors">
             <div
@@ -181,8 +181,8 @@ export function Wins() {
                 </Link>
               </div>
 
-              <div className="rounded-2xl overflow-hidden border border-white/10 dark:border-border bg-black/10 dark:bg-muted h-full min-h-75">
-                <div className="relative h-full w-full min-h-75">
+              <div className="rounded-2xl overflow-hidden border border-white/10 dark:border-border bg-black/10 dark:bg-muted h-full min-h-[280px] sm:min-h-75">
+                <div className="relative h-full w-full min-h-[280px] sm:min-h-75">
                   <Image
                     src={win.image.src}
                     alt={win.image.alt}

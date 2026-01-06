@@ -74,27 +74,21 @@ function StackedCardLayer({
 
   const { scrollYProgress } = useScroll({
     target: cardRef,
-    // We extend the start of the "watch zone" by 10% so it picks up the
-    // card movement earlier, making it feel more gradual.
-    offset: ["start 110%", `start ${stickyPoint}px`],
+    // Start tracking earlier (150%) for smoother, faster transition
+    offset: ["start 150%", `start ${stickyPoint}px`],
   });
 
-  /**
-   * FIX: Added useSpring to the local progress.
-   * stiffness: 80 (Higher = faster/snappier)
-   * damping: 25 (Higher = less bounce)
-   * mass: 1 (Heavier feel)
-   */
+  // Snappier spring for faster card transitions
   const smoothProgress = useSpring(scrollYProgress, {
-    stiffness: 80,
-    damping: 25,
-    mass: 1,
+    stiffness: 120,
+    damping: 20,
+    mass: 0.8,
   });
 
-  // Use smoothProgress instead of scrollYProgress
-  const scale = useTransform(smoothProgress, [0, 1], [0.9, 1]);
-  const opacity = useTransform(smoothProgress, [0, 0.4], [0, 1]);
-  const yPosition = useTransform(smoothProgress, [0, 1], [150, 0]);
+  // Use smoothProgress - faster opacity ramp for quicker visibility
+  const scale = useTransform(smoothProgress, [0, 1], [0.92, 1]);
+  const opacity = useTransform(smoothProgress, [0, 0.25], [0, 1]);
+  const yPosition = useTransform(smoothProgress, [0, 1], [100, 0]);
 
   return (
     <motion.div
