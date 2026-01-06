@@ -125,7 +125,7 @@ export function Wins() {
         stageClassName="max-w-5xl mx-auto"
         topOffset={96}
         peek={18}
-        vhPerCard={75}
+        vhPerCard={60}
         renderCard={(win) => (
           <article className="relative rounded-2xl border border-white/20 dark:border-border bg-[#1a0a5c] dark:bg-card p-8 tic-shadow shadow-xl hover:bg-[#1f0d66] dark:hover:bg-card/90 transition-colors">
             <div
