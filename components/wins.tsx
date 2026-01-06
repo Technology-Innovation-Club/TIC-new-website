@@ -43,7 +43,7 @@ export function Wins() {
       ],
       featured: true,
       image: {
-        src: "/wins/zenith-zecathon.jpg",
+        src: "/wins/zenith-zecathon.webp",
         alt: "Zenith Bank Zecathon win placeholder",
       },
     },
@@ -59,7 +59,7 @@ export function Wins() {
         { k: "Result", v: "Win" },
       ],
       image: {
-        src: "/wins/payaza-5000.jpg",
+        src: "/wins/payaza-5000.webp",
         alt: "Payaza hackathon win placeholder",
       },
     },
@@ -75,7 +75,7 @@ export function Wins() {
         { k: "Signal", v: "Real constraints" },
       ],
       image: {
-        src: "/wins/lagos-impact-supamart.jpg",
+        src: "/wins/lagos-impact-supamart.webp",
         alt: "Lagos Impact SupaMart placeholder",
       },
     },
@@ -91,7 +91,7 @@ export function Wins() {
         { k: "Signal", v: "Repeatable output" },
       ],
       image: {
-        src: "/wins/kriitor.jpg",
+        src: "/wins/kriitor.webp",
         alt: "PowerTech Kriitor placeholder",
       },
     },

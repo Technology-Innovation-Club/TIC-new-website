@@ -31,7 +31,7 @@ export default function ProgrammesPage() {
         "Fast-paced build sprints that improve speed, discipline, and product delivery.",
       longDescription:
         "CodeSpark is our flagship build sprint programme where teams tackle real-world problems in intensive sessions. Participants learn to ship under pressure, iterate quickly, and present demo-ready products to mentors and peers.",
-      image: "/programmes/codespark.jpg",
+      image: "/programmes/codespark.webp",
       tags: ["Build sprint", "Mentorship", "Demo-ready output"],
       schedule: "Monthly",
       duration: "1-2 weeks",
@@ -43,7 +43,7 @@ export default function ProgrammesPage() {
         "Annual flagship hackathon where students compete, build innovative solutions, and win prizes.",
       longDescription:
         "TIC Hackathon is our premier competitive event where students form teams and build solutions to real-world challenges within 48 hours. With mentorship, prizes, and industry judges, participants experience the intensity of shipping under pressure while competing for recognition and rewards.",
-      image: "/programmes/tic-hackathon.jpg",
+      image: "/programmes/tic-hackathon.webp",
       tags: ["Competition", "Prizes", "48-hour build", "Industry judges"],
       schedule: "Annually",
       duration: "48 hours",
@@ -55,7 +55,7 @@ export default function ProgrammesPage() {
         "Hands-on prototyping for embedded systems, robotics, and practical hardware builds.",
       longDescription:
         "Our MakerSpace lab provides the equipment, mentorship, and structure for students to build physical products. From IoT devices to robotics prototypes, members gain hands-on experience with hardware development.",
-      image: "/programmes/makerspace.jpg",
+      image: "/programmes/makerspace.webp",
       tags: ["Hardware", "Prototyping", "Robotics", "IoT"],
       schedule: "Ongoing",
       duration: "Semester-long",
@@ -67,7 +67,7 @@ export default function ProgrammesPage() {
         "A showcase where teams pitch, demo, and get feedback from operators and partners.",
       longDescription:
         "Tech Fair is the culmination of our build programmes. Teams present their projects to industry partners, faculty, and fellow students. This is where our members practice pitch skills and receive critical feedback.",
-      image: "/programmes/tech-fair.jpg",
+      image: "/programmes/tech-fair.webp",
       tags: ["Showcase", "Feedback", "Partner-facing", "Pitching"],
       schedule: "End of each semester",
       duration: "Full day event",
@@ -79,7 +79,7 @@ export default function ProgrammesPage() {
         "Applied AI learning and project execution focused on real use-cases and portfolios.",
       longDescription:
         "The AI/ML Lab bridges theoretical knowledge and practical application. Members work on projects ranging from data analysis to machine learning models, building portfolios that demonstrate genuine AI capability.",
-      image: "/programmes/ai-ml-lab.jpg",
+      image: "/programmes/ai-ml-lab.webp",
       tags: ["Applied AI", "Machine Learning", "Data Science", "Portfolio"],
       schedule: "Weekly sessions",
       duration: "Semester-long",
@@ -91,7 +91,7 @@ export default function ProgrammesPage() {
         "A high-energy week of talks, workshops, and builds that expands the community.",
       longDescription:
         "TIC Week is our annual flagship event featuring industry speakers, hands-on workshops, hackathons, and networking opportunities. It is the biggest gathering of tech enthusiasts at Pan-Atlantic University.",
-      image: "/programmes/tic-week.jpg",
+      image: "/programmes/tic-week.webp",
       tags: ["Workshops", "Community", "Networking", "Annual event"],
       schedule: "Once per year",
       duration: "5 days",
