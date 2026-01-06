@@ -10,7 +10,7 @@ export function ImageLogo({ className }: { className?: string }) {
       )}
     >
       <Image
-        src="/logo.jpeg"
+        src="/logo.webp"
         alt="TIC logo"
         fill
         className="object-cover"

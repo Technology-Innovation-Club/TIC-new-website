@@ -22,7 +22,7 @@ export function Programmes() {
       description:
         "Fast-paced build sprints that improve speed, discipline, and product delivery.",
       image: {
-        src: "/programmes/codespark.jpg",
+        src: "/programmes/codespark.webp",
         alt: "CodeSpark programme placeholder",
       },
       tags: ["Build sprint", "Mentors", "Demo-ready output"],
@@ -32,7 +32,7 @@ export function Programmes() {
       description:
         "Annual flagship hackathon where students compete, build innovative solutions, and win prizes.",
       image: {
-        src: "/programmes/tic-hackathon.jpg",
+        src: "/programmes/tic-hackathon.webp",
         alt: "TIC Hackathon programme placeholder",
       },
       tags: ["Competition", "Prizes", "48-hour build"],
@@ -42,7 +42,7 @@ export function Programmes() {
       description:
         "Hands-on prototyping for embedded systems, robotics, and practical hardware builds.",
       image: {
-        src: "/programmes/makerspace.jpg",
+        src: "/programmes/makerspace.webp",
         alt: "MakerSpace programme placeholder",
       },
       tags: ["Hardware", "Prototyping", "Robotics"],
@@ -53,7 +53,7 @@ export function Programmes() {
       description:
         "A showcase where teams pitch, demo, and get feedback from operators and partners.",
       image: {
-        src: "/programmes/tech-fair.jpg",
+        src: "/programmes/tech-fair.webp",
         alt: "Tech Fair programme placeholder",
       },
       tags: ["Showcase", "Feedback", "Partner-facing"],
@@ -63,7 +63,7 @@ export function Programmes() {
       description:
         "A day for student builders to pitch their solutions, demo them and get feedback",
       image: {
-        src: "/programmes/demo-day.jpg",
+        src: "/programmes/demo-day.webp",
         alt: "Tech Fair programme placeholder",
       },
       tags: ["Showcase", "Feedback", "Partner-facing"],
@@ -73,7 +73,7 @@ export function Programmes() {
       description:
         "Applied AI learning and project execution focused on real use-cases and portfolios.",
       image: {
-        src: "/programmes/ai-ml-lab.jpg",
+        src: "/programmes/ai-ml-lab.webp",
         alt: "AI/ML Lab programme placeholder",
       },
       tags: ["Applied AI", "Projects", "Portfolio"],
@@ -83,7 +83,7 @@ export function Programmes() {
       description:
         "A high-energy week of talks, workshops, and builds that expands the community.",
       image: {
-        src: "/programmes/tic-week.jpg",
+        src: "/programmes/tic-week.webp",
         alt: "TIC Week programme placeholder",
       },
       tags: ["Workshops", "Community", "Momentum"],

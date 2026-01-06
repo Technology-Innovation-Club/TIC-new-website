@@ -30,7 +30,7 @@ export default function MediaPage() {
       date: "2025",
       prize: "N10M",
       image: {
-        src: "/wins/zenith-zecathon.jpg",
+        src: "/wins/zenith-zecathon.webp",
         alt: "Zenith Zecathon team presentation",
       },
       highlights: [
@@ -48,7 +48,7 @@ export default function MediaPage() {
       date: "2024",
       prize: "$5,000",
       image: {
-        src: "/wins/payaza-5000.jpg",
+        src: "/wins/payaza-5000.webp",
         alt: "Payaza Hackathon winning team",
       },
       highlights: [
@@ -66,7 +66,7 @@ export default function MediaPage() {
       date: "2025",
       prize: "$2,000",
       image: {
-        src: "/wins/lagos-impact-supamart.jpg",
+        src: "/wins/lagos-impact-supamart.webp",
         alt: "Lagos Impact Hackathon team building",
       },
       highlights: [
@@ -83,7 +83,7 @@ export default function MediaPage() {
         "Our team built Kriitor, a prototype that earned recognition at the PowerTech Hackathon, showcasing our ability to ship demo-ready products under tight competition timelines.",
       date: "2025",
       image: {
-        src: "/wins/powertech-pius.jpg",
+        src: "/wins/powertech-pius.webp",
         alt: "PowerTech Hackathon team",
       },
       highlights: [
@@ -104,7 +104,7 @@ export default function MediaPage() {
         "An enriching session where ServiceNow professionals shared industry insights on enterprise software, career pathways, and the future of workflow automation with TIC members.",
       date: "2025",
       image: {
-        src: "/media/servicenow-session-1.jpg",
+        src: "/media/servicenow-session-1.webp",
         alt: "ServiceNow session presentation",
       },
       highlights: [
@@ -121,7 +121,7 @@ export default function MediaPage() {
         "A vibrant showcase where student builders demonstrated their CodeSpark projects to peers, faculty, and industry partners. The Tech Fair highlighted the practical outcomes of our intensive build sprints.",
       date: "2025",
       image: {
-        src: "/programmes/codespark.jpg",
+        src: "/programmes/codespark.webp",
         alt: "CodeSpark project demonstrations",
       },
       highlights: [
@@ -138,7 +138,7 @@ export default function MediaPage() {
         "Our flagship internal hackathon brought together student builders from all streams for 48 hours of intensive building, mentorship, and innovation. Teams tackled real-world challenges and shipped working prototypes.",
       date: "2025",
       image: {
-        src: "/programmes/tic-hackathon.jpg",
+        src: "/programmes/tic-hackathon.webp",
         alt: "TIC Hackathon 2.0 opening ceremony",
       },
       highlights: [
