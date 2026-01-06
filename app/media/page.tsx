@@ -104,7 +104,7 @@ export default function MediaPage() {
         "An enriching session where ServiceNow professionals shared industry insights on enterprise software, career pathways, and the future of workflow automation with TIC members.",
       date: "2025",
       image: {
-        src: "/media/servicenow-session-1.webp",
+        src: "/media/servicenow-session.webp",
         alt: "ServiceNow session presentation",
       },
       highlights: [
