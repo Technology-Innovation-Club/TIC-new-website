@@ -94,7 +94,6 @@ export default function MediaPage() {
     },
   ];
 
-  // TODO: Update ServiceNow Image when ready
   const communityEvents: MediaEvent[] = [
     {
       id: "servicenow-session",
