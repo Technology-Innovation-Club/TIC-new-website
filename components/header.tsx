@@ -37,7 +37,7 @@ export function Header() {
   }, []);
 
   useEffect(() => {
-    navItems.map((navItem) => {
+    navItems.forEach((navItem) => {
       router.prefetch(navItem.href);
     });
   }, [router]);
