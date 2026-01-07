@@ -105,7 +105,7 @@ export default function AboutPage() {
     {
       name: "Owumi Oghenetejirin",
       role: "Web Dev Stream Lead",
-      linkedin: "https://www.linkedin.com/in/owumi-oghenetejirin-0b586233a",
+      linkedin: "https://www.linkedin.com/in/owumi-o-0b586233a/",
       image: "/excos/oghenetejirin-owumi.webp",
     },
     {
