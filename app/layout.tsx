@@ -53,8 +53,7 @@ export default function RootLayout({
       <body className="font-poppins">
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
-          enableSystem
+          defaultTheme="light"
           disableTransitionOnChange
         >
           <a
