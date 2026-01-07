@@ -71,7 +71,6 @@ export function Header() {
         <Link
           key={item.href}
           href={item.href}
-          prefetch={true}
           onClick={() => setIsOpen(false)}
           className={`text-sm font-semibold font-poppins relative group inline-flex ${
             isActive(item.href) ? "text-primary" : "text-foreground/80"
@@ -162,7 +161,6 @@ export function Header() {
                     <Link
                       key={item.href}
                       href={item.href}
-                      prefetch={true}
                       onClick={() => setIsOpen(false)}
                       className={`text-sm font-semibold font-poppins relative group inline-flex ${
                         isActive(item.href)
@@ -185,7 +183,6 @@ export function Header() {
                   <Link
                     href="/media"
                     onClick={() => setIsOpen(false)}
-                    prefetch={true}
                     className="w-full px-4 py-2 rounded-lg border border-border text-primary font-semibold hover:bg-muted transition-colors text-center"
                   >
                     Explore wins
@@ -193,7 +190,6 @@ export function Header() {
                   <Link
                     href="/contact"
                     onClick={() => setIsOpen(false)}
-                    prefetch={true}
                     className="w-full px-4 py-2 rounded-lg bg-secondary text-secondary-foreground font-bold hover:brightness-[0.98] transition-colors text-center"
                   >
                     Partner / Join
