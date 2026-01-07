@@ -30,12 +30,7 @@ export function StackedCards<T>({
     <div
       ref={containerRef}
       className={cn("relative w-full", className)}
-      /**
-       * We add +1.25 to the items.length so that after the last card
-       * reaches its "sticky" spot, the user can still scroll a bit
-       * before the section ends. This prevents the "overlap" bug.
-       */
-      style={{ height: `${(items.length + 0.5) * vhPerCard}vh` }}
+      style={{ minHeight: `${items.length * vhPerCard}vh` }}
     >
       <div
         className={cn("sticky flex flex-col items-center", stageClassName)}
