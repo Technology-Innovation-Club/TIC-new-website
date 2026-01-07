@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { ImageLogo } from "./image-logo";
 import { ModeToggle } from "./mode-toggle";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 interface NavItem {
   label: string;
@@ -26,6 +26,7 @@ export function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
+  const router = useRouter();
 
   useEffect(() => {
     const onKeyDown = (e: KeyboardEvent) => {
@@ -34,6 +35,12 @@ export function Header() {
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
   }, []);
+
+  useEffect(() => {
+    navItems.forEach((navItem) => {
+      router.prefetch(navItem.href);
+    });
+  }, [router]);
 
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "";
@@ -64,7 +71,6 @@ export function Header() {
         <Link
           key={item.href}
           href={item.href}
-          prefetch={true}
           onClick={() => setIsOpen(false)}
           className={`text-sm font-semibold font-poppins relative group inline-flex ${
             isActive(item.href) ? "text-primary" : "text-foreground/80"
@@ -155,7 +161,6 @@ export function Header() {
                     <Link
                       key={item.href}
                       href={item.href}
-                      prefetch={true}
                       onClick={() => setIsOpen(false)}
                       className={`text-sm font-semibold font-poppins relative group inline-flex ${
                         isActive(item.href)
@@ -178,7 +183,6 @@ export function Header() {
                   <Link
                     href="/media"
                     onClick={() => setIsOpen(false)}
-                    prefetch={true}
                     className="w-full px-4 py-2 rounded-lg border border-border text-primary font-semibold hover:bg-muted transition-colors text-center"
                   >
                     Explore wins
@@ -186,7 +190,6 @@ export function Header() {
                   <Link
                     href="/contact"
                     onClick={() => setIsOpen(false)}
-                    prefetch={true}
                     className="w-full px-4 py-2 rounded-lg bg-secondary text-secondary-foreground font-bold hover:brightness-[0.98] transition-colors text-center"
                   >
                     Partner / Join
