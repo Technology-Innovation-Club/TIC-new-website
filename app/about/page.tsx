@@ -22,7 +22,7 @@ interface Executive {
 }
 
 export default function AboutPage() {
-  // TODO: Add Kamdi, Owumi, Kenechuckwu, and Victor's images when ready
+  // TODO: Add Kamdi and Kenechuckwu's images when ready
   const executives: Executive[] = [
     {
       name: "Prosperity Olorunfemi",
@@ -105,20 +105,21 @@ export default function AboutPage() {
     {
       name: "Owumi Oghenetejirin",
       role: "Web Dev Stream Lead",
-      linkedin: "https://www.linkedin.com/in/owumi-oghenetejirin-0b586233a",
+      linkedin: "https://www.linkedin.com/in/owumi-o-0b586233a/",
       image: "/excos/oghenetejirin-owumi.webp",
-    },
-    {
-      name: "Kenechukwu Justin-Ijeh",
-      role: "Data Science and AI Co-Lead",
-      linkedin: "https://www.linkedin.com/in/kenechukwu-justin-ijeh/",
-      image: "/excos/kenechukwu-justin-ijeh.webp",
     },
     {
       name: "Victor Braimah",
       role: "Robotics & Embedded Systems Co-Lead",
       linkedin: "https://www.linkedin.com/in/victor-braimah-874a4b289/",
       image: "/excos/victor-braimah.webp",
+    },
+    // TODO: Verify and update Kenechukwu's Linkedin profile URL
+    {
+      name: "Kenechukwu Justin-Ijeh",
+      role: "Data Science and AI Co-Lead",
+      linkedin: "https://www.linkedin.com/in/kenechukwu-justin-ijeh/",
+      image: "/excos/kenechukwu-justin-ijeh.webp",
     },
   ];
 
