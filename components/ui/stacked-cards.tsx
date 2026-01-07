@@ -35,7 +35,7 @@ export function StackedCards<T>({
        * reaches its "sticky" spot, the user can still scroll a bit
        * before the section ends. This prevents the "overlap" bug.
        */
-      style={{ height: `${(items.length + 1.25) * vhPerCard}vh` }}
+      style={{ height: `${(items.length + 0.5) * vhPerCard}vh` }}
     >
       <div
         className={cn("sticky flex flex-col items-center", stageClassName)}
@@ -74,27 +74,21 @@ function StackedCardLayer({
 
   const { scrollYProgress } = useScroll({
     target: cardRef,
-    // We extend the start of the "watch zone" by 10% so it picks up the
-    // card movement earlier, making it feel more gradual.
-    offset: ["start 110%", `start ${stickyPoint}px`],
+    // Tighter scroll range - cards animate in faster
+    offset: ["start 105%", `start ${stickyPoint}px`],
   });
 
-  /**
-   * FIX: Added useSpring to the local progress.
-   * stiffness: 80 (Higher = faster/snappier)
-   * damping: 25 (Higher = less bounce)
-   * mass: 1 (Heavier feel)
-   */
+  // Very snappy spring
   const smoothProgress = useSpring(scrollYProgress, {
-    stiffness: 80,
+    stiffness: 200,
     damping: 25,
-    mass: 1,
+    mass: 0.5,
   });
 
-  // Use smoothProgress instead of scrollYProgress
-  const scale = useTransform(smoothProgress, [0, 1], [0.9, 1]);
-  const opacity = useTransform(smoothProgress, [0, 0.4], [0, 1]);
-  const yPosition = useTransform(smoothProgress, [0, 1], [150, 0]);
+  // Quick animations - minimal travel distance
+  const scale = useTransform(smoothProgress, [0, 1], [0.96, 1]);
+  const opacity = useTransform(smoothProgress, [0, 0.1], [0, 1]);
+  const yPosition = useTransform(smoothProgress, [0, 1], [50, 0]);
 
   return (
     <motion.div
