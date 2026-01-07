@@ -114,6 +114,7 @@ export default function AboutPage() {
       linkedin: "https://www.linkedin.com/in/victor-braimah-874a4b289/",
       image: "/excos/victor-braimah.webp",
     },
+    // TODO: Verify and update Kenechukwu's Linkedin profile URL
     {
       name: "Kenechukwu Justin-Ijeh",
       role: "Data Science and AI Co-Lead",
