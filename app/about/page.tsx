@@ -22,7 +22,7 @@ interface Executive {
 }
 
 export default function AboutPage() {
-  // TODO: Add Kamdi and Kenechuckwu's images when ready
+  // TODO: Add Kenechuckwu's images when ready
   const executives: Executive[] = [
     {
       name: "Prosperity Olorunfemi",
