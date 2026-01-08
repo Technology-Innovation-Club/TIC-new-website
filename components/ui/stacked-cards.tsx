@@ -95,7 +95,6 @@ function StackedCardLayer({
         opacity,
         top: index * peek + topOffset,
         zIndex: index,
-        marginBottom: "5vh", // Reduced margin for tighter layout
       }}
     >
       {children}
