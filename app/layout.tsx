@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://techinnovationclub.com"),
   title: "Tech Innovation Club | Pan-Atlantic University",
   description:
     "Tech Innovation Club (TIC) is Pan-Atlantic University's innovation engine, building real products, winning hackathons, and developing world-class talent in Lagos, Nigeria.",
@@ -19,17 +20,34 @@ export const metadata: Metadata = {
   ],
   icons: {
     icon: [
-      { url: "/icon-light-32x32.png", media: "(prefers-color-scheme: light)" },
-      { url: "/icon-dark-32x32.png", media: "(prefers-color-scheme: dark)" },
-      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/favicon.png", type: "image/png", sizes: "32x32" },
     ],
-    apple: "/apple-icon.png",
+    apple: "/apple-touch-icon.png",
   },
   openGraph: {
     title: "Tech Innovation Club | Pan-Atlantic University",
     description:
       "Real products. Real wins. Real impact. Meet PAU's student builders competing on national stages and shipping practical tech.",
     type: "website",
+    siteName: "Tech Innovation Club",
+    locale: "en_US",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Tech Innovation Club - Pan-Atlantic University",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@tic_pau",
+    creator: "@tic_pau",
+    title: "Tech Innovation Club | Pan-Atlantic University",
+    description:
+      "Real products. Real wins. Real impact. Meet PAU's student builders competing on national stages and shipping practical tech.",
+    images: ["/twitter-image.png"],
   },
 };
 
