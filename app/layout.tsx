@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://techinnovationclub.com"),
   title: "Tech Innovation Club | Pan-Atlantic University",
   description:
     "Tech Innovation Club (TIC) is Pan-Atlantic University's innovation engine, building real products, winning hackathons, and developing world-class talent in Lagos, Nigeria.",
