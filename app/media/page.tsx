@@ -112,6 +112,7 @@ export default function MediaPage() {
         "Enterprise tech insights",
       ],
     },
+    // TODO: Currently, NVIDIA Workshop Image does not exist (intentional 404). Add when ready.
     {
       id: "nvidia-workshop",
       title: "NVIDIA Workshop",
