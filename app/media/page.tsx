@@ -297,12 +297,6 @@ export default function MediaPage() {
                         className="object-cover"
                         sizes="(max-width: 1024px) 100vw, 50vw"
                       />
-                      {/* Placeholder overlay - remove when images are added */}
-                      <div className="absolute inset-0 bg-linear-to-br from-primary/5 to-secondary/5 flex items-center justify-center">
-                        <p className="text-xs text-foreground/40 text-center px-4">
-                          {event.image.alt}
-                        </p>
-                      </div>
                     </div>
                   </div>
                 </motion.article>
@@ -383,12 +377,6 @@ export default function MediaPage() {
                         className="object-cover"
                         sizes="(max-width: 1024px) 100vw, 50vw"
                       />
-                      {/* Placeholder overlay - remove when images are added */}
-                      <div className="absolute inset-0 bg-linear-to-br from-primary/5 to-secondary/5 flex items-center justify-center">
-                        <p className="text-xs text-foreground/40 text-center px-4">
-                          {event.image.alt}
-                        </p>
-                      </div>
                     </div>
                   </div>
                 </motion.article>
