@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   ],
   icons: {
     icon: [
-      { url: "/favicon.png", type: "image/png", sizes: "32x32" },
+      { url: "/favicon.png", type: "image/png", sizes: "48x48" },
     ],
     apple: "/apple-touch-icon.png",
   },
@@ -34,8 +34,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/og-image.png",
-        width: 1200,
-        height: 630,
+        width: 800,
+        height: 420,
         alt: "Tech Innovation Club - Pan-Atlantic University",
       },
     ],
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     title: "Tech Innovation Club | Pan-Atlantic University",
     description:
       "Real products. Real wins. Real impact. Meet PAU's student builders competing on national stages and shipping practical tech.",
-    images: ["/twitter-image.png"],
+    images: [{ url: "/twitter-image.png", width: 800, height: 400, alt: "Tech Innovation Club - Pan-Atlantic University" }],
   },
 };
 
