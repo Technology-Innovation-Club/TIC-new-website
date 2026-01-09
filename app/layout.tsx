@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     title: "Tech Innovation Club | Pan-Atlantic University",
     description:
       "Real products. Real wins. Real impact. Meet PAU's student builders competing on national stages and shipping practical tech.",
-    images: ["/twitter-image.png"],
+    images: [{ url: "/twitter-image.png", width: 800, height: 400, alt: "Tech Innovation Club - Pan-Atlantic University" }],
   },
 };
 
