@@ -126,6 +126,7 @@ export function Programmes() {
         topOffset={96}
         peek={18}
         vhPerCard={60}
+        cardMinHeight={480}
         renderCard={(programme) => (
           <article className="relative rounded-2xl border border-border bg-white dark:bg-card p-8 tic-shadow shadow-xl">
             <div

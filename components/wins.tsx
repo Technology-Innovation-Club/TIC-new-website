@@ -126,6 +126,7 @@ export function Wins() {
         topOffset={96}
         peek={18}
         vhPerCard={60}
+        cardMinHeight={480}
         renderCard={(win) => (
           <article className="relative rounded-2xl border border-white/20 dark:border-border bg-[#1a0a5c] dark:bg-card p-8 tic-shadow shadow-xl hover:bg-[#1f0d66] dark:hover:bg-card/90 transition-colors">
             <div

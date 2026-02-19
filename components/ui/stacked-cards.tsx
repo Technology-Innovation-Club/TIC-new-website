@@ -15,6 +15,7 @@ export function StackedCards<T>({
   topOffset = 220,
   peek = 18,
   vhPerCard = 100,
+  cardMinHeight = 450,
 }: {
   items: T[];
   renderCard: RenderCard<T>;
@@ -23,6 +24,7 @@ export function StackedCards<T>({
   topOffset?: number;
   peek?: number;
   vhPerCard?: number;
+  cardMinHeight?: number;
 }) {
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -30,7 +32,7 @@ export function StackedCards<T>({
     <div
       ref={containerRef}
       className={cn("relative w-full", className)}
-      style={{ minHeight: `${items.length * vhPerCard}vh` }}
+      style={{ minHeight: `${(items.length + 0.5) * vhPerCard}vh` }}
     >
       <div
         className={cn("sticky flex flex-col items-center", stageClassName)}
@@ -43,6 +45,7 @@ export function StackedCards<T>({
             totalItems={items.length}
             peek={peek}
             topOffset={topOffset}
+            cardMinHeight={cardMinHeight}
           >
             {renderCard(item, index)}
           </StackedCardLayer>
@@ -57,12 +60,14 @@ function StackedCardLayer({
   index,
   peek,
   topOffset,
+  cardMinHeight,
 }: {
   children: ReactNode;
   index: number;
   totalItems: number;
   peek: number;
   topOffset: number;
+  cardMinHeight?: number;
 }) {
   const cardRef = useRef<HTMLDivElement>(null);
   const stickyPoint = topOffset + index * peek;
@@ -97,7 +102,9 @@ function StackedCardLayer({
         zIndex: index,
       }}
     >
-      {children}
+      <div style={{ minHeight: cardMinHeight }}>
+        {children}
+      </div>
     </motion.div>
   );
 }
