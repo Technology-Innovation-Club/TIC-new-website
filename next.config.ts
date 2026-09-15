@@ -2,6 +2,7 @@ import type { NextConfig } from "next";
 // some next config
 
 const nextConfig: NextConfig = {
+  allowedDevOrigins: ['TICnewwebsite.localhost', '*.TICnewwebsite.localhost'],
   experimental: {
     optimizePackageImports: ["react-icons"],
   },
