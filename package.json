@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "portless TICnewwebsite next dev",
-    "build": "next build",
+    "dev": "portless techinnovationclub next dev",
+    "build": "convex codegen && next build",
     "start": "next start",
     "lint": "eslint"
   },
@@ -12,6 +12,7 @@
     "@base-ui/react": "^1.0.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "convex": "1.45.0",
     "framer-motion": "^12.23.26",
     "lucide-react": "^0.562.0",
     "next": "16.1.1",
@@ -29,8 +30,8 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.1.1",
+    "portless": "^0.15.4",
     "tailwindcss": "^4",
-    "typescript": "^5",
-    "portless": "^0.15.4"
+    "typescript": "^5"
   }
 }
