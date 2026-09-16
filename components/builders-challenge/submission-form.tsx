@@ -406,30 +406,38 @@ export function SubmissionForm() {
         {errors.statement && <p className={errCls}>{errors.statement}</p>}
       </div>
 
-      <fieldset className="mt-6 rounded-xl border border-border bg-muted p-4 sm:p-5">
-        <legend className="px-2 font-poppins text-sm font-semibold text-primary">
+      <div className="mt-6">
+        <p
+          id="bc-agreements-label"
+          className="mb-2 font-poppins text-sm font-semibold text-primary"
+        >
           TIC agreements (all mandatory) *
-        </legend>
-        <div className="space-y-3">
-          {AGREEMENTS.map((a) => (
-            <label
-              key={a.key}
-              className="flex cursor-pointer items-start gap-3 rounded-lg p-2 hover:bg-background"
-            >
-              <input
-                type="checkbox"
-                checked={agreements[a.key]}
-                onChange={() => toggleAgreement(a.key)}
-                className="mt-1 h-4 w-4 shrink-0 accent-[#1E048B]"
-              />
-              <span className="text-sm leading-relaxed text-foreground/80">
-                {a.text}
-              </span>
-            </label>
-          ))}
-        </div>
-        {errors.agreements && <p className={errCls}>{errors.agreements}</p>}
-      </fieldset>
+        </p>
+        <fieldset
+          aria-labelledby="bc-agreements-label"
+          className="rounded-xl border border-border bg-muted p-4 sm:p-5"
+        >
+          <div className="space-y-3">
+            {AGREEMENTS.map((a) => (
+              <label
+                key={a.key}
+                className="flex cursor-pointer items-start gap-3 rounded-lg p-2 hover:bg-background"
+              >
+                <input
+                  type="checkbox"
+                  checked={agreements[a.key]}
+                  onChange={() => toggleAgreement(a.key)}
+                  className="mt-1 h-4 w-4 shrink-0 accent-[#1E048B]"
+                />
+                <span className="text-sm leading-relaxed text-foreground/80">
+                  {a.text}
+                </span>
+              </label>
+            ))}
+          </div>
+          {errors.agreements && <p className={errCls}>{errors.agreements}</p>}
+        </fieldset>
+      </div>
 
       <button
         type="submit"
