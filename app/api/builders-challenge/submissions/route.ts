@@ -49,6 +49,16 @@ export function convexClient(): ConvexHttpClient {
   return new ConvexHttpClient(url);
 }
 
+// Server-only secret shared with the Convex deployment. It gates the write
+// mutations so a direct caller cannot mint uploads or insert rows.
+function backendSecret(): string {
+  const secret = process.env.CONVEX_BACKEND_SECRET;
+  if (!secret) {
+    throw new Error("CONVEX_BACKEND_SECRET is not configured");
+  }
+  return secret;
+}
+
 function extOf(name: string): string {
   const parts = name.toLowerCase().split(".");
   return parts.length > 1 ? parts[parts.length - 1] : "";
@@ -211,10 +221,11 @@ export async function POST(req: NextRequest) {
 
   try {
     const client = convexClient();
+    const secret = backendSecret();
     if (fileBytes && fileMeta) {
       const uploadUrl = await client.mutation(
         api.submissions.generateUploadUrl,
-        {},
+        { secret },
       );
       const uploadRes = await fetch(uploadUrl, {
         method: "POST",
@@ -235,6 +246,7 @@ export async function POST(req: NextRequest) {
       };
     }
     await client.mutation(api.submissions.create, {
+      secret,
       tid: id,
       late: isLate(),
       fullName: input.fullName,

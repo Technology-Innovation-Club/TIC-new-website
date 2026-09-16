@@ -26,8 +26,8 @@ function bounded(value: string, max: number): string {
   return value;
 }
 
-// Constant-time compare so a wrong password leaks no prefix information.
-function reviewerPasswordOk(candidate: string, expected: string | undefined): boolean {
+// Constant-time compare so a wrong credential leaks no prefix information.
+function constantTimeEquals(candidate: string, expected: string | undefined): boolean {
   if (!expected) return false;
   if (candidate.length !== expected.length) return false;
   let diff = 0;
@@ -38,20 +38,30 @@ function reviewerPasswordOk(candidate: string, expected: string | undefined): bo
 }
 
 function assertReviewer(password: string): void {
-  if (!reviewerPasswordOk(password, process.env.BUILDERS_CHALLENGE_PASSWORD)) {
+  if (!constantTimeEquals(password, process.env.BUILDERS_CHALLENGE_PASSWORD)) {
+    throw new Error("Unauthorized.");
+  }
+}
+
+// Only the Next route holds this server-side secret; it never reaches the
+// browser. Without it, direct callers cannot mint upload URLs or insert rows.
+function assertBackend(secret: string): void {
+  if (!constantTimeEquals(secret, process.env.CONVEX_BACKEND_SECRET)) {
     throw new Error("Unauthorized.");
   }
 }
 
 export const generateUploadUrl = mutation({
-  args: {},
-  handler: async (ctx) => {
+  args: { secret: v.string() },
+  handler: async (ctx, args) => {
+    assertBackend(args.secret);
     return await ctx.storage.generateUploadUrl();
   },
 });
 
 export const create = mutation({
   args: {
+    secret: v.string(),
     tid: v.string(),
     late: v.boolean(),
     fullName: v.string(),
@@ -79,6 +89,7 @@ export const create = mutation({
     }),
   },
   handler: async (ctx, args) => {
+    assertBackend(args.secret);
     if (!TRACK_IDS.includes(args.track)) {
       throw new Error("Unknown track.");
     }
