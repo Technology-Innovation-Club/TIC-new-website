@@ -20,10 +20,6 @@
     {
       "title": "Reviewers could not always open the build",
       "detail": "9 of 20 links went to source code, a download, or a private project instead of a working app. A reviewer who has to install a toolchain may never see your best work. Host it (GitHub Pages, Netlify, Vercel, Streamlit) and open the link in a private window before you submit."
-    },
-    {
-      "title": "Few briefs showed what broke",
-      "detail": "No entry scored above 7 of 10 on process. Most briefs listed steps or described the product. The strongest ones named a bug, what caused it, and what changed. Keep a short build log as you work, and say which AI tool did which part."
     }
   ],
   "entries": [
