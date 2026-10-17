@@ -14,9 +14,9 @@ import { INSIGHTS, JUDGED_AT, LEADERBOARD } from "@/lib/builders-challenge-leade
 import { TRACKS, trackTitle } from "@/lib/builders-challenge";
 
 export const metadata = {
-  title: "Leaderboard | Builders Challenge | Tech Innovation Club",
+  title: "Builders Challenge results | Tech Innovation Club",
   description:
-    "Ranked results of the TIC Builders Challenge, with criterion-by-criterion feedback that shows every entrant what to fix next.",
+    "Every Builders Challenge entry scored out of 100, with the ranking, what the judges saw, and what would raise each score.",
 };
 
 const judgedLabel = new Date(JUDGED_AT).toLocaleDateString("en-GB", {
@@ -54,15 +54,14 @@ export default function LeaderboardPage() {
               </AnimatedSection>
               <AnimatedSection delay={0.08}>
                 <h1 className="mt-6 text-4xl leading-[1.05] text-balance text-white sm:text-6xl dark:text-foreground">
-                  The leaderboard, and what to fix next.
+                  Builders Challenge results.
                 </h1>
               </AnimatedSection>
               <AnimatedSection delay={0.16}>
                 <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-white/80 dark:text-foreground/70">
-                  Every entry was scored against the same 100-point rubric. A
-                  score alone does not help you build better, so each entry
-                  shows what we saw, the gap that cost points, and the next
-                  step that closes it.
+                  Every entry was scored on the same 100-point rubric. Open
+                  any entry below to read what the judges saw, what it lost
+                  points for, and the steps that would raise the score.
                 </p>
               </AnimatedSection>
               <AnimatedSection delay={0.24}>
@@ -91,7 +90,7 @@ export default function LeaderboardPage() {
           <AnimatedSection>
             <p className="text-sm font-extrabold uppercase tracking-widest text-primary/70">Top {TOP_COUNT}</p>
             <h2 className="mt-2 font-poppins text-3xl font-semibold text-primary sm:text-4xl">
-              The builds that went furthest.
+              The five highest scores.
             </h2>
           </AnimatedSection>
           <StaggerContainer className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-5" staggerDelay={0.06}>
@@ -123,12 +122,12 @@ export default function LeaderboardPage() {
             <AnimatedSection>
               <p className="text-sm font-extrabold uppercase tracking-widest text-primary/70">Across all entries</p>
               <h2 className="mt-2 max-w-3xl font-poppins text-3xl font-semibold text-primary sm:text-4xl">
-                Where the cohort fell short.
+                Where the entries fell short.
               </h2>
               <p className="mt-3 max-w-2xl text-foreground/70">
-                The average share of points won on each criterion, weakest
-                first. These are the habits that separate a demo from a
-                product.
+                Average points won on each criterion, weakest first. The
+                number under each bar counts the entries that scored less
+                than half.
               </p>
             </AnimatedSection>
             <div className="mt-8 grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
@@ -175,12 +174,12 @@ export default function LeaderboardPage() {
           <AnimatedSection>
             <p className="text-sm font-extrabold uppercase tracking-widest text-primary/70">Full ranking</p>
             <h2 className="mt-2 font-poppins text-3xl font-semibold text-primary sm:text-4xl">
-              Open your entry. Find your gap.
+              Find your entry, and read what cost points.
             </h2>
             <p className="mt-3 max-w-2xl text-foreground/70">
-              Each bar has six parts, one for each criterion, sized by its
-              weight. The empty part of each segment is the points you left on
-              the table.
+              Each bar has six segments, one per criterion and sized by its
+              weight. The light part of a segment is the points the entry
+              did not score.
             </p>
           </AnimatedSection>
           <div className="mt-8">
@@ -195,14 +194,14 @@ export default function LeaderboardPage() {
                 <Scale size={16} aria-hidden="true" /> How we judged
               </p>
               <h2 className="mt-2 max-w-3xl font-poppins text-3xl font-semibold text-primary sm:text-4xl">
-                Six criteria, taken from the brief you were given.
+                Six criteria, taken from the challenge brief.
               </h2>
               <p className="mt-3 max-w-3xl text-foreground/70">
                 The challenge asked you to understand, research, ideate, and
-                prototype, and said the prototype is the heart of your entry.
-                So the prototype carries the most weight, and we scored what a
-                reviewer could open and use, not what the brief claimed. AI
-                builders were allowed and never cost points. Late entries lost{" "}
+                prototype, and called the prototype the heart of the entry.
+                So the prototype carries the most weight, and we scored what
+                a reviewer could open and use, not what the brief claimed. AI
+                builders were allowed and never cost points. A late entry lost{" "}
                 {LATE_PENALTY} points. When two totals tie, the higher
                 prototype score ranks first.
               </p>

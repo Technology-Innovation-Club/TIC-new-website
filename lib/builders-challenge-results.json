@@ -3,11 +3,11 @@
   "insights": [
     {
       "title": "Research was almost absent",
-      "detail": "19 of 20 entries scored below half on research. Only one brief cited sources with links. No entry tested an existing product or spoke to a real user. Next time, cite two numbers with links and dates, try one tool that already exists, and write down what it misses."
+      "detail": "19 of 20 entries scored below half on research. Only one brief cited sources with links. No entry tested an existing product or spoke to a real user. Next time, cite two numbers with links and dates. Then try one tool that already exists and write down what it misses."
     },
     {
       "title": "Briefs promised more than the prototypes did",
-      "detail": "Most briefs described a feature the judges could not find: an AI model, a Wi-Fi link to a circuit, alerts, tests, or a verified label. Words like Verified, AI, and Live need a real check behind them. Write the brief after you test the build, and label sample data as sample data."
+      "detail": "Most briefs described a feature the judges could not find: an AI model, a Wi-Fi link to a circuit, alerts, tests, or a verified label. Words like Verified, AI, and Live must point at something the reviewer can test. Write the brief after you test the build, and label sample data as sample data."
     },
     {
       "title": "The demo path worked, the real path did not",

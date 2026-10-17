@@ -102,7 +102,7 @@ export default function BuildersChallengePage() {
                   href="/builders-challenge/leaderboard"
                   className="mb-4 flex w-full items-center justify-center gap-2 rounded-xl bg-gold px-4 py-3 font-poppins text-sm font-bold text-primary transition hover:brightness-105 sm:mx-auto sm:w-fit"
                 >
-                  <Trophy size={16} aria-hidden="true" /> Results are out. See the leaderboard and your feedback
+                  <Trophy size={16} aria-hidden="true" /> The results are in. See the leaderboard and your feedback
                   <ArrowRight size={16} aria-hidden="true" />
                 </Link>
                 <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2">
