@@ -1,0 +1,1131 @@
+{
+  "judgedAt": "2026-10-17",
+  "insights": [
+    {
+      "title": "Research was almost absent",
+      "detail": "19 of 20 entries scored below half on research. Only one brief cited sources with links. No entry tested an existing product or spoke to a real user. Next time, cite two numbers with links and dates, try one tool that already exists, and write down what it misses."
+    },
+    {
+      "title": "Briefs promised more than the prototypes did",
+      "detail": "Most briefs described a feature the judges could not find: an AI model, a Wi-Fi link to a circuit, alerts, tests, or a verified label. Words like Verified, AI, and Live need a real check behind them. Write the brief after you test the build, and label sample data as sample data."
+    },
+    {
+      "title": "The demo path worked, the real path did not",
+      "detail": "Only one prototype reached the top band. Many worked for the preset case and failed on the first real input: typed symptoms that never reached the result, a lookalike bank link marked safe, a grid rule the code skips. Before you submit, write five test cases, including one edge case, and run all of them."
+    },
+    {
+      "title": "The user was still 'Nigerians' or 'students'",
+      "detail": "13 of 20 entries scored below half on problem understanding. Most named a group, not a person in a place with a constraint. Name one user, for example a PoS agent's customer in Ikorodu who cannot read English, and let that constraint change the design."
+    },
+    {
+      "title": "Reviewers could not always open the build",
+      "detail": "9 of 20 links went to source code, a download, or a private project instead of a working app. A reviewer who has to install a toolchain may never see your best work. Host it (GitHub Pages, Netlify, Vercel, Streamlit) and open the link in a private window before you submit."
+    },
+    {
+      "title": "Few briefs showed what broke",
+      "detail": "No entry scored above 7 of 10 on process. Most briefs listed steps or described the product. The strongest ones named a bug, what caused it, and what changed. Keep a short build log as you work, and say which AI tool did which part."
+    }
+  ],
+  "entries": [
+    {
+      "tid": "TIC-4FEJ2P",
+      "name": "Omojisola Oduguwa",
+      "track": "embedded",
+      "title": "Smart Power Management",
+      "prototypeUrl": "https://smartpowermanagement.lovable.app/",
+      "late": false,
+      "scores": {
+        "C1": {
+          "score": 7,
+          "evidence": "Your brief says 'Nigerian students and small businesses rely on different power sources when the national grid is unavailable' and that it is hard to track 'consumption, generator status and which power source should be used'. It names money being wasted as the cost.",
+          "gap": "The user is still 'students and small businesses', with no place, no size and no number. The money constraint is named but never measured, so it does not shape the design.",
+          "action": "Pick one hostel or one shop, record its generator hours and fuel spend for one week, and put those two numbers in the first paragraph of the brief."
+        },
+        "C2": {
+          "score": 2,
+          "evidence": "The brief has no statistics, no sources and no existing products. The problem is stated without any figure.",
+          "gap": "You have no sourced claims and no look at other tools. Band 4 to 7 needs a few sourced statistics.",
+          "action": "Find one published figure for Nigerian grid outage hours or diesel price, cite it with a link and date, and name one existing power monitor and one thing it lacks."
+        },
+        "C3": {
+          "score": 5,
+          "evidence": "Your brief lays out inputs, controller and output, and writes the decision rule: 'If solar output is greater than or equal to power consumption, solar supplies the load'. It explains that the hardware is simulated because the sensors were not available.",
+          "gap": "The brief does not say why solar ranks above the grid. It leaves the battery out of the written rule, although the app uses the battery. It compares no alternative and names no risk, such as a generator that runs out of fuel during an outage.",
+          "action": "Add a paragraph that explains why solar comes before the grid in your rule, and add the battery step to the written rule so it matches what the app does."
+        },
+        "C4": {
+          "score": 21,
+          "evidence": "The live app at smartpowermanagement.lovable.app loads with no login. It has sliders for solar, battery, consumption, generator fuel, grid availability and generator availability, and a 'Run Automatic Power Management' button. In the live test, five inputs gave five outcomes: SOLAR + BATTERY (solar 0, battery 78 percent), GRID (battery 0), NO SOURCE (grid off, generator on at 1 percent fuel), GENERATOR (fuel 71 percent). Each run shows a LAST DECISION reason, and Reset works. The page says it is a simulation.",
+          "gap": "Your brief says the dashboard shows system alerts. We did not find an alerts panel in the live app. The analytics chart is a simulated day, not a record of your runs. The app runs only when you press the button, and the battery health is a threshold on the level alone. The brief's rule says grid supplies the load when solar is short, but with solar at 0 and the grid on, the app uses solar and battery first. The chart also drew very small on first load, though it was fine after Reset.",
+          "action": "Add a history table that stores each run (time, source and reason) and show the last ten rows, so the reviewer can see what the system decided over time."
+        },
+        "C5": {
+          "score": 5,
+          "evidence": "Your brief has ten steps that show the path: the problem, the rule, the simulation, the backend, the dashboard and the testing table. You name Lovable as the tool that built the dashboard, and you say the hardware is not built.",
+          "gap": "No problem, failed attempt or change is recorded. The testing table reads like the finished result, not the process. You do not say what Lovable generated, what you changed by hand, or what broke.",
+          "action": "Add a 'What went wrong' section with two things that broke or changed during your build (for example, a rule you changed after a test, or the chart problem you saw) and what you did about each."
+        },
+        "C6": {
+          "score": 4,
+          "evidence": "Your statement is sincere and speaks to TIC directly: you want to help solve real problems. It names no project or role, and no portfolio is linked, so this entry is the only build we can see.",
+          "gap": "You name no project, role or skill you want to contribute to TIC, and you link no past build. The statement could fit any new member.",
+          "action": "Name one TIC stream or role you want to join and one feature you would add to this dashboard next sprint, and put both in the statement."
+        }
+      },
+      "total": 44,
+      "verdict": "A clear, working source-switching simulation built with Lovable and honest about its scope, held back by no research and a brief that describes alerts and a decision rule the live app does not show.",
+      "strongestPoint": "The live app loads with no login, and five different test inputs give five different sources, each with a plain reason.",
+      "biggestGap": "The live app does not show the alerts its brief describes, and it does not follow the grid rule the brief writes down.",
+      "improvements": [
+        "Add a history table that stores each run (time, source and reason) and show the last ten rows.",
+        "Change the written decision rule in your brief to include the battery step, and explain why solar comes before the grid.",
+        "Cite one published figure on Nigerian outage hours or diesel price and put the link in the brief."
+      ]
+    },
+    {
+      "tid": "TIC-4LGEZN",
+      "name": "Israel Utoro",
+      "track": "cybersecurity",
+      "title": "FraudShield",
+      "prototypeUrl": "https://rococo-dodol-987925.netlify.app/",
+      "late": false,
+      "scores": {
+        "C1": {
+          "score": 9,
+          "evidence": "Your brief names 'low-literacy users' and says audio 'was the most important feature for low-literacy users'. You chose big red and green screens and sound cues because of that group. The brief does not name a place, a customer, or a scam you saw happen.",
+          "gap": "You name the group but not one person or one place. Band 12 to 15 needs the constraint to shape the design in a visible way, tied to one real situation. Right now the brief does not say what a low-literacy customer of a PoS agent does wrong.",
+          "action": "Write one short scene: a customer at a PoS agent in a Lagos market is asked to pay to a named account, and list the three moments where your app would stop that payment."
+        },
+        "C2": {
+          "score": 1,
+          "evidence": "Your brief has no statistic, no source, and no look at an existing product. It names only your tools (Flutter, audioplayers, Netlify) and three dummy account numbers.",
+          "gap": "No research is shown at all. Band 4 to 7 needs a few sourced claims, for example how often PoS or bank transfer scams are reported.",
+          "action": "Find one published figure on PoS or bank transfer fraud in Nigeria, cite it with its link and date in your brief, and name one bank or fintech app that checks account names and say what it shows the user."
+        },
+        "C3": {
+          "score": 7,
+          "evidence": "You justify two choices. Flutter, because 'I have previous experience with mobile development'. Audio, because it is 'the most important feature for low-literacy users'. You also say the dummy database is a stand-in: 'To simulate a real backend, I created a local dummy database'.",
+          "gap": "You do not justify the default answer. Any account number not on your list shows 'SAFE: VERIFIED ACCOUNT', and your brief does not name this as a risk. The brief also does not say how a real account check would work or what it would cost in Nigeria.",
+          "action": "Change the default result from SAFE to 'NOT CHECKED' for any number not on your list, then add a risk paragraph that explains why a false SAFE is more harmful than a false warning in a fraud tool."
+        },
+        "C4": {
+          "score": 14,
+          "evidence": "The Netlify link loads with no login. We entered 0123456789 with GTBank and got 'DANGER: SCAM REPORTED' with the red screen. We entered 0803123456, 1111111111 and 12, and each one got 'SAFE: VERIFIED ACCOUNT'. A two-digit number is shown as verified. We downloaded the public web build and read the check code. It compares the account number with a fixed list of three numbers and returns SAFE for every other non-empty input. The bank list is five fixed names. The interface is English only.",
+          "gap": "The core promise, catching fraud, works only for the three numbers in your code. Every other number gets SAFE, including a two-digit number. Your brief calls the audio a 'localized danger warning', but we could not confirm the audio language, and the screen text is English only. To reach the next band, the check must do more than match three numbers, such as an account name lookup or a warning for unknown accounts, and the SAFE text must not claim the account was verified.",
+          "action": "Change the result for any account not on your list to 'NOT CHECKED: ask the receiver for their name', keep the same layout, then test 0803123456 and expect that result."
+        },
+        "C5": {
+          "score": 4,
+          "evidence": "Your brief lists five steps: interface, logic, audio, deployment, and how to test. It names one problem you hit: 'I had to configure my pubspec.yaml carefully to make sure the assets loaded correctly'.",
+          "gap": "The brief does not say what broke beyond the pubspec file, what you changed after testing, or which tools you used besides Flutter. It also does not say whether you used AI tools. Band 6 to 8 needs the real path: what you tried, what broke, and what changed.",
+          "action": "Add a 'What broke' section with the pubspec asset problem and one more bug, the change you made for each, and one line that says whether you used an AI tool and for what."
+        },
+        "C6": {
+          "score": 4,
+          "evidence": "Your statement says you have several years of coding across web and mobile, with some security interest, and you want real projects. No repo or portfolio is linked, so we could not see that past work.",
+          "gap": "The statement is sincere but general. It names no TIC role and no feature you would build. The 5-year claim has no proof in this entry.",
+          "action": "Link one public repo or live site you built, then name one TIC project you would lead in the first term."
+        }
+      },
+      "total": 39,
+      "verdict": "You built a clean, colour-coded check screen with sound cues for low-literacy users, but the check flags only three account numbers and shows SAFE for everything else.",
+      "strongestPoint": "Your audio and colour choices are aimed at low-literacy users, and your brief says so clearly.",
+      "biggestGap": "The check returns SAFE for every account number that is not in a list of three, so the core promise of catching fraud does not work for real inputs.",
+      "improvements": [
+        "Change the default result from SAFE to NOT CHECKED for any account number that is not on your list, then test 0803123456 and expect NOT CHECKED.",
+        "Add a 'What broke' section to your brief with the pubspec.yaml problem and one more bug, and state whether you used an AI tool.",
+        "Add one published statistic on PoS or bank transfer fraud, with its link and date, to the brief."
+      ]
+    },
+    {
+      "tid": "TIC-6EZRQ4",
+      "name": "Alex Lawrence",
+      "track": "embedded",
+      "title": "PowerGuard NG: Embedded systems",
+      "prototypeUrl": "https://github.com/Alex0-T/powerguard-ng.git",
+      "late": false,
+      "scores": {
+        "C1": {
+          "score": 9,
+          "evidence": "Your brief names students and small businesses and says 'users often don't have a clear view of how much electricity they are consuming'. Your statement adds an offline-first goal for farmers, schools and clinics where internet is not always there.",
+          "gap": "You name a user group but not one real place or setting. The offline-first constraint from your statement does not shape the design: the ESP32 sends telemetry over HTTPS to a server, so the dashboard stops when Wi-Fi drops.",
+          "action": "Write one paragraph that says what the ESP32 does when Wi-Fi is down for 10 minutes (for example, store readings on the device and send them later) and add that as a requirement in the brief."
+        },
+        "C2": {
+          "score": 3,
+          "evidence": "Your brief lists your technology choices (C++, FastAPI, SQLite, Chart.js) and gives the problem as 'unreliable electricity supply'. It gives no outage figure, no price, no source and no existing product.",
+          "gap": "You have no sourced statistics and no look at other products. Band 4 to 7 needs a few sourced claims. Band 8 to 11 needs cited sources and a comparison with existing solutions.",
+          "action": "Find one published figure for grid outage hours or the diesel price per litre in Nigeria, cite it with a link and date, and name one commercial product (for example a prepaid meter or inverter app) and what it does not do."
+        },
+        "C3": {
+          "score": 10,
+          "evidence": "The brief explains why the system is split into firmware, backend, database and dashboard. The code sets clear source rules: grid if available, else solar at 100 W or more, else battery above the minimum state of charge, else generator. A source must win two ticks in a row before the switch is logged (source_manager.py, hysteresis tested in tests/test_core.py). The brief says the hardware is simulated because sensors were not available.",
+          "gap": "You do not compare alternatives. The source selection runs on the server, but the brief never says why it is not run on the ESP32. The safety risk (electrical isolation and switching hardware) gets one paragraph and no plan.",
+          "action": "Write a one-page note that compares source selection on the ESP32 with source selection on the server, pick one, and say what the system does to its outputs if the network link drops."
+        },
+        "C4": {
+          "score": 27,
+          "evidence": "The hosted dashboard at powerguard-ng.onrender.com returns 200 for /, /api/health, /api/status, /api/sources, /api/telemetry and /api/analytics/daily (checked with GET only). The scripted scenarios (grid failure, night, low battery, generator start) drive real source selection in backend/services/source_manager.py, with hysteresis, a battery floor, pydantic validation on device telemetry and 401 for a wrong device key. The README and docs/demo.md are honest about what is simulated.",
+          "gap": "GET /api/battery returns HTTP 500 on the live app (we checked this). The cause is routes.py line 54, which returns row.__dict__ with SQLAlchemy state in it. Every write route (settings, scenario, source, generator) has no key check, so anyone with the URL can change the active source and the cost per kWh (read from code, not called). The solar threshold is 100 W in source_manager.py but 80 W in simulation.py, so the dashboard can show solar as available when the dispatcher will not use it. The ESP32 defines selectSource but never calls it. To reach full marks, the public API must return 200 on every read route and require the device key on every write route.",
+          "action": "Change routes.py line 54 to return a plain dict built from the model columns, then add a test that calls GET /api/battery and expects 200."
+        },
+        "C5": {
+          "score": 6,
+          "evidence": "Your process brief has ten numbered sections. It covers the problem, the stack, the architecture, the simulation scenarios, the backend, the dashboard, the testing, the hardware step and the result. It is clear about why the hardware is simulated.",
+          "gap": "The brief records no problem that came up and no change made after a test. It does not say whether AI tools were used. It also says the energy calculation was tested separately, but test_power_and_energy_formula asserts 230 x 4 = 920 and calls no application code.",
+          "action": "Replace that formula test with one that imports the energy function from backend/analytics.py and checks that 1000 W for 3600 seconds gives 1.0 kWh, then add one paragraph to the brief about a bug you hit on the way."
+        },
+        "C6": {
+          "score": 8,
+          "evidence": "Your statement is specific: you want offline-first technology for farmers, schools and clinics, and you link your micro-grid project as the reason. Your portfolio repo has 65 commits of C practice from June to July 2026, which shows steady learning before the sprint. The sprint repo has five commits and a full stack: FastAPI backend, ESP32 firmware, dashboard, tests and docs.",
+          "gap": "Your portfolio is tutorial exercises, not a finished product. The sprint project is the only build evidence, and some of its parts (firmware selection, device commands) are not wired up. Band 9 to 10 needs a finished project you can show a user.",
+          "action": "Put one finished, working embedded project in its own public repo (even a single sensor read-out on the ESP32 with a photo and a README) and link it in the portfolio field."
+        }
+      },
+      "total": 63,
+      "verdict": "A strong build with real source-selection logic, tests and honest docs, held back by one broken API route and write endpoints that anyone can call.",
+      "strongestPoint": "Source selection is real logic (pure functions, hysteresis, a battery floor, tests) and the hosted demo runs without a login.",
+      "biggestGap": "The public API accepts changes from anyone (settings, active source, scenario) because the write routes have no device key check, and GET /api/battery returns 500.",
+      "improvements": [
+        "Add the device key check to every POST route in backend/api/routes.py and add a test that a request without the key gets 401.",
+        "Change routes.py line 54 so GET /api/battery returns a plain dict and add a test that expects 200.",
+        "Write a one-page note comparing source selection on the ESP32 and on the server, then make the firmware call selectSource or delete the dead code."
+      ]
+    },
+    {
+      "tid": "TIC-ARUHSL",
+      "name": "Abdullah Sule",
+      "track": "embedded",
+      "title": "GridPulse",
+      "prototypeUrl": "https://wokwi.com/projects/475407432372044801",
+      "late": false,
+      "scores": {
+        "C1": {
+          "score": 10,
+          "evidence": "Your brief names 'hostels and small businesses' and the load that causes the damage: 'Students plug in heavy loads like hot plates or pressing irons' and 'Small business and hostels run generators without tracking actual load'. It also names the cost in naira and the inverter battery.",
+          "gap": "You name hostels and small businesses, but not one place. The petrol price (1350 naira per litre) and the generator burn rate are assumptions, and the brief does not say how often the power goes off or who reads the 16x2 screen.",
+          "action": "Pick one hostel room or one shop, time its hot plate or iron load for one hour, and replace the 1500 W range in your brief with the real peak you measured."
+        },
+        "C2": {
+          "score": 4,
+          "evidence": "The brief gives several numbers with no source: 'price of 1L of petrol is taken to be N1350', a burn rate of '0.5L/hr at low load, and 1.2L/hr at full load', and a 'simulated capacity of 1200Wh'. The phrase 'taken to be' is honest, but nothing is cited and no product is named.",
+          "gap": "No figure has a source, and no existing monitor or generator tool is named. Band 8 to 11 needs cited sources and a comparison with a product that exists.",
+          "action": "Check the current petrol pump price in your city, cite the source with its date, and name one existing inverter or generator monitor and what it lacks."
+        },
+        "C3": {
+          "score": 9,
+          "evidence": "Your brief gives reasons for three choices. The relay is there because 'An ESP32 pin only outputs 3.3V, which cannot switch household AC power'. The LCD uses I2C 'using just two communication pins'. Wokwi was chosen because 'this was a rapid 3-day sprint that required no physical parts'. The sketch uses 500 W as the inverter trip point and 1100 W for generator mode.",
+          "gap": "You compare no alternatives, such as a current clamp against your potentiometer, or a relay against a smart plug. You name no safety risk for switching mains power, such as a relay that sticks closed. You do not say why 500 W is the inverter trip point.",
+          "action": "Write one paragraph on mains risk: what fuse, enclosure and isolation you would need before the relay touches a real socket, and why the inverter trip is set at 500 W."
+        },
+        "C4": {
+          "score": 18,
+          "evidence": "The Wokwi project runs with no login. The potentiometer reads 0 to 1500 W on the LCD. At the top of the range the screen shows 'SRC:Inv 1500W' and 'TRIP: OVERLOAD!', with the red LED on. At 299 W the runtime reads 'Rem: 4.0 hrs', which is 1200 divided by 299. In generator mode at 1046 W the screen shows 'Cost:~N1566/hr', which matches the formula in the sketch.",
+          "gap": "Your brief says the system 'automatically sheds high load'. The relay pin goes LOW, but nothing is wired to the relay in diagram.json, so no load is cut. Runtime always starts from a full 1200 Wh battery and never drops. The trip does not latch and is not logged: the relay returns as soon as the load falls from 598 W to 299 W. In testing, a short press did not change the mode, and a 1.5 s hold did, because the sketch checks the button only once per 250 ms loop. The '~' shows as an arrow on the LCD ('Cost:→N1566/hr'). The stream asks for power monitoring, source switching or battery health. You have monitoring from a simulated input, and the only switch is a manual button. To reach 26, the load must be cut for real, the trip must latch, and the button must respond to a short press.",
+          "action": "Wire the relay output to a lamp or a load part in diagram.json, then confirm the lamp turns off when the potentiometer goes above 1023."
+        },
+        "C5": {
+          "score": 6,
+          "evidence": "Your brief has three stages, and each one names a fault. 'I ran into an error due to a missing screen driver library' and 'the relay failed to trigger and the indicator lights were backwards. I debugged the code'. You also state the limit of the sprint: 'required no physical parts'.",
+          "gap": "No AI tool is named, and the brief does not say whether you used AI on the sketch. The limits are not listed: no real sensor, no load on the relay, and a fuel rate that is an assumption. The brief says the relay 'breaks the high-power circuit to cut off heavy appliances'. In the simulation nothing is on the relay, so this is not shown. The brief gives 0.5 L/hr at low load, and the sketch uses 0.4 L/h at 0 W.",
+          "action": "Add a short 'Limits' list with three items (no real sensor, no load on the relay, fuel rate from an assumption), and state whether you used AI for the sketch."
+        },
+        "C6": {
+          "score": 6,
+          "evidence": "Your statement is specific: you want to turn ideas into working physical prototypes for community problems, and you say you taught yourself embedded basics. Your brief names a next step, a physical PCB prototype.",
+          "gap": "You link no portfolio, repo or past Arduino project, so your past work rests on your word. The statement does not name a TIC role or the first feature you would build.",
+          "action": "Put one past Arduino or Wokwi project in the portfolio field with its link, and name the first feature you would build for TIC next term."
+        }
+      },
+      "total": 53,
+      "verdict": "A short, well-explained Wokwi sketch that reads a simulated load, shows runtime and fuel cost, and trips on overload, held back by a relay wired to nothing and a brief that says it sheds load.",
+      "strongestPoint": "Your brief explains its choices (why a relay, why I2C, why Wokwi), and the runtime and fuel formulas match what the LCD shows.",
+      "biggestGap": "The relay is the core of your automatic load shedding, but nothing is wired to it, so no load is ever cut in your simulation.",
+      "improvements": [
+        "Wire the relay to a real load part in diagram.json, and confirm that load turns off above the trip point.",
+        "Latch the overload trip until a reset, and log each trip with its time and watts on the serial monitor.",
+        "Fix the mode button so a short press works, by checking it on every loop pass with a short debounce, then test a 100 ms press."
+      ]
+    },
+    {
+      "tid": "TIC-BC8SW3",
+      "name": "Samuel Oyeniran",
+      "track": "embedded",
+      "title": "PowerTracker",
+      "prototypeUrl": "https://github.com/samuel-oyeniran270808/TIC-Projects.git",
+      "late": false,
+      "scores": {
+        "C1": {
+          "score": 3,
+          "evidence": "Your brief says you copied the problem into an AI assistant and asked it to build the project. The brief itself states no problem. The app is framed as an 'energy management platform' with a marketplace for power providers.",
+          "gap": "No user, no place and no constraint is stated anywhere a reviewer can read. The brief and the README do not say who the platform is for or what it must cope with (outages, cost, low connectivity).",
+          "action": "Write one paragraph at the top of the README that names one user (for example, a small shop owner in one Lagos market) and the three things that user must know each day about their power."
+        },
+        "C2": {
+          "score": 2,
+          "evidence": "The brief and the README contain no statistics or sources. The app shows simulated figures such as 'solar saved' and 'CO2 avoided', computed from the simulator.",
+          "gap": "You have no sourced claims and no look at existing tools. Band 4 to 7 needs a few sourced statistics.",
+          "action": "Find one published figure for Nigerian grid outage hours or the price per kWh of generator power, cite it with a link, and use it as the default value in the simulator."
+        },
+        "C3": {
+          "score": 5,
+          "evidence": "The dispatch rule is written down in PowerTracker.py (_choose_source: grid if available, then solar at 90 percent of load or more, then battery above 18 percent, then generator). The Rust engine adds safe shutdown for a hot battery, an offline inverter or invalid telemetry, and has 9 tests.",
+          "gap": "The brief gives no reason for any design choice. The 90 percent solar ratio and the 18 percent floor are not justified. Two dispatch rules exist (Python and Rust) and they disagree (Python uses SOC above 18, Rust uses the configured minimum). The app never calls the Rust engine.",
+          "action": "Choose one dispatch implementation: either make PowerTracker.py call the Rust engine's /decision endpoint, or delete the Rust copy of the rules and say which one you kept and why."
+        },
+        "C4": {
+          "score": 22,
+          "evidence": "We ran the server locally from a fresh clone with python3 -I PowerTracker.py on port 8799 (the default port 8765 was already in use on this machine). These pages return 200: /, /marketplace.html, /operations.html, /database.html and /login.html. /api/status returned live simulated values that changed over two minutes (load 1.77 to 1.95 kW, battery 74 percent, source grid). /api/database returned four stored readings. The simulator runs a tick every 2 seconds and writes to SQLite. We did not render the pages in a browser, so this score rests on HTTP responses and code reading.",
+          "gap": "Login does not stop anyone. POST /api/mode with no session changed the live app to manual and switched the generator on (generator_on true, auto_mode false). The marketplace page labels its four providers 'Verified providers', but they are hard-coded sample records in PowerTracker.py. Passwords are stored in a column named password_hash as plain text. The Rust engine, which has the most careful safety rules in the entry, is not used by the running app. The Docker image binds to 127.0.0.1, so a port mapping will not reach it.",
+          "action": "Add a session check to the POST routes in PowerTracker.py that returns 401 without a valid session, then test that POST /api/mode with no session returns 401."
+        },
+        "C5": {
+          "score": 3,
+          "evidence": "Your brief is one paragraph. It says: 'I merely used AI to create everything here. I copied and pasted the problem and solution... into my copilot on my VS Code... I made lots of preferencial changes until I was satisfied and ran the code successfully.' It is honest about the AI tool and the tool name.",
+          "gap": "No steps, no problems and no decisions are recorded. 'Lots of changes' is not a record. A reviewer cannot tell which changes mattered, what broke, or what you decided.",
+          "action": "List the five biggest changes you asked the AI to make, what each one fixed, and the one change that broke the app and how you fixed it."
+        },
+        "C6": {
+          "score": 3,
+          "evidence": "Your statement says you want to grow your technical skills through practical projects. The sprint repo was created during the sprint. Your other public repos are course exercises or were created after the sprint, so we found no earlier build of your own.",
+          "gap": "The statement is sincere but generic and names no TIC project or role. There is no prior built project to show effort before the sprint.",
+          "action": "Name one TIC project you would join and one thing you would build for it next term, and link one project you built yourself before the sprint, with its README."
+        }
+      },
+      "total": 38,
+      "verdict": "A runnable, persistent simulator with real switching logic and a Rust safety engine that the app never calls, held back by a login that does not stop anyone and a marketplace that presents sample providers as verified.",
+      "strongestPoint": "The Python app runs with no install, serves five pages and a live API, and its simulator writes real readings to a database.",
+      "biggestGap": "Anyone who can reach the server can change the live mode and switch the generator on, because the POST routes do not check for a login.",
+      "improvements": [
+        "Add a session check to every POST route in PowerTracker.py and test that POST /api/mode without a session returns 401.",
+        "Remove the word 'Verified' from the marketplace page or label the four providers as sample data in the page itself.",
+        "Write one paragraph that names a user and the three facts they need each day, then add the reason for the 18 percent battery floor."
+      ]
+    },
+    {
+      "tid": "TIC-C2RXVH",
+      "name": "Itua Ehinome Brian",
+      "track": "cybersecurity",
+      "title": "SafeGuard Nigeria",
+      "prototypeUrl": "https://github.com/brianitua/Safeguard-Nigeria/blob/main/safeguard-nigeria.html",
+      "late": false,
+      "scores": {
+        "C1": {
+          "score": 6,
+          "evidence": "Your brief says the app covers 'everyday financial fraud and social-engineering scams, using examples familiar to Nigerian users'. The user in the brief is only 'users'. The page has a Pidgin switch and a read-aloud button, but your brief does not tie either one to a specific person or situation.",
+          "gap": "You do not name one user. Band 8 to 11 needs a specific user in a specific setting, with a real constraint. The Pidgin and voice features point at low-literacy users, but your brief never says who they are or why they need them.",
+          "action": "Name one user (for example a trader who sells on Instagram and gets fake payment alerts) and write the three steps that scam takes against that user, then state which feature of SafeGuard stops each step."
+        },
+        "C2": {
+          "score": 3,
+          "evidence": "Your brief gives no source for any fact. It lists scam types (fake refunds, prize scams, urgent threats, impersonation of banks or authorities) with no link. The repo has no README, and we did not find a research section anywhere in the entry.",
+          "gap": "You show what scams exist, but not where that knowledge comes from. Band 4 to 7 needs a few sourced claims. Band 8 to 11 needs a look at an existing scam checker and what it misses.",
+          "action": "Pick one published source on fraud losses in Nigeria (for example a NIBSS or CBN fraud report, or a dated news article), cite it with its link in your brief, and name one existing scam-checking tool and one thing it does not do."
+        },
+        "C3": {
+          "score": 8,
+          "evidence": "Your brief explains the main choices. It says the engine is 'rule-based', that scam numbers and domains are stored in the page, and that report and call buttons 'currently show interface feedback rather than sending information to a backend'. Section 5 sets the scope honestly.",
+          "gap": "You do not name the main risk of keyword matching, which is false alarms. In the live page, 'pin' matches 'shipping' and 'otp' matches 'hotpot', so ordinary messages get a warning or a High Risk verdict. Your brief does not mention this, and it does not say how a user without data or a smartphone would reach the checker.",
+          "action": "Add a risk paragraph with one false alarm and one missed scam from your own tests, then switch the keyword check to whole-word matching and retest the same messages."
+        },
+        "C4": {
+          "score": 21,
+          "evidence": "The manifest link opens the GitHub source view, not the app. We downloaded the raw file and opened it. It loads with no login and sends no data to a server (it only loads Google Fonts). The three checkers return verdicts: 'Your GTBank account is frozen. Send OTP to avoid block' gave High Risk with reasons, the number 08031234567 gave High Risk, and https://gtb4nk-secure.com/verify gave High Risk. The Pidgin switch changes the verdict headings and the tips. The read-aloud button uses the browser voice with the en-NG tag.",
+          "gap": "Four faults showed up in our tests. First, https://accessbank.com.evil.net gets Looks Safe, because a match on 'accessbank.com' sets the score to zero. Second, 'I won't be late, mum. Hotpot is ready' gets High Risk (Likely Scam). Third, Pidgin only changes the headings and tips. The reason lines stay in English under a Pidgin verdict. Fourth, the Pidgin message 'Abeg send me your account number and OTP' gets only Warning, while the English version gets High Risk. The reviewer also has to download the file, because the manifest link shows code. To reach the next band, the lookalike domain must be caught, the false alarms must stop, and the link must open the app.",
+          "action": "Change the link check so a host counts as a bank only when it equals the bank domain or ends with '.' plus that domain, then test https://accessbank.com.evil.net and expect High Risk."
+        },
+        "C5": {
+          "score": 5,
+          "evidence": "Your brief has six short sections: overview, features, how you built it, project flow, scope, and outcome. Section 3 names the tools (HTML, CSS, JavaScript) and the scoring method. The repo has one commit, 'Add files via upload'.",
+          "gap": "The brief lists steps but no problem you hit, no change after a test, and no note on AI tools. Band 6 to 8 needs the real path: what you tried, what broke, what changed, and which tools (including AI) you used for what.",
+          "action": "Add a section called 'What broke' with two bugs from your own tests (for example the 'shipping' false alarm), the fix for each, and whether you used an AI tool to write that fix."
+        },
+        "C6": {
+          "score": 8,
+          "evidence": "Your statement is specific about what you want to contribute at TIC: ethical hacking, security awareness, CTFs, workshops and mentorship. Your GitHub account has 8 public repos from 2024 to 2026, including security lab write-ups. We did not open those write-ups. The prototype is one 1,119-line file.",
+          "gap": "The sprint repo has one upload commit and no README, so the build process is not visible to a reviewer. Band 9 to 10 needs a specific purpose, past building, and effort that a reviewer can see in the entry itself.",
+          "action": "Add a README to the Safeguard-Nigeria repo with the run steps, one screenshot per check type, and the list of known limits, then link one of your offensive-writeups repos in the portfolio field."
+        }
+      },
+      "total": 51,
+      "verdict": "You built a working single-file scam checker with three tabs, Pidgin, and read-aloud, but keyword matching flags ordinary words and lets a lookalike bank domain pass as safe.",
+      "strongestPoint": "The page runs with no login. Its verdicts come from rules you can trace in the code, and your brief is honest that the report and call buttons are not connected to anything.",
+      "biggestGap": "The core check gives wrong answers in both directions. Ordinary messages get flagged (hotpot, shipping), and a lookalike bank domain gets Looks Safe.",
+      "improvements": [
+        "Fix the link check so https://accessbank.com.evil.net is not treated as a bank domain, then test it and expect High Risk.",
+        "Switch the keyword check to whole-word matching so 'hotpot', 'won't' and 'shipping' stop triggering scam flags, then retest those three messages.",
+        "Turn on GitHub Pages for the repo and put the Pages link in your entry, so a reviewer opens the app and not the source code."
+      ]
+    },
+    {
+      "tid": "TIC-C5BT9G",
+      "name": "Tolulope Olalekan",
+      "track": "data-ai",
+      "title": "HealthTriageAI",
+      "prototypeUrl": "https://github.com/Tolulope-inspiration/TIC_projects.git",
+      "late": false,
+      "scores": {
+        "C1": {
+          "score": 5,
+          "evidence": "Your report says the app should 'help users understand the level of medical attention they may need based on the symptoms and information they provide.' The form asks for age, temperature, patient category, symptoms, duration and severity.",
+          "gap": "The user is only 'users'. You do not name a real person or place, and no local constraint (low literacy, phone only, no clinic nearby, transport cost, power cuts) changes any screen. The whole app is English only.",
+          "action": "Write a one-paragraph profile of one real user (for example a mother in Ikorodu with a child who has a fever at night), list 3 things that user cannot do easily, and change one screen so it fits one of them."
+        },
+        "C2": {
+          "score": 2,
+          "evidence": "The report has no research section. The repo has no README and no source for any symptom rule. The only outside fact is the emergency number, 'In Nigeria, call 112' (index.html line 133).",
+          "gap": "No research is shown at all. The rules in determineTriage (script.js lines 339-380), such as the 40.5 C and 38.5 C thresholds, have no source or reason written down.",
+          "action": "Find 3 sources on malaria or typhoid warning signs, cite them in a Research section of your report, and write which rule in determineTriage each source changed or confirmed."
+        },
+        "C3": {
+          "score": 6,
+          "evidence": "You state the design intent: 'intended for general guidance and does not replace professional medical advice.' The app uses four outcome levels, gives 'Call 112' on the emergency screen, and stores history only in localStorage (script.js lines 382-392), so health data stays on the device.",
+          "gap": "You describe features but do not justify them. No alternative was considered (for example a 3-level or 5-level scale, or a free-text entry). The report does not say what false alarms or missed emergencies the design is trying to prevent.",
+          "action": "For each of the four outcome levels, write one sentence on the worst mistake it could cause (a missed emergency, or a false alarm that sends a parent to hospital) and the rule that stops it."
+        },
+        "C4": {
+          "score": 21,
+          "evidence": "The submitted link is a public GitHub repo, not a hosted site, so we cloned it and served the folder locally. The five-step form works. Age 30, 36.6 C, cough, under 24 hours, mild gives 'Self-care and monitoring may be appropriate for now.' Fever and headache at 39.2 C, 1 to 3 days, moderate gives 'Urgent medical attention is recommended.' Breathing warning gives 'Emergency care is recommended' with Call 112. Age 3 at 38.6 C gives emergency. Fever and headache at 37.6 C, 1 to 3 days, mild gives 'Medical consultation recommended soon.' Continue is blocked with no symptom selected (script.js lines 198-202). Results save to History with the date. The page does not hold any malaria or typhoid text: a search of the whole repo finds 0 matches.",
+          "gap": "A reviewer must download the repo and open index.html to see anything, which is a barrier to the 26 band. Malaria and typhoid are not named in the rules, so the stream's disease focus is missing. The AI label is a fixed text template (getAiEducationalSummary, script.js lines 312-337), and no learned or data logic exists. Health_ai.html and Health_ai.js are a second rule set that no page links to. Notes typed on the review step are inserted into the page as raw HTML (script.js line 291), so a typed tag is rendered, not shown as text.",
+          "action": "Publish the folder on GitHub Pages or Netlify and put that live link in your submission, so a reviewer can use the app without downloading anything."
+        },
+        "C5": {
+          "score": 5,
+          "evidence": "You name your tool (GitHub Copilot) and say how you used it: 'to help me understand new concepts, generate and improve code, debug errors.' You say you 'reviewed, tested, and modified the code where necessary' and that a main challenge was 'features beyond my current level.'",
+          "gap": "No specific bug, no before and after, and no test result. 'Identify and fix errors' is named but no error is described. The brief lists About and Health and Safety pages, but the repo has neither as a page; the navigation links only to Home, How It Works, Assessment and History.",
+          "action": "Write a 'What broke' section with 3 real bugs you hit while building with Copilot: what Copilot suggested, what was wrong with it, and the change you made by hand."
+        },
+        "C6": {
+          "score": 4,
+          "evidence": "Your statement is sincere and focuses on teamwork, communication and leadership. No portfolio link is given. The repo has 3 commits, all made on 17 Sep 2026, and a merge commit that brings in earlier history.",
+          "gap": "The statement mostly says what you will gain. It does not name a TIC project you want to build, and no earlier project is shown. The sprint build is the only evidence of building.",
+          "action": "Link one earlier project (GitHub or a live site), or say plainly that this is your first build, and name one TIC project you will lead in term one."
+        }
+      },
+      "total": 43,
+      "verdict": "You built a working five-step triage app with real rules, history and emergency handling, but it never names malaria or typhoid, uses no AI or data, and is only reachable by downloading the repo.",
+      "strongestPoint": "The app is real and complete: validation blocks an empty step, the four outcome levels follow your rules in every test we ran, and the emergency screen tells the user to call 112.",
+      "biggestGap": "The app is not about malaria or typhoid, and it has no learned or data logic, so the stream's core ask is not met even though the flow works.",
+      "improvements": [
+        "Put the static site on GitHub Pages or Netlify and put the live link in your submission, so reviewers can use it without downloading.",
+        "Add malaria and typhoid rules to determineTriage with a source for each rule, and state in your report which symptoms make each disease more or less likely.",
+        "Write a 'What broke' section with 3 real bugs you hit while building with Copilot, and what you changed by hand for each."
+      ]
+    },
+    {
+      "tid": "TIC-FEX8X9",
+      "name": "Chinomso Onwubiko",
+      "track": "web",
+      "title": "Fresh From Farms",
+      "prototypeUrl": "https://marketplace-prototype-2.onrender.com/",
+      "late": false,
+      "scores": {
+        "C1": {
+          "score": 4,
+          "evidence": "The live home page says 'Source with confidence' and speaks to a business buyer. Your brief does not state a problem at all. The only framing we found is the repo README: 'connects local farmers directly to bulk buyers'. We saw no named place, no named farmer group and no local constraint such as power, data cost, phone type or language.",
+          "gap": "You name a buyer type but not a real buyer. No constraint shapes the design. Band 8 to 11 needs one specific user in one specific setting, with one real limit that changes what you built.",
+          "action": "Write one paragraph that names one farmer and one buyer you would talk to in a specific Nigerian market, and one limit they face (for example, unreliable phone data or cash-only payment) that changes a feature."
+        },
+        "C2": {
+          "score": 2,
+          "evidence": "Your brief says you 'read up on what the web stream challenge was and the solution which was recommended'. No source, figure, competitor or user interview appears in the brief, the live site or the repo.",
+          "gap": "Reading the challenge brief is not research into farmers or buyers. Band 4 to 7 needs a few sourced facts about post-harvest loss, price gaps or buyer trust in Nigeria. Band 8 to 11 needs those sources plus a look at one existing marketplace.",
+          "action": "Find two cited sources on post-harvest loss or price gaps for one crop (for example tomatoes) and add each with its link and date to your brief."
+        },
+        "C3": {
+          "score": 5,
+          "evidence": "Your brief gives reasons for Django (you 'had been intending to do for quite some time') and for a virtual environment ('to prevent incompatibility issues'). The live buy button sends an inquiry, not a payment, and the repo models this as an Inquiry with status pending, replied or closed. The brief does not say why an inquiry was chosen over a payment.",
+          "gap": "You describe features but do not justify the big choices. Why an inquiry and not a payment? Why a server-side cart? Nothing covers feasibility for Nigerian buyers (payment, connectivity, phone use), and no risk is named, such as fake listings or a farmer who never replies.",
+          "action": "Write a four-row decisions table (inquiry vs payment, Django vs a simpler tool, server cart vs browser cart, English only vs Pidgin). For each row, give the reason and one risk you accept."
+        },
+        "C4": {
+          "score": 22,
+          "evidence": "We opened marketplace-prototype-2.onrender.com. The first load showed the Render wake page and took about 60 seconds. After that we saw 20 product cards, each with a naira price, farm, harvest date, batch ID and a 'Verified origin' tag. Add to cart worked (Kano Tomatoes, quantity 2, total ₦3,600.00). Confirm order showed 'Order confirmed for Kano Tomatoes' and emptied the cart. Search (on Enter) and the Grains and Spices filters worked. A wrong farmer password returned 'Invalid farmer credentials.' The repo confirms the cart total is computed on the server and each order is stored as an Inquiry row (market/models.py, views.py).",
+          "gap": "The core buyer flow works, but the stream's central promise, origin verification, is not there. The 'Verified origin' tag is printed on every card and no verification step exists in views.py (a search for 'verif' returns nothing). Batch IDs link nowhere. There is no farmer profile or trace page. Category labels are wrong: Plateau Carrots sits under Fruits, Kano Onions under Spices, and Benue Cassava under Grains. Search needs Enter and has no button. We could not test the farmer dashboard, because we had no valid farmer login, so the dashboard is only read, not tested. Against the web brief: connecting buyers to farmers is partly there, price clarity is there, transparency is partly there, origin verification is missing.",
+          "action": "Replace the hard-coded 'Verified origin' tag with a real check: store a verification record for each farmer (who checked, and when) and show the tag only when that record exists."
+        },
+        "C5": {
+          "score": 7,
+          "evidence": "Your brief describes the real path. You chose Django, set up a virtual environment, let GitHub Copilot write the backend and frontend, and then found wrong images. You fixed the crop image links in views.py by hand. You name the AI tool and say what it did and did not do well. You say the email was tested locally from the command line.",
+          "gap": "The brief is honest about the tool and the errors, but it stops before the limits and the next steps. It calls the site 'fully functional', yet the live page says a confirmation email was sent and the code does not deliver one (see integrityFlags). You list no next-step plan.",
+          "action": "Add a 'limits and next steps' section with three lines: the email is not delivered to inboxes, origin verification is not built, and the farmer dashboard has not been tested with a real farmer login."
+        },
+        "C6": {
+          "score": 4,
+          "evidence": "Your statement says you want TIC to give you bigger challenges. It names no TIC role or project. Your repo was created on 16 Sept 2026, during the sprint, so no earlier building is shown. Its 15 commits show steady work and a deployed app, which is more than the minimum.",
+          "gap": "The statement is sincere but generic, and no past building is shown. Band 6 to 8 needs a named TIC role or project you want to work on, or a link to earlier work.",
+          "action": "Name one TIC role you want, and add a link to one project you built before 15 Sept 2026, even a small one."
+        }
+      },
+      "total": 44,
+      "verdict": "You built a live, database-backed buyer inquiry flow in three days, but the 'Verified origin' tag and the 'confirmation email has been sent' message on the page are not true yet.",
+      "strongestPoint": "The buy flow is real. The cart total is calculated on the server, and each inquiry is saved as a database row, so the core order path does not rely on the browser.",
+      "biggestGap": "The page says origin is verified and an email was sent, and neither is true yet. The origin tag is hard-coded on every card, and the email goes to the server log, not to a buyer.",
+      "improvements": [
+        "Replace the hard-coded 'Verified origin' tag with a real check: store a verification record per farmer and show the tag only when it exists.",
+        "Fix the email message: either send the confirmation through a real email service with a test inbox, or change the page to say 'Your inquiry was saved. The farmer will reply.'",
+        "Fix the four wrong category labels, make search run as you type, and test the farmer dashboard with a real farmer login, then write down what you saw."
+      ]
+    },
+    {
+      "tid": "TIC-HRKWDG",
+      "name": "Emmanuella Emetulu",
+      "track": "embedded",
+      "title": "CONSERVE Energy",
+      "prototypeUrl": "https://conserve-orcin.vercel.app/",
+      "late": false,
+      "scores": {
+        "C1": {
+          "score": 6,
+          "evidence": "Your brief says the project aims 'to make the solution simple and accessible to users' and does not name a user or a problem. The app has a named SME persona, 'Ella's Bakery', with costs in naira and a generator diesel cost.",
+          "gap": "The brief gives no problem statement, so the bakery and its constraints are visible only if a reviewer opens the app. A reviewer cannot tell from the brief what problem you chose to solve.",
+          "action": "Write a 150-word problem statement at the top of the brief for one named bakery: its location, its generator hours per day and its diesel spend per week."
+        },
+        "C2": {
+          "score": 3,
+          "evidence": "The brief has no statistics, sources or competitor check. The app shows figures with no source: 'Estimated potential savings ₦38,600 / month', 'Generator cost last month ₦143,600' and 'generator supplied 15% of energy last month'.",
+          "gap": "No figure in the brief or the app has a source, and no existing product is named. Band 4 to 7 needs a few sourced claims.",
+          "action": "Ask the bakery owner for last month's diesel receipts, put that total in the app as the real generator cost, and label every other figure as sample data until you have a source."
+        },
+        "C3": {
+          "score": 4,
+          "evidence": "Your brief says you picked the stream because you study Electrical and Electronics Engineering and that you planned the features and layout first. The app shows a switching priority (1 Solar, 2 Battery, 3 Grid 'when available & affordable', 4 Generator 'last resort') and a 25 percent reserve.",
+          "gap": "The brief does not say why solar is first or why the reserve is 25 percent. No alternative is named and no risk is named. The app's own grid condition ('when available & affordable') is not explained anywhere in the brief.",
+          "action": "Add three sentences to the brief that explain why solar is first in the priority list and why the reserve is 25 percent."
+        },
+        "C4": {
+          "score": 17,
+          "evidence": "The live site at conserve-orcin.vercel.app loads with no login. The /battery, /insights, /alerts, Energy Analytics and Power Management pages all load. The Grid Failure and Low Solar scenarios change the active source and write a switching log entry with a reason. The Low Battery scenario switches to the generator at 18 percent, which matches the 25 percent reserve shown on the battery page.",
+          "gap": "The core rule breaks in one visible case. With Low Battery alone, the grid shows as Available, yet the app picks the generator, although its own priority list puts the grid ahead of the generator. The log gives only the battery reason. Manual mode has no source picker, so the toggle does nothing you can see. Live load stayed at 6.4 kW and battery at 82 percent for 15 seconds. Scenarios carry over between clicks: Grid Failure followed by Low Battery gives a different result from Low Battery alone.",
+          "action": "Fix the switching function so that it checks the grid before the generator when the grid is available, then run Low Battery alone and confirm the log says Grid."
+        },
+        "C5": {
+          "score": 6,
+          "evidence": "Your brief describes the path: you identified the problem, planned the features, built the first version in Lovable, moved to GitHub and Vercel, and tested after each change. It says 'I had some problems in trying to fix some bugs and had to restart on Vercel to meet the deadline.' It names the tools.",
+          "gap": "The bug that forced the restart is not named. No symptom, no fix and no change is recorded. The brief does not mention the known bugs left in the app (the Manual mode and the switching rule).",
+          "action": "Write one paragraph that names the bug that forced the restart: what the screen showed, what you tried, and what the restart changed."
+        },
+        "C6": {
+          "score": 5,
+          "evidence": "Your statement says you have ideas you want to build and you want hands-on learning. You study Electrical and Electronics Engineering. The app shows a full deployed build with six pages. You have no portfolio link.",
+          "gap": "You name no specific energy problem or TIC role, and you link no prior project. The statement is sincere but could be written by any student.",
+          "action": "Name one energy problem you want to solve for TIC next term and link one public repo you built yourself, such as the GitHub copy of this project."
+        }
+      },
+      "total": 41,
+      "verdict": "A broad SME energy dashboard where scenario switching works in some cases, but its own grid-priority rule is broken, Manual mode does nothing, and most numbers are fixed.",
+      "strongestPoint": "The app covers the whole SME story (dashboard, battery reserve, insights, alerts and analytics), and the Grid Failure and Low Solar scenarios switch sources with a logged reason.",
+      "biggestGap": "The switching rule ignores the grid priority the app itself displays, so the Low Battery scenario sends the bakery to a generator while the grid is available.",
+      "improvements": [
+        "Fix the switching function so the grid is checked before the generator when the grid is available, then confirm that Low Battery alone logs Grid.",
+        "Make Manual mode show a source picker, or remove the Manual button, so that no visible control does nothing.",
+        "Replace the fixed dashboard numbers with values that change over time, or label them as sample data on the page."
+      ]
+    },
+    {
+      "tid": "TIC-J5U5TG",
+      "name": "Daniel Nmecha",
+      "track": "data-ai",
+      "title": "Primary Healthcare Triage AI (AfriTriage AI)",
+      "prototypeUrl": "https://github.com/Codebro2026/Testing-",
+      "late": true,
+      "scores": {
+        "C1": {
+          "score": 9,
+          "evidence": "Your brief names a specific setting and constraints: 'feature phone users in off-grid rural areas', 'low-bandwidth', 'low-literacy users', and a model under 2 MB. It names local illnesses (Malaria, Typhoid, Lassa Fever, Cholera). The root cause is named: 'Nigeria's severe 1:10,000 doctor-to-patient deficit.'",
+          "gap": "The constraints are named in the brief but do not show in the code. There is no text-only input, no local-language output and no USSD path, so no design decision you can point to was shaped by a constraint. The 1:10,000 figure has no source.",
+          "action": "Replace the 1:10,000 figure with a number from a named source (for example the WHO Global Health Observatory for Nigeria), and write the source in the brief next to it."
+        },
+        "C2": {
+          "score": 4,
+          "evidence": "The only outside number in the brief is '1:10,000 doctor-to-patient deficit', with no source. In the code, the disease mix (Malaria 30%, Typhoid 25%, Lassa 8%, and so on) and the symptom probabilities are hand-set numbers with no source (script lines 19 and 27 to 70).",
+          "gap": "No cited source, no look at existing triage tools or symptom checkers, and no primary data from users or clinicians. The prevalence and symptom numbers are your guesses, and the brief does not say so.",
+          "action": "Add a table to your brief with one row per prevalence number used on script line 19, giving the source name and link for each row, and mark any row you cannot source as a guess."
+        },
+        "C3": {
+          "score": 6,
+          "evidence": "The design has two layers: a diagnostic model and a triage model, with RED, YELLOW and GREEN tiers. You say the design avoids 'auto-prescribing antibiotics' and needs 'clinical confirmation (e.g., Rapid Diagnostic Testing)'. The action text tells a yellow case to get a malaria RDT (script line 118).",
+          "gap": "You describe the parts but do not justify them. Nothing explains why the app needs a condition guess at all, when the urgency level is what a user acts on. No alternative is compared (for example a simple symptom-count rule versus a random forest). The output shows 'Suspected Condition: Malaria, 99.2%' with no warning that it is not a diagnosis, and the brief does not name that as a risk.",
+          "action": "Write one paragraph that argues whether the condition guess should be shown to the user at all, and name the worst mistake each option could cause (a missed malaria case or a false reassurance)."
+        },
+        "C4": {
+          "score": 12,
+          "evidence": "The link is a public GitHub repo, not a hosted app. The README is 10 bytes ('# Testing-') and there is no requirements file. We installed pandas, numpy and scikit-learn in an isolated environment and ran the script with python -I. It printed: 'Suspected Condition: Malaria', 'Diagnostic Confidence: 99.2%', 'Triage Urgency: YELLOW', and a recommended action. The run works, but it uses one hard-coded patient (script lines 130 to 135). The 2,000 rows are generated from hand-set probabilities (lines 11 to 88). The script imports classification_report and accuracy_score (line 5) and never calls them, so no metric is printed.",
+          "gap": "No one can enter their own symptoms. A user cannot run the triage on a patient without editing the code. The brief's accuracy numbers, USSD path, Hausa, Yoruba and Igbo output and latency figures are not in the code. The triage labels are made by the same rules that the models learn (lines 72 to 78), so the accuracy would be circular even if it were printed. To reach the 17 band, a user must be able to enter answers and get a result from real or clearly labelled data.",
+          "action": "Add an input() loop or a small Streamlit form that asks the 13 questions your brief lists, prints the triage result for the patient the user types, and put a line in the output that says it is not a diagnosis."
+        },
+        "C5": {
+          "score": 2,
+          "evidence": "The brief describes a finished product: an architecture table, a metrics table, a deployment plan and pledges. It gives no steps taken, no problems, no iterations, no decisions that changed, and no tools used (AI or otherwise).",
+          "gap": "No process at all. The metrics table gives exact numbers (for example 94.67% and 'Zero missed emergencies') that the code does not compute. No testing is described, and the brief does not say the training data is synthetic.",
+          "action": "Write a 'How I built it' section with 3 steps you actually took, one problem you hit (for example the first model that gave bad results), and the change you made, and name every AI tool you used."
+        },
+        "C6": {
+          "score": 4,
+          "evidence": "Your statement has some detail: you want to work on machine learning for low-bandwidth use and turn prototypes into production systems. The portfolio field is empty. The only repo is one Python script and an empty README, created on 18 Sep 2026, after the sprint deadline.",
+          "gap": "No past building is shown, and the entry shows little effort beyond one 139-line script. The statement is about what you will learn, not what you will build for TIC.",
+          "action": "Add a link to a GitHub profile with at least one earlier project, and name one TIC project you will lead in the next term."
+        }
+      },
+      "total": 32,
+      "verdict": "You built a working two-model script on synthetic data, but no user can enter their own symptoms, the brief's accuracy and USSD claims are not in the code, and the entry was submitted after the deadline.",
+      "strongestPoint": "The model code runs and produces a triage level and a recommended action, and the tiers match your brief's RED, YELLOW and GREEN design.",
+      "biggestGap": "No user can enter symptoms, so the prototype never gives a recommendation to a real person, and the claims in the brief (accuracy, USSD, local languages) are not built.",
+      "improvements": [
+        "Add an input step that asks the 13 questions from your brief and prints the triage result for the answers the user types.",
+        "Remove or prove every number in the metrics table: add the evaluation code that prints each figure, or delete the figure from the brief.",
+        "Write a 'How I built it' section with the steps you took, one problem you hit, and every AI tool you used."
+      ]
+    },
+    {
+      "tid": "TIC-JHAH9N",
+      "name": "Urechi Victoria Ozims",
+      "track": "game-dev",
+      "title": "Naija Survival",
+      "prototypeUrl": "https://naija-survival.lovable.app",
+      "late": false,
+      "scores": {
+        "C1": {
+          "score": 7,
+          "evidence": "Your brief names the user as 'the average Nigerian'. The game is more specific. 'Naija Survival Day' starts at 06:30 AM in a Surulere compound flat, and it has generator, conductor and flooding scenes with Pidgin lines such as 'Lagos no dey carry last'. Your brief does not explain which constraint the game is built around or why it matters.",
+          "gap": "The player is still 'the average Nigerian'. The next band needs one named person, such as a trader, a student or an okada rider in one area, with the constraints (power cuts, cash, transport) written down as the problem you are solving.",
+          "action": "Pick one real person (a trader, a student or an okada rider), write their day in six lines, and check each stat in the game against one thing from that day."
+        },
+        "C2": {
+          "score": 2,
+          "evidence": "Your brief names no source, no survey and no existing game. The Lagos details in the game (generator wahala, conductor shouting, nylon bags over shoes in the rain) come from your own knowledge, and the brief shows no check against anything else.",
+          "gap": "No research is shown. The next band needs cited sources or primary research, such as checking the scenes with real people or studying an existing survival or life-sim game.",
+          "action": "Play one existing life-sim or survival game for 30 minutes and write down three mechanics you copied or rejected, and why."
+        },
+        "C3": {
+          "score": 7,
+          "evidence": "Your brief justifies two choices. You moved to Lovable because the early build was 'incredibly barebones', and you added a Karma system so that 'each playthrough [has] a somewhat unique experience'. The game shows Karma in action: the first scene's good option returns 'Good Karma: Sunday remembers your past kindness and gives you a discount!'.",
+          "gap": "You do not compare the tools or name any risk. Why did Godot last only a short time, and why Lovable over the others? What does AI-generated code cost you when you need to change it yourself? The next band needs a stated trade-off for the tool and one risk with how you handled it.",
+          "action": "Write a short comparison of Rust, Godot and Lovable for this game, one row each for time to a first playable build and what you could check yourself, and say why you chose the one you did."
+        },
+        "C4": {
+          "score": 23,
+          "evidence": "The link https://naija-survival.lovable.app loads with no login. We played it. We chose option 2 in the first scene, and the result said 'GOOD OUTCOME' with Energy +10, Sanity +10, Cash -N5 and Street Cred +5. We then played on through 11 scenes until Energy reached 0%. The game then showed 'Survival Grade: F', 'ENERGY DEPLETED (0%)' and a scorecard with a 'Survive Next Day' button. The outcome text names the Karma effect ('Good Karma: Sunday remembers your past kindness'), so the Karma value feeds the result and is not only decoration.",
+          "gap": "Two things kept this out of the next band. First, the win state was not reached. Your goal is 'reach nightfall in one piece', and we reached 7 of 25 decisions, so we did not see the win screen. Second, the first screen shows 'Loading Lagos...' for several seconds with no progress indicator. We also did not test the keyboard keys, Share, the transcript or the sound.",
+          "action": "Play one full day from 06:30 to nightfall on the live link, and check that the win screen appears. If it does not, fix that path before anything else."
+        },
+        "C5": {
+          "score": 7,
+          "evidence": "Your brief names the real path: 'I initially tried to code it in rust with the help of Gemini AI, but I started having problems with it. From there I tried Godot, which was short-lived, and then moved over to Lovable AI'. It names the AI tools and what each did: Lovable for the UI and code, Gemini AI Studio for the finishing touches.",
+          "gap": "The brief does not say what broke in the Rust attempt or what you changed when the Lovable build was 'barebones'. 'I would love to expand on this project' is a wish, not a plan.",
+          "action": "Write the three specific problems you hit with Rust and Godot (for example the error or the feature that failed), and one next step for the game with a date."
+        },
+        "C6": {
+          "score": 5,
+          "evidence": "Your statement says this was your first real attempt at game development, and that you have project ideas you want to work on. No project is named, and no portfolio or repo is linked.",
+          "gap": "The statement is sincere but general, and no past building is shown beyond this sprint entry. The next band needs one named project or one specific thing you would do in TIC.",
+          "action": "Name the one game project from your list that you want to build, in one sentence, and say which TIC session you would join to start it."
+        }
+      },
+      "total": 51,
+      "verdict": "You made a playable Lagos survival game with real stat logic, a lose state and specific Pidgin scenes, but a reviewer cannot yet reach the win screen, and the brief does not show the research or design reasons behind it.",
+      "strongestPoint": "The game is playable in a browser with no login. Each choice changes four vitals, the outcome text depends on your Karma, and the day ends with a grade.",
+      "biggestGap": "The win path was not reached in review, and the brief shows no research or user, so the game's Lagos content is not backed by evidence from real people.",
+      "improvements": [
+        "Play one full day from 06:30 to nightfall on the live link, and check that the win screen appears. Fix that path first if it does not.",
+        "Add a progress bar or percentage to the 'Loading Lagos...' screen, then time how long the first screen takes to appear on a phone on mobile data.",
+        "Interview five people who work or study in Lagos about one ordinary day, and change at least two stat effects in the game to match what they tell you."
+      ]
+    },
+    {
+      "tid": "TIC-KHTK55",
+      "name": "Vincent Osugba",
+      "track": "embedded",
+      "title": "Hostel power monitor",
+      "prototypeUrl": "https://github.com/vosugba/hostel_power_monitor.git",
+      "late": false,
+      "scores": {
+        "C1": {
+          "score": 8,
+          "evidence": "Your brief says 'Erratic grid power forces students and small businesses to rely on expensive generators.' The title names a student hostel. The constraint is the cost of generators.",
+          "gap": "The user is not a real place. You give no hostel size, no monthly generator bill and no number of outage hours. The design does not respond to any constraint: there is no cost figure, no low-power mode and no offline mode.",
+          "action": "Count the rooms in one hostel you know, ask its students what they spend on generator fuel each week, and put both numbers in your first paragraph."
+        },
+        "C2": {
+          "score": 2,
+          "evidence": "The brief gives no figures and no sources. It says 'There is usually no easy way to monitor power usage' with no data behind it. No existing product or competitor is named.",
+          "gap": "You have no statistics and no sources. Band 4 to 7 needs a few sourced claims. Band 8 to 11 needs cited sources and a look at existing products.",
+          "action": "Find one published figure on Nigerian grid outage hours or the diesel price per litre, cite it with a link, and name one existing power monitor and one thing it does not do."
+        },
+        "C3": {
+          "score": 5,
+          "evidence": "The brief sets the rule 'grid first, then solar, then generator' and says the system warns when no source can meet demand. The Rust file gives a reason in a comment ('cost/eco order'). You say openly that the system is a simulation.",
+          "gap": "You describe the rule but do not justify it. The brief does not say why grid ranks above solar, does not compare any other option, and names no risk (for example, what a hostel should do when the battery is low at night).",
+          "action": "Write three sentences in the brief that explain why grid ranks above solar in your rule and what the system should do when all three sources fail."
+        },
+        "C4": {
+          "score": 20,
+          "evidence": "dashboard.html opens in a browser with no install. It runs a live simulation with a demand slider, a source chosen on each tick (decideSource: grid, then solar, then generator), a warning when battery is under 1.0 kWh, pause and reset buttons and a chart of the last 40 ticks. Power_monitor.rs reads one demand value from stdin and prints a decision. The GitHub repo link has no hosted copy, so the reviewer has to download dashboard.html.",
+          "gap": "power_monitor.rs fixes grid power at 0.0 (lines 13 to 15). The grid branch can therefore only run when demand is zero or less, so the grid-first rule in your README cannot run for real demand. The battery warning cannot fire either: solar is fixed at 2.5 and the check is 'below 1.0'. The two files also start from different numbers (grid 6.0 in the dashboard, 0.0 in Rust). Generator fuel only decays, and the demand is random noise.",
+          "action": "In power_monitor.rs, read grid availability from stdin the same way you read demand, then run it with demand 3 and check that it prints 'Using Grid'."
+        },
+        "C5": {
+          "score": 5,
+          "evidence": "Your brief is a README with the problem, the solution, the files, how to run them, the status and an honest note: 'I relied heavily on Claude (Anthropic) to write most of the code and the dashboard design, while I directed the idea, the logic decisions, and how everything fit together.' It says what the AI did and what you decided.",
+          "gap": "The brief records no problem that came up and no change made after a test. The git history has two commits, 'Initial commit' and 'Add files via upload', so the path of the work is not visible.",
+          "action": "Add a 'What broke' list with at least two items. For each one, write the symptom you saw and the change you made."
+        },
+        "C6": {
+          "score": 4,
+          "evidence": "Your statement is sincere: you want to grow in tech and want guidance on where to start. You have no portfolio link. The sprint repo has two commits.",
+          "gap": "You name no TIC project, no role and no skill you want to build for the club. You link no past project. The repo has no tests and no .gitignore, so there is no sign of effort beyond the minimum.",
+          "action": "Name one TIC stream or role you want to join and one feature you would add to this dashboard, then link one project you finished before the sprint, even a small one."
+        }
+      },
+      "total": 44,
+      "verdict": "A sincere first build with a dashboard that works in a browser, but the Rust half does not do what its README says and the problem is never sized.",
+      "strongestPoint": "The dashboard runs with no install, and the README states clearly that the data is simulated and how much AI wrote.",
+      "biggestGap": "The Rust decision program fixes grid power at 0.0, so its grid-first rule cannot run for any real demand.",
+      "improvements": [
+        "In power_monitor.rs, read grid availability from input as you read demand, run it with demand 3, and confirm it prints the Grid line.",
+        "Find one cited figure on Nigerian grid outages or diesel prices and put the link in the brief.",
+        "Give the dashboard and the Rust file the same starting numbers, or make the Rust file use the same rule and test both with the same three demand values."
+      ]
+    },
+    {
+      "tid": "TIC-LJ2V6J",
+      "name": "Belemabo Asawo",
+      "track": "data-ai",
+      "title": "Health Triage Project",
+      "prototypeUrl": "https://unique-capybara-7c949.netlify.app",
+      "late": false,
+      "scores": {
+        "C1": {
+          "score": 5,
+          "evidence": "Your brief names the problem well: people 'may experience symptoms such as fever, headache, weakness... without knowing how urgently they should seek medical attention.' The page subtitle says 'common illnesses in Nigeria'. But the user is only 'people'.",
+          "gap": "You do not name one real user (a parent at night, a trader with no clinic nearby, a student with no money for transport). No local constraint shapes the design. The form is English only with no simpler option for low-literacy users.",
+          "action": "Interview 5 people who had malaria or typhoid in the last year (family, classmates, market traders) and write down the one question they wished someone had answered for them before they went to a clinic."
+        },
+        "C2": {
+          "score": 4,
+          "evidence": "Section 2 says information was gathered on 'common symptoms associated with malaria, typhoid and other common infections' and 'warning signs'. No source, statistic, guideline or existing symptom checker is named anywhere in the brief.",
+          "gap": "You show that research happened, but not what it said. No cited source, and no look at any existing triage tool or symptom checker and what it gets wrong.",
+          "action": "Pick 3 cited sources (for example the WHO fact sheet on malaria and one Nigerian public health source), and make a table with one row per symptom and the source that supports it."
+        },
+        "C3": {
+          "score": 8,
+          "evidence": "You justify key choices: triage not diagnosis ('It does not confirm that a user has a particular disease'), three levels, warning signs that override everything, and no database or server 'so that it can run directly in a modern web browser'. You name the limit: 'would require review by qualified healthcare professionals' before real patients.",
+          "gap": "You do not compare alternatives (why checkboxes and not a USSD menu or a chatbot, why three levels and not four). You do not discuss feasibility in Nigeria (data cost, basic phones, language). The fever rule is not justified, and the prototype returns the lowest level for fever with chills for 1 to 3 days.",
+          "action": "Write one page comparing 3 ways to take symptoms (web checkboxes, USSD menu, SMS or WhatsApp questions) on cost per user, whether it works on a basic phone, and the risk of missing a severe case, then pick one and say why."
+        },
+        "C4": {
+          "score": 18,
+          "evidence": "The live link loads (HTTP 200, one page, no login, title 'HealthTriage AI Prototype'). We read the page source and the runTriage() function. Warning signs (breathing, confusion, seizure, fainting, dehydration, blood) return red 'Urgent medical attention'. Duration 'More than 7 days' returns orange 'Clinical assessment recommended'. Anything else returns green 'Monitor and seek advice if needed'. Fever only adds one sentence to the text (lines 187-189). The age dropdown `<select id=\"age\">` (line 83) is never read by any code. A child under 5 and an adult with the same answers get the same result. The brief says 'AI-style explanations' and 'AI-assisted reasoning', but the page has only fixed rules and fixed text. The page does say it does not diagnose malaria or typhoid.",
+          "gap": "To reach the 26 band the core rule must be real. Age must change the result, fever with a 1 to 3 day history must raise the level, and the page must do more than add one sentence for fever. The stream asks for triage of malaria and typhoid. This page never separates them and has no malaria or typhoid logic. It has no learned or data-based logic at all, so the 'AI-driven' part of the stream is not met.",
+          "action": "Make the age dropdown change the result: a child under 5 with fever for 1 to 3 days should return orange, not green. Then test 3 cases and put the 3 results in your brief."
+        },
+        "C5": {
+          "score": 3,
+          "evidence": "Your brief has seven sections (Introduction, Research Process, Project Design, Set-Up, Safety, Testing, Conclusion). Testing says 'the prototype can be tested using different combinations of symptoms' and describes what should happen, but it reports no test run, no bug and no change. It names HTML, CSS and JavaScript as tools.",
+          "gap": "No problem you hit, no iteration, and no decision that changed because of testing. No mention of any AI tool used to build the page, which makes the claimed 'AI-assisted reasoning' hard to trust.",
+          "action": "Add a section called 'What broke' with 3 bugs you found while testing (for example the age dropdown that does nothing), what you changed to fix each one, and which tool (AI or manual) you used for the fix."
+        },
+        "C6": {
+          "score": 3,
+          "evidence": "Your statement says you want to help develop IT and AI in Nigeria and Africa. No portfolio link is given, and no repo is linked for the prototype.",
+          "gap": "The statement is sincere but generic. It does not say what you want to build for TIC or what you have built before, and no past work is shown.",
+          "action": "Link one earlier project (GitHub or a live site), or say plainly that this is your first build, and name one TIC project you will lead in term one."
+        }
+      },
+      "total": 41,
+      "verdict": "You built a live, safety-minded triage form that gives an emergency answer for warning signs, but the age field is dead, fever alone gets the lowest level, and there is no AI or malaria-specific logic.",
+      "strongestPoint": "Safety design: warning signs override every other answer, the page says it does not diagnose malaria or typhoid, and the link is live with no login.",
+      "biggestGap": "The triage logic is a short fixed rule list. The age input is never read, fever with chills for 1 to 3 days returns green, and the brief's AI claims are not in the code.",
+      "improvements": [
+        "Make the age dropdown change the result: a child under 5 with fever for 1 to 3 days should return orange, and test it.",
+        "Add a 'What broke' section to your brief with 3 real bugs, the fix for each, and the tool used for the fix.",
+        "Interview 5 people who had malaria or typhoid and write down the one question they wished someone had answered before going to a clinic."
+      ]
+    },
+    {
+      "tid": "TIC-ML4MCG",
+      "name": "Oluwadamilola Edun",
+      "track": "data-ai",
+      "title": "CarePath",
+      "prototypeUrl": "https://carepath-tic.streamlit.app/",
+      "late": false,
+      "scores": {
+        "C1": {
+          "score": 11,
+          "evidence": "You reframe the problem well: 'How might we help someone recognize when symptoms may require urgent professional attention?' You name the root cause (few clinicians, malaria symptoms overlap with other fevers). The form asks where the user lives ('Urban / peri-urban' or 'Rural / hard to reach'), and the rural answer changes the care text ('If the nearest clinic is far, do not delay travel'). Pidgin is offered as a second language.",
+          "gap": "The user is still 'someone'. You do not name who this is for (for example a mother with a child under 5 in a rural LGA, or a trader with no transport money). The brief does not say how low literacy shaped the form, and the form is a text-heavy wizard with 21 checkboxes on one page.",
+          "action": "Write a one-page profile of one real user in one place in Nigeria, list the 3 things that user cannot do easily, and change the symptom page so it does not need reading to finish."
+        },
+        "C2": {
+          "score": 8,
+          "evidence": "Your brief cites four sources with links: WHO malaria fact sheet, WHO Global Health Observatory figure for Nigeria (3.86 doctors per 10,000 in 2022), WHO guidance on diagnostic testing for malaria, and WHO malaria guidelines (2025). The WHO testing guidance changed the wording in the app: 'WHO recommends diagnostic testing for suspected malaria rather than treating from symptoms alone.'",
+          "gap": "You do not look at any existing solution. No symptom checker, Nigerian health app or PHC tool is named, so you cannot say what they miss. No primary research with users, which is the step that would move this to the 12 band.",
+          "action": "Test 3 existing symptom checkers (for example NHS 111 online and one Nigerian health app) on the same 5 cases, and write down where each one gives a different answer from your app."
+        },
+        "C3": {
+          "score": 12,
+          "evidence": "Section 9 has a clear trade-off table: train an ML model now (rejected, no validated dataset), diagnose malaria or typhoid (rejected, symptoms overlap), add many diseases (rejected, narrower is easier to test), build a backend (rejected, keep it light). Section 3 names the risk: 'A false reassurance from an unvalidated diagnostic model could be harmful.' Section 6 says the weights are 'prototype heuristics, not clinical thresholds.' The design handles the main risk with a danger-sign override that returns urgent regardless of score.",
+          "gap": "Feasibility in Nigeria is not worked through: no data cost, no basic-phone test, and no offline plan (listed only as Phase 5). The safety design you describe (danger signs always override) does not hold in the live manual path, and the brief does not say so.",
+          "action": "Write a 1-page feasibility check for one user with a basic phone and a 500 MB data plan: how many taps the form needs, how long it takes to load on 2G, and what you would cut to make it work."
+        },
+        "C4": {
+          "score": 14,
+          "evidence": "The app is live at carepath-tic.streamlit.app (it was asleep and woke after one click, no login). Two of the three live demo presets work (we ran them; the third is not confirmed below): 'Fever + headache + chills' gives score 7, 'Lower urgency', 'Monitor and reassess'. 'Child + breathing + confusion' gives score 30, 'High urgency', 'Urgent attention', 'Seek emergency medical care immediately', with a contribution chart. The manual path fails. We entered age 35, ticked 'Confusion / unusual drowsiness' and 'Seizure / convulsion' on step 2, pressed Continue, Continue, 'See my urgency result'. The result was 'Monitor and reassess', 'No emergency warning signs were detected in this prototype', completeness 0%, and 'No symptoms were selected, so the score stays low.' We also entered age 35, went to 'Edit answers', and the age came back as 0. The cause is in app.py: the symptom checkboxes are drawn only on page 1 (lines 298-308), and Streamlit clears a widget's value when the widget is not drawn on a run. So the values are gone by the result page.",
+          "gap": "The safety path fails for typed-in answers. A person who ticks seizure and confusion by hand is told to monitor at home. To reach the 26 band the result must use what the user typed. Keep all answers on the result path, and re-test the three preset cases and three typed cases after the fix. The 'Similar prototype cases' tab uses a 10-row hand-written file (data/prototype_cases.csv), so the 'data-driven' claim is thin. The middle preset (fever, vomiting, weakness) was not captured in our run, so we did not confirm its headline.",
+          "action": "Copy each answer into a plain dictionary when the user presses Continue on step 1, 2 and 3, so the values survive to the result page, then type in the seizure and confusion case and confirm it returns 'Urgent attention'."
+        },
+        "C5": {
+          "score": 7,
+          "evidence": "The brief shows the real path: the first framing was 'shortage of healthcare access', it was narrowed to triage, a table records what was rejected and why (section 9), and section 12 lists what a real AI system would need. Honest limits are stated in section 6 and section 11. Stack is named: Python, Streamlit, Pandas, Plotly. Your commit history shows Cursor was used (the commit 'Add CarePath Streamlit triage prototype' has a Cursor co-author line), but the brief does not say so.",
+          "gap": "No bug or failed attempt is described. The testing section (section 10) lists 3 expected pathways and says they 'demonstrate that the intended decision pathways are implemented'. That claim is not true of the live app for typed answers. No next-step dates or owners beyond a roadmap.",
+          "action": "Add a 'What broke' section that reports the typed-answers bug, the screenshot of the 0% result, the fix you made, and the date you re-tested, and name Cursor as the AI tool you used with what you used it for."
+        },
+        "C6": {
+          "score": 9,
+          "evidence": "Your statement is specific: you want to turn real problems into practical technology that fits the Nigerian context. The portfolio shows about two dozen public repos from before the sprint, including a voice-first AI tutor, a health dashboard and a hackathon tool. The entry itself shows effort: presets, a clinician handoff download, a Pidgin option, a contribution chart, and a 16-section brief with references.",
+          "gap": "The statement does not name a TIC project you want to lead. It is strong on what you will learn and gain, and less strong on what you will build for the club.",
+          "action": "Name one TIC project you want to lead this term (for example a Pidgin voice version of CarePath for a PHC), and say which of your earlier repos you would bring to it."
+        }
+      },
+      "total": 61,
+      "verdict": "You have a well-argued, honest triage design and a live app whose preset cases work, but a typed-in danger sign is lost before the result, so a real user with seizure and confusion would be told to monitor at home.",
+      "strongestPoint": "Your design reasoning is the clearest part of the entry: a written table of rejected options (ML model now, diagnosis, many diseases, backend), with the reason for each, and the brief says plainly that the weights are not clinical thresholds.",
+      "biggestGap": "Typed-in answers never reach the result. Ticking seizure and confusion by hand gives 'Monitor and reassess' with 0% completeness, which is the most serious gap in this entry.",
+      "improvements": [
+        "Copy every answer into a plain dictionary when the user presses Continue, so the symptom and danger-sign values reach the result page, then test the typed seizure and confusion case.",
+        "Add a 'What broke' section that shows the typed-answers bug with a screenshot, the fix, and the date you re-tested.",
+        "Test 3 existing symptom checkers on the same 5 cases and write down where each one differs from CarePath."
+      ]
+    },
+    {
+      "tid": "TIC-MMUR8C",
+      "name": "Nicholas Onuorah",
+      "track": "game-dev",
+      "title": "danfo",
+      "prototypeUrl": "https://github.com/nicholaswashere-ops/nicholas12345.git",
+      "late": false,
+      "scores": {
+        "C1": {
+          "score": 8,
+          "evidence": "Your game puts the player at 'OJOTA BUS STOP, 9:14am' with a sister's wedding in Lekki by 11am, a Bolt fare of NGN 4,200 because of surge, and 'Your data dey also finish small small'. The setting and the constraints are specific. Your brief says only that you 'thought about my area and what some people go through'. It never says who the player is.",
+          "gap": "You name a setting and real constraints, but no real person and no root cause. The next band needs the user written down (for example a worker who must reach Lekki on time with little money) and the cost, data or traffic problem explained as a real problem, not only as a joke in the game.",
+          "action": "Write three lines about one real person you know who made a Lagos trip like this in the last month: their route, what it cost them, and how long it took."
+        },
+        "C2": {
+          "score": 2,
+          "evidence": "Your brief names no source, no survey and no existing game. It describes choosing Rust and debugging with help. The Lagos details in the game (Ojota, Third Mainland, Bolt surge, okada, a police checkpoint) come from your own knowledge with no check against any source.",
+          "gap": "No research is shown. The next band needs a few cited claims, such as a published danfo or Bolt fare with its source and date, or a primary check where you asked real people.",
+          "action": "Ask five people who travel to Lekki what they paid last week for a danfo, an okada and a Bolt, and write the five answers in your brief."
+        },
+        "C3": {
+          "score": 4,
+          "evidence": "Your brief gives one reason: 'I chose this to well be able to understand it ... since its in my curriculum', which is a reason for the language. It gives no reason for the game design. It does not say why the game is text, why time and cash are the two stats, or why the routes are set up as they are.",
+          "gap": "You describe the scenes and endings but do not justify them. The next band needs a stated design decision with a reason, and at least one thing you chose not to build.",
+          "action": "Write one paragraph that explains why you chose a text game over a graphic one, why time and cash are the two stats, and name one feature you left out and why."
+        },
+        "C4": {
+          "score": 18,
+          "evidence": "The code is public at github.com/nicholaswashere-ops/nicholas12345 in rust/danfo/src/main.rs (347 lines). We read the source on GitHub and did not run it. The choices change cash, time and vibe, route to other scenes, and reach one of four endings. The game is a real branching game with Lagos scenes and Pidgin dialogue. But there is no hosted or browser version, the README is only the repo name, and a reviewer needs a Rust toolchain (edition 2024) before they can play it. The time limit cannot run out. The start time is 90 minutes (line 40). The largest total time cost on any route is 41 minutes (-25 on the danfo, -6 in the danfo scene, -10 at the conductor scene), so the 'YOU MISSED THE ENTRY DANCE' ending (line 258) cannot be reached. The Bolt option costs NGN 4,200 (line 172) and the player starts with NGN 2,500. The code clamps cash to 0 (line 65) instead of blocking the purchase.",
+          "gap": "To reach the next band, the time limit must be able to run out, and an unaffordable option must be blocked. A reviewer also needs a way to play without a toolchain, such as a README with exact run steps or a browser build. The stakes are the heart of a game, and right now the player cannot lose on time.",
+          "action": "Change the start time on line 40 from 90 to 40, play the danfo route once, and confirm the missed-entry ending appears."
+        },
+        "C5": {
+          "score": 4,
+          "evidence": "Your brief lists steps: you chose Rust, 'proofread and debugged with assist', 'stored it as a sublime text' and 'ran it in my command prompt'. It names no bug and no change. The brief is 481 bytes long.",
+          "gap": "The steps are listed, but there is no problem, no iteration and no decision. 'With assist' does not say which AI tool helped or what it changed. The next band needs at least one real bug you hit and the tool that helped you fix it.",
+          "action": "Name one bug you hit while building (for example the Bolt cost or the time check), say which AI tool you asked for help, and write what you changed."
+        },
+        "C6": {
+          "score": 6,
+          "evidence": "Your statement is sincere but general: you want to make a positive difference for yourself and PAU. Your repo shows Rust practice before the sprint. It has a practice crate, and the first commits are dated 30 August 2026, before the sprint started. That is evidence of past building.",
+          "gap": "Your statement does not say what you want to build or do in TIC. The next band needs a specific purpose and a finished project you can show a user. Your danfo game is not yet a finished project a user can open.",
+          "action": "Write one sentence that names the game you want to build for TIC next term and the TIC session you would join to start it."
+        }
+      },
+      "total": 42,
+      "verdict": "You built a real branching Rust text game with specific Lagos scenes and Pidgin, but the time limit cannot run out and a reviewer cannot play it without installing Rust.",
+      "strongestPoint": "The Lagos scenes (Ojota bus stop, Third Mainland, Bolt surge, okada, a police checkpoint) and the Pidgin dialogue are specific, and each choice changes the game state and the route.",
+      "biggestGap": "The time limit cannot run out. The worst route costs 41 of the 90 minutes, so the main stake of the game does not exist, and the missed-entry ending cannot be reached.",
+      "improvements": [
+        "Change the start time on line 40 of rust/danfo/src/main.rs from 90 to 40, play the danfo route once, and confirm the missed-entry ending appears.",
+        "Block the Bolt option when cash is below NGN 4,200, then check that a player with NGN 2,500 cannot buy it.",
+        "Add a README to rust/danfo with the exact cargo run steps and the Rust version needed, and remove the committed .exe, .pdb and target/ folders from the repo."
+      ]
+    },
+    {
+      "tid": "TIC-NLNHVX",
+      "name": "Chinedu Mbaeto",
+      "track": "web",
+      "title": "A Farm Traceability Website",
+      "prototypeUrl": "https://lovable.dev/projects/df880672-602b-45ed-b6e8-29f31afe01c6",
+      "late": true,
+      "scores": {
+        "C1": {
+          "score": 3,
+          "evidence": "The uploaded brief file is the app's source code (2,147 lines of HTML, CSS and JavaScript), so it holds no problem statement. The only framing is on the page: 'Connect farmers, buyers and supply-chain partners through transparent batch records'. That restates the stream topic. The sample farms are in Ethiopia and Switzerland, and prices are in US dollars.",
+          "gap": "You name no user, no place and no constraint. Nothing in the design shows a Nigerian farmer or buyer. Band 8 to 11 needs one specific user in one specific setting, with one real limit that shapes the design.",
+          "action": "Write one paragraph that names one Nigerian farmer, one buyer, the market they trade in, and one constraint they face (for example, buyers cannot check a price before they travel)."
+        },
+        "C2": {
+          "score": 0,
+          "evidence": "We found no research in the uploaded file or the repo. The sample farms, the certifier names (for example 'AgriCert Standard Labs') and the prices are invented. No source, statistic or competitor is named.",
+          "gap": "You show no research at all. Band 4 to 7 needs a few sourced claims. Band 8 to 11 needs those sources plus a look at existing traceability tools and what they miss.",
+          "action": "List three existing produce marketplaces or traceability tools, and write one line on what each does and one line on what it misses for a farmer."
+        },
+        "C3": {
+          "score": 4,
+          "evidence": "The page has four sections (Marketplace, Traceability, Farmer Portal, Dashboard). The header says 'Simulated Web3 Node' and the mint form says 'simulated on-chain provenance record', which is an honest label. The code keeps all data in the browser's localStorage. The brief does not say why a blockchain-style ledger was chosen, why browser storage was chosen, or what stops a fake farm from registering.",
+          "gap": "You describe features but do not justify them. You do not compare a simulated ledger with a normal database. You do not consider how a Nigerian farmer with weak connectivity would use the app, and the product photos load from an external image host. The main risk, that anyone can mint a batch under any farm name, is not named.",
+          "action": "Write a three-row decisions table: why a ledger or not, why browser storage or not, and what stops a fake farm from registering. For each row, give the reason and the risk you accept."
+        },
+        "C4": {
+          "score": 4,
+          "evidence": "The public link (lovable.dev/projects/df880672-602b-45ed-b6e8-29f31afe01c6) shows 'You don't have access. This project is private.' We clicked the page's 'Log in' button, which opened the Lovable login page. We entered no details and did not request access. The prototype could not be used by a public reviewer, so there was nothing to test live. We do not run entrant code, so we read the uploaded source only. It shows a marketplace, a traceability search and a mint form in JavaScript, with data kept in localStorage.",
+          "gap": "A reviewer cannot open the prototype, so this score stays in the 0 to 7 band. The source also shows that the verification is for display only. Every product card prints 'Verified Origin' and every batch searched shows 'On-Chain Verified', whether it was minted seconds ago or not. 'Units listed' counts batches, not units. The cart is a counter with no checkout and no way to remove an item. The next band needs a link any reviewer can open, where the verification works for real.",
+          "action": "Publish the Lovable project to a public URL, open that URL in a private browser window with no login, and send us the link."
+        },
+        "C5": {
+          "score": 1,
+          "evidence": "The uploaded brief file is source code, not a process brief. It has no steps, no problems hit, no iterations and no AI tool named. The processDocLink field in your entry is empty.",
+          "gap": "No process is shown. Band 3 to 5 needs the steps you took. Band 6 to 8 needs what broke, what you changed, and which tools (including AI tools) you used for which part.",
+          "action": "Write a one-page process note in time order: what you tried first, what broke, what you changed, and which AI tool you used for which part."
+        },
+        "C6": {
+          "score": 3,
+          "evidence": "Your statement says you want to improve and relearn skills you already have. It names no TIC role or project. Your public repo has one small 2025 upload. The prototype file was committed after the deadline.",
+          "gap": "The statement is generic, and the repo shows no past building. Band 6 to 8 needs a named TIC role or project you want to work on, or a link to earlier work you can show.",
+          "action": "Name one TIC role you want, and add a link to one project you built before the sprint, even a single page that runs."
+        }
+      },
+      "total": 10,
+      "verdict": "You submitted a one-page demo that labels every batch as verified without any check behind the label, and a reviewer could not open it at all, and it arrived about an hour after the deadline.",
+      "strongestPoint": "The mint form checks required fields, and the code escapes user text before it reaches the page (escapeHTML), so a farmer typing HTML cannot break the layout.",
+      "biggestGap": "The verified claims are not real. Every batch shows 'Verified Origin' and 'On-Chain Verified', and anyone can mint a batch under any farm name. A public reviewer also could not open the prototype.",
+      "improvements": [
+        "Publish the Lovable project to a public URL and test it yourself in a private browser window with no login.",
+        "Make the verified label earn its name: show 'Verified' only for batches that a second party has checked, and store who checked and when.",
+        "Move the app to Nigerian data: naira prices, Nigerian sample farms, and a quantity field with a number and a unit (kg or tonnes) so buyers can add up totals."
+      ]
+    },
+    {
+      "tid": "TIC-QRVN6Y",
+      "name": "Dami Fakiyesi",
+      "track": "embedded",
+      "title": "PowerGuard: Solving power and grid management issues in nigeria",
+      "prototypeUrl": "https://github.com/D-fakiyesi/PowerGuard",
+      "late": false,
+      "scores": {
+        "C1": {
+          "score": 7,
+          "evidence": "Your brief says 'users need to understand how much energy their appliances consume and how that affects electricity costs and available power.' The tariff is set in naira per kWh, the only Nigeria-specific detail.",
+          "gap": "The user is 'users' or 'households', with no place, no size and no income or setting. The naira tariff is an input the user types in. It does not change the design.",
+          "action": "Name one real user (for example, a provision shop owner in Surulere with a fridge and a freezer on an inverter) and write their monthly bill, outage hours per day and battery size into the brief."
+        },
+        "C2": {
+          "score": 2,
+          "evidence": "The brief has no figures, no sources and no existing product. The tariff is typed in by the user, not taken from a published source.",
+          "gap": "You have no sourced claims at all. Band 4 to 7 needs a few sourced statistics, and band 8 to 11 needs a comparison with existing solutions.",
+          "action": "Look up the current tariff for your local electricity distributor (DisCo) on its website, cite the page and date, and set that number as the default tariff in the app."
+        },
+        "C3": {
+          "score": 6,
+          "evidence": "The brief sets four battery modes (NORMAL at 80 percent and above, MODERATE at 50 to 79, SAVING at 20 to 49, CRITICAL below 20) and says lower-priority appliances are cut first. It gives the reason: 'available power becomes limited'.",
+          "gap": "The brief does not explain why 80, 50 and 20 were chosen, what happens to a fridge or freezer when it is cut, or what alternative design you rejected. No risk is named.",
+          "action": "Pick a battery datasheet, write one sentence on why the 20 percent critical line protects the battery, and one sentence on what happens to a fridge that is switched off at that level."
+        },
+        "C4": {
+          "score": 17,
+          "evidence": "The console app (Program.cs) asks for appliance name, watts, hours, tariff and priority, then calculates energy as W / 1000 x hours and cost as energy x tariff (checked in the code). It saves records to usage_history.txt. Its battery section cuts the lowest-priority appliance at 50 percent or less, and cuts all of them below 20 percent. The WinForms dashboard (Form1.cs lines 12 to 15) hard-codes batteryLevel = 75, energyUsed = 6.5 and tariff = 200, and its 'Automatic Switch System' panel is a fixed label.",
+          "gap": "The console works from start to finish, but it crashes on bad input (Convert.ToDouble and Convert.ToInt32 throw), and it sheds load but never switches a source. The dashboard is one static screen. PowerGuardCore is referenced by the project files, but no code calls it. There is no README, screenshot or test project, so a reviewer must install .NET 10 and guess what to type.",
+          "action": "Replace the Convert.ToDouble and Convert.ToInt32 calls in Program.cs with double.TryParse and int.TryParse inside a re-ask loop, then type 'abc' for watts and confirm the program asks again instead of crashing."
+        },
+        "C5": {
+          "score": 6,
+          "evidence": "Your process brief lists eleven build steps in order: console calculator, multiple appliances, history file, appliance class, battery modes, priorities, shared core, then dashboard. It names C#, .NET and VS Code.",
+          "gap": "No problem, failed attempt or change after a test is recorded, and the brief does not say whether AI tools were used. Two claims go beyond the repo: step 11 says the dashboard is connected to PowerGuardCore, and section 6 says tests covered the AC, fridge and microwave cases. No code references PowerGuardCore and there is no test project.",
+          "action": "Add a 'What broke' step with one real bug you hit (for example, the console crash on bad input) and what you changed, and remove the claim about the core connection unless you wire it up."
+        },
+        "C6": {
+          "score": 4,
+          "evidence": "Your statement says you want to learn more about embedded systems and machine learning, and gives networking and opportunities as reasons. You have no portfolio link, and the repo has two commits in the sprint window.",
+          "gap": "You name no TIC project or role, and you link no past build. The statement is sincere, but it could be written by anyone in the club.",
+          "action": "Name one TIC stream or role you want and one thing you would build for it next term, then link one public repo you built before the sprint."
+        }
+      },
+      "total": 42,
+      "verdict": "A working console calculator with real battery-mode logic, let down by a dashboard that shows fixed numbers and a brief that claims a core connection and tests the repo does not contain.",
+      "strongestPoint": "The console app does real arithmetic, saves a usage history and sheds the lowest-priority load first, and the battery bands are written out clearly.",
+      "biggestGap": "The dashboard is a static screen with hard-coded values, and the brief says it is connected to the core logic, which the repo does not show.",
+      "improvements": [
+        "Replace the Convert.ToDouble and Convert.ToInt32 calls in Program.cs with TryParse and a re-ask loop, then type 'abc' for watts to confirm the app does not crash.",
+        "Make Form1.cs read batteryLevel and the appliance states from PowerGuardCore, then delete the hard-coded values.",
+        "Add a test project with one test that checks 1000 W for 2 hours at 200 naira per kWh gives 2 kWh and 400 naira, and cite that test in the brief."
+      ]
+    },
+    {
+      "tid": "TIC-UA4NPV",
+      "name": "Chika Nwaezeigwe",
+      "track": "embedded",
+      "title": "Voltra: Monitoring your power.",
+      "prototypeUrl": "https://voltra.vercel.app/",
+      "late": false,
+      "scores": {
+        "C1": {
+          "score": 7,
+          "evidence": "Your brief says the dashboard 'summarizes the power situation in ones living space' and that Manual mode is 'the recommended mode for end users'. It names the unstable supply in Nigeria as the problem. It does not name a place, a household type or a daily pattern.",
+          "gap": "The user is 'one's living space' and 'end users'. No hostel, flat or shop is named in the brief. The 200 V and 250 V cut-offs shape the whole design, but the brief never explains them.",
+          "action": "Pick one hostel room or shop, log its mains voltage for one day with a cheap meter, and put the lowest and highest readings in the first paragraph of the brief."
+        },
+        "C2": {
+          "score": 2,
+          "evidence": "The brief has no figure, no source and no product. Its only research claim is 'the unstable power supply in Nigeria'. The live page cites nothing either.",
+          "gap": "No sourced statistic and no existing product are named. Band 4 to 7 needs a few sourced claims, and band 8 to 11 needs a comparison with a product that exists.",
+          "action": "Find one published figure for mains voltage swings or outage hours in a Nigerian city, cite it with a link and date, and name one voltage stabiliser and one thing it lacks."
+        },
+        "C3": {
+          "score": 4,
+          "evidence": "The live page shows the rules: 'Grid low < 200V, Grid high > 250V, Solar ready >= 12V'. Its status text explains one choice: 'Grid fault, but the solar bank is not charged enough yet, staying on grid'. The brief explains none of these rules.",
+          "gap": "You do not say why 200 V and 250 V are the cut-offs, why 12 V is the solar-ready level, or what a fridge or laptop does at 260 V. You compare no alternative, such as a generator, and name no risk.",
+          "action": "Add three sentences to the brief: why 200 V and 250 V were chosen, why 12 V counts as solar ready, and which appliance each rule protects."
+        },
+        "C4": {
+          "score": 20,
+          "evidence": "The live site at voltra.vercel.app loads with no login. In Manual mode, grid 180 V with solar 24 V moved to 'Solar Active'. Grid 180 V with solar 5 V stayed on 'Grid Active' and showed the reason. Grid 280 V with solar 24 V moved to solar with 'running on solar to protect the load'. In Demo mode the grid read 274.3 V and then 156.2 V, ten seconds apart. The mobile layout is clean.",
+          "gap": "The Live view should show your circuit, but it shows a shared web store. The public history holds 60 readings, all from Manual or Demo mode, and none from a device. Anyone can post to that feed, and the device API key sits in the public JavaScript. The page logs a download-button fetch error and a WebSocket close on load. The dashboard measures voltage only: no kW, kWh, battery or generator, so 'power' in the name is not measured. To reach 26, Live must show readings from your ESP32 only, the POST route must reject posts without a device key, and the load errors must be fixed.",
+          "action": "Add a device key check to the POST /api/reading route and filter the Live view to readings from your ESP32's device ID, then test that a POST without the key is rejected."
+        },
+        "C5": {
+          "score": 4,
+          "evidence": "Your brief covers Sense, Think and Act, the three modes and the Wokwi circuit. It says 'I used AI to assist me in the code and how best to wire the components of the circuitry.' That is an honest answer, and it is rewarded here.",
+          "gap": "The brief records no failed attempt, no problem and no change. It says the dashboard 'had to be connected to the circuitry over wifi, to get real time changes'. The live app has no device data, and the sketch image in your brief has no Wi-Fi code. The process brief claims a link that is not shown.",
+          "action": "Write a 'What went wrong' section with two items, then either show the ESP32 Wi-Fi code and one real post to your live app, or remove the Wi-Fi claim from the brief."
+        },
+        "C6": {
+          "score": 4,
+          "evidence": "Your statement says you want to build something of your own that helps people. Your brief says you are new to embedded systems. You link no portfolio and no past project.",
+          "gap": "The statement names no problem, no TIC role and no feature you want to build. It shows no past build. Band 6 to 8 needs a specific contribution you want to make and a link to past work.",
+          "action": "Name one power problem you want to solve for TIC next term and link one past project, even a school or Arduino tutorial build with a photo."
+        }
+      },
+      "total": 41,
+      "verdict": "A working voltage-switching dashboard with clear modes, held back by a Live view that shows shared web data instead of your circuit, and a brief that claims a Wi-Fi link that the evidence does not show.",
+      "strongestPoint": "The switching rule is real. In every Manual test the page did what its thresholds say: 180 V with solar 24 V moved to solar, and 180 V with solar 5 V stayed on grid with a reason.",
+      "biggestGap": "On the live site, the Live view shows values posted from the web page, not from a circuit, and the write route accepts posts from anyone.",
+      "improvements": [
+        "Add a device key check to the POST route, and filter the Live view to readings from your ESP32 only.",
+        "Explain the 200 V, 250 V and 12 V rules in your brief, with the appliance each rule protects.",
+        "Add a measured or simulated current input so the dashboard shows watts, not only volts, and say in the brief how it is produced."
+      ]
+    },
+    {
+      "tid": "TIC-VKVCGB",
+      "name": "Andikan-Phoebe Gideon Etefia",
+      "track": "cybersecurity",
+      "title": "FraudShield NG",
+      "prototypeUrl": "https://fraudshield-ng-alert.lovable.app",
+      "late": false,
+      "scores": {
+        "C1": {
+          "score": 4,
+          "evidence": "Your 'Problem' section repeats the stream brief almost word for word: 'Millions of unsophisticated internet users are losing their livelihoods to complex phishing and local 419 digital tactics'. The user is 'Millions of unsophisticated internet users', with no place, job, or setting from your own research.",
+          "gap": "The problem is named, but the user is generic. Band 8 to 11 needs one specific user in one setting, with one real constraint. The low-literacy constraint from the stream brief does not shape anything you describe in your own words.",
+          "action": "Pick one user (for example a Lagos trader who gets bank and mobile money SMS on a basic phone) and write one paragraph that says what that user reads, what they cannot read easily, and what the first line of your tool must say to them."
+        },
+        "C2": {
+          "score": 2,
+          "evidence": "Your brief has no sources and no statistics. It names no existing scam checker and no test with a real user. We did not find any research in the brief beyond the Rust code screenshot, which is a build artefact.",
+          "gap": "You show that you wrote a tool, but not what the fraud problem looks like for real people. Band 4 to 7 needs a few sourced claims. Band 8 to 11 needs a cited source and a look at an existing product.",
+          "action": "Collect 10 real scam messages from people you know (with their permission), sort them into 3 groups by type, and put the counts and the group names in your brief."
+        },
+        "C3": {
+          "score": 6,
+          "evidence": "Your brief names two limits: 'It uses predefined fraud indicators' and 'It does not work for all scam messages or as a complete scam message detector'. You use three risk levels, High Risk, Caution and Low Risk, and show a warning sign list for each message.",
+          "gap": "You do not explain why you chose these levels, these indicators, or a web page over a USSD or SMS format. The live page marks a real bank OTP notice as High Risk, and your brief does not name that as a false alarm. Your brief does not discuss cost or how a user without data would reach the tool.",
+          "action": "Test the tool on 5 real bank OTP notices and 5 real scam messages, count the false alarms and the misses, and write one paragraph that names the false alarm risk and the change you would make."
+        },
+        "C4": {
+          "score": 19,
+          "evidence": "The live app at fraudshield-ng-alert.lovable.app loads with no login. The check runs in the browser with 12 weighted patterns. We tested your brief's example ('Your BVN has been blocked. Send your OTP to 08031234567 to unblock now') and got High Risk with 5 warning signs. 'Hi mum, I will be home by 6' got Low Risk. The Pidgin message 'Abeg send me your account number and OTP' got High Risk. Each warning sign has a plain-language reason, and five example buttons fill the box in one tap.",
+          "gap": "Four faults showed up in our tests. First, 'Your OTP is 482913. Do not share it with anyone. - GTBank' gets High Risk, because any match on OTP forces High Risk, so a real bank notice gets the same alarm as a scam. Second, 'Your transfer has been verified' gets an 'asks you to verify' sign, because the pattern matches the letters 'verif'. Third, the verdict and the sign list disagree: 'Your GTBank account has been debited N1,500' lists a bank-impersonation sign and still gets Low Risk. Fourth, 'Hi mum, I will be home by 6. Pls send me N500 for food' gets Low Risk, so a money request is not flagged. There is no Pidgin option, no voice, and no USSD or SMS path. To reach the next band, the OTP rule needs context, the verdict and signs must agree, and the page needs a voice or language option.",
+          "action": "Stop the OTP pattern from forcing High Risk on its own: give it 2 points instead, then test 'Your OTP is 482913. Do not share it with anyone. - GTBank' and write the verdict you get in your brief."
+        },
+        "C5": {
+          "score": 6,
+          "evidence": "Your brief names the tools you used (a Rust program, ChatGPT and Lovable), says you 'know little to nothing when it comes to coding', and embeds four images, several of them Rust code in Sublime Text. It names two limits of the tool. This is an honest account of how the tool was made.",
+          "gap": "The brief does not say what broke, or what you changed after a test. The live page does not run the Rust keyword list from your screenshot. It runs 12 JavaScript patterns, and the brief does not say the logic was rewritten. Band 9 to 10 needs the full path plus a next-step plan.",
+          "action": "Add a 'What broke and what changed' section that compares the 17-item Rust keyword list with the 12 patterns on the live page, and name the two bugs that led to the change."
+        },
+        "C6": {
+          "score": 3,
+          "evidence": "Your statement says you want more exposure to real-world technology, and you are not yet sure what to build. The portfolio field is empty, and no repo is linked.",
+          "gap": "The statement is sincere but general. It names no TIC role and no project, and no past work is shown. Band 6 to 8 needs a specific contribution or a link to past work.",
+          "action": "Link the folder or repo for your Rust project, and name one TIC project you want to help build in the first term."
+        }
+      },
+      "total": 40,
+      "verdict": "You built a working browser checker with plain-language reasons, but a real bank OTP notice gets High Risk, and your brief does not say the logic was rewritten from the Rust code.",
+      "strongestPoint": "The page works with no login and explains each warning sign in plain words. Your brief is open about how little coding you knew and which AI tools you used.",
+      "biggestGap": "The OTP pattern forces High Risk on any message that mentions OTP, so a real bank notice gets the same alarm as a scam.",
+      "improvements": [
+        "Give the OTP pattern 2 points instead of forcing High Risk, then test 'Your OTP is 482913. Do not share it with anyone. - GTBank' and record the verdict in your brief.",
+        "Fix the money pattern so 'send me N500' is flagged, and stop the verification pattern matching 'verified' by using whole-word matches.",
+        "Add a 'What broke and what changed' section that covers the move from Rust to the web page and the two bugs above, and name the tool you used for each fix."
+      ]
+    },
+    {
+      "tid": "TIC-VLGX7Y",
+      "name": "Nickson Omoike",
+      "track": "game-dev",
+      "title": "Rush Hour Traffic",
+      "prototypeUrl": "https://rush-traffic-dodge-081941.onhercules.app/",
+      "late": false,
+      "scores": {
+        "C1": {
+          "score": 3,
+          "evidence": "Your brief describes a 'high-score road-dodging game' with a 'lane-based car' on 'an endless road'. It names no player, no place and no problem. It does not mention Nigeria, Africa or a danfo or matatu. The live game is titled 'MATATU RUSH' and its text is in English only.",
+          "gap": "You have a mechanic but no user and no problem. The next band needs a named player and a setting (for example a commuter who takes a danfo to school in Lagos at 7am) and one real constraint that shapes the design.",
+          "action": "Write three sentences: who plays this game, where and when they play it, and what it should make them feel about the daily commute."
+        },
+        "C2": {
+          "score": 1,
+          "evidence": "Your brief and statement show no research. There is no source, no survey, no interview and no look at another game. The brief's only background is the mechanic itself.",
+          "gap": "Nothing is researched. The next band needs at least a few sourced claims, or a primary check such as a short ride-along or a short survey of people who commute.",
+          "action": "Ride a danfo for 30 minutes at rush hour, write down the three things that happened most often (for example stops, lane changes, hawkers), and put that list in your brief."
+        },
+        "C3": {
+          "score": 6,
+          "evidence": "Your brief explains some choices. The timing minigame 'sets starting time budget', checkpoints 'grant bonus time', and you used 'PNGs as objects' 'due to limits'. The live game does what the brief says: a start lock at the centre of the bar gave 45 s, and a lock at the edge gave 30 s.",
+          "gap": "You describe features but do not weigh them. Why a timing minigame and not a free start? What does a new player lose if the time budget is too tight? The next band needs one trade-off you made and one risk you handled, for example phone data cost or a slow phone.",
+          "action": "Write one paragraph that explains why the start-time bar exists, and what a new player should expect from a 30-second start, and say whether you tested it with anyone."
+        },
+        "C4": {
+          "score": 20,
+          "evidence": "The link https://rush-traffic-dodge-081941.onhercules.app/ loads with no login. We played about nine rounds with real steering, pause and restart. The clock counts down in real time, and 'Time's up!' with 'JOURNEY OVER' appears when it reaches zero. The start-time bar gave 45 s at the centre and 30 s at the edge, as your brief says. At phone width (390x844) the layout and the on-screen controls appear. Three things kept this out of the next band. First, a truck hit costs about 1 second and gives no visible feedback. In one screenshot the car sits on a truck and the score keeps rising. Second, the first two ArrowLeft presses after the start lock did not move the car. Third, we did not reach the finish line, and one restart showed the same figures as the earlier round, so we could not confirm that a new round started. We also did not see a checkpoint on screen, although your brief says they grant bonus time. The obstacle sprites sit on white and grey boxes, and the game text has no Nigerian place, language or event. 'Matatu' is the word used in Kenya and East Africa, and Nigerians say danfo.",
+          "gap": "To reach the next band, a hit must be clear to the player, the first controls must respond straight away, a restart must clearly start a new round, and the checkpoints must be visible. The Nigerian content must also appear in the game itself, not only in the title. The obstacle boxes are the first thing a reviewer sees as unfinished.",
+          "action": "Add a red screen flash and a clock penalty of 3 seconds on each vehicle hit, then play three rounds and check that the penalty shows on the clock each time."
+        },
+        "C5": {
+          "score": 5,
+          "evidence": "Your brief says you used 'an Ai application' to build a web React app and that you 'had to outsource my work to an Ai agent due to a tight time schedule'. It is honest about the limits: 'a lot of bugs have currently not been optimized' and the mobile version is 'not fully ... optimized'.",
+          "gap": "The brief is honest about the limits, but it does not list what broke, what you tried, or what changed. It does not name the AI tool. The next band needs one bug, the fix you tried, and the tool used for it.",
+          "action": "Write down three bugs you know about (for example the hit with no feedback and the first controls that do not respond), and for each one write the fix you asked the AI agent for and whether it worked."
+        },
+        "C6": {
+          "score": 4,
+          "evidence": "Your statement says you want to create games for others to enjoy. No portfolio or repo is linked, and no earlier project is shown.",
+          "gap": "The statement is sincere but general. It names no TIC role and no past build. The next band needs one specific thing you want to build or contribute, and evidence that you have built something before.",
+          "action": "Link one earlier project (a GitHub repo, a Scratch project or a live page) in the portfolio field, or write plainly that this is your first build."
+        }
+      },
+      "total": 39,
+      "verdict": "You built a working browser arcade game with a real timing start, a countdown and a clear end state, but it has no Nigerian content, and a reviewer sees unfinished details such as the box behind each vehicle.",
+      "strongestPoint": "The core loop works end to end in the browser: the start-time bar sets your clock, steering and speed change your progress, and the round ends with a score and a Try Again button.",
+      "biggestGap": "The game has no Nigerian or African content beyond the word in the title, and your brief does not describe a player or a problem, so the stream's cultural goal is not met.",
+      "improvements": [
+        "Add a red flash and a 3-second clock penalty on each vehicle hit, then play three rounds and check the penalty shows each time.",
+        "Put one Lagos detail in the game itself, such as a danfo conductor line or a Lagos road name on the title screen, and call the minibus a danfo instead of a matatu.",
+        "Write three sentences that name the player, the place and the problem the game is about, and add them to the top of your brief."
+      ]
+    }
+  ]
+}
