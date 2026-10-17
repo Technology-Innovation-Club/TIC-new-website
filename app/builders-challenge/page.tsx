@@ -98,6 +98,13 @@ export default function BuildersChallengePage() {
           <div className="relative mx-auto max-w-7xl px-4 pt-12 pb-10 sm:px-6 sm:pt-16 lg:px-8">
             <div className="mx-auto max-w-4xl text-center">
               <AnimatedSection>
+                <Link
+                  href="/builders-challenge/leaderboard"
+                  className="mb-4 flex w-full items-center justify-center gap-2 rounded-xl bg-gold px-4 py-3 font-poppins text-sm font-bold text-primary transition hover:brightness-105 sm:mx-auto sm:w-fit"
+                >
+                  <Trophy size={16} aria-hidden="true" /> The results are in. See the leaderboard and your feedback
+                  <ArrowRight size={16} aria-hidden="true" />
+                </Link>
                 <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2">
                   <span className="h-2 w-2 animate-pulse rounded-full bg-gold" aria-hidden="true" />
                   <span className="text-xs font-bold uppercase tracking-widest text-white/90 dark:text-foreground/80">

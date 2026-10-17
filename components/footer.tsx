@@ -133,7 +133,7 @@ export function Footer() {
                 <p className="text-xs font-semibold uppercase text-primary font-poppins">
                   Partner inbox
                 </p>
-                <p className="mt-1 text-sm text-foreground/70">
+                <p className="mt-1 text-sm break-all text-foreground/70">
                   tech.innovation.club@pau.edu.ng
                 </p>
               </div>
