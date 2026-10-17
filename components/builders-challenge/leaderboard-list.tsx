@@ -12,29 +12,68 @@ export interface StreamGroup {
 
 const ALL = "all";
 
-function openFromHash() {
-  const target = document.getElementById(decodeURIComponent(window.location.hash.slice(1)));
+function currentFragment() {
+  try {
+    return decodeURIComponent(window.location.hash.slice(1));
+  } catch {
+    return "";
+  }
+}
+
+function anchorFragment(anchor: HTMLAnchorElement) {
+  try {
+    return decodeURIComponent((anchor.getAttribute("href") ?? "").slice(1));
+  } catch {
+    return "";
+  }
+}
+
+function dropFragment() {
+  history.replaceState(null, "", window.location.pathname + window.location.search);
+}
+
+function openEntry(id: string) {
+  const target = document.getElementById(id);
   if (target instanceof HTMLDetailsElement) {
     target.open = true;
     target.scrollIntoView({ block: "start" });
   }
 }
 
+function isVisible(entries: RankedEntry[], streamId: string, tid: string) {
+  return streamId === ALL || entries.some((entry) => entry.tid === tid && entry.track === streamId);
+}
+
 export function LeaderboardList({ entries, groups }: { entries: RankedEntry[]; groups: StreamGroup[] }) {
   const [active, setActive] = useState(ALL);
 
   useEffect(() => {
-    const onHashChange = () => {
+    const showFragmentEntry = () => {
       setActive(ALL);
-      requestAnimationFrame(openFromHash);
+      requestAnimationFrame(() => openEntry(currentFragment()));
     };
-    openFromHash();
-    window.addEventListener("hashchange", onHashChange);
-    return () => window.removeEventListener("hashchange", onHashChange);
+    const onClick = (event: MouseEvent) => {
+      const anchor = (event.target as Element | null)?.closest<HTMLAnchorElement>('a[href^="#"]');
+      const id = anchor ? anchorFragment(anchor) : "";
+      if (id && id === currentFragment()) showFragmentEntry();
+    };
+    showFragmentEntry();
+    window.addEventListener("hashchange", showFragmentEntry);
+    document.addEventListener("click", onClick);
+    return () => {
+      window.removeEventListener("hashchange", showFragmentEntry);
+      document.removeEventListener("click", onClick);
+    };
   }, []);
 
   const options = [{ id: ALL, label: "All streams", count: entries.length }, ...groups];
   const visible = active === ALL ? entries : entries.filter((entry) => entry.track === active);
+
+  function selectStream(streamId: string) {
+    const open = currentFragment();
+    if (open && !isVisible(entries, streamId, open)) dropFragment();
+    setActive(streamId);
+  }
 
   return (
     <div>
@@ -45,7 +84,7 @@ export function LeaderboardList({ entries, groups }: { entries: RankedEntry[]; g
             type="button"
             aria-pressed={active === option.id}
             aria-label={`${option.label}, ${option.count} entries`}
-            onClick={() => setActive(option.id)}
+            onClick={() => selectStream(option.id)}
             className="rounded-full border border-border bg-card px-4 py-2 text-sm font-semibold text-foreground/75 transition hover:border-secondary/50 aria-pressed:border-secondary aria-pressed:bg-secondary aria-pressed:text-secondary-foreground"
           >
             {option.label}
