@@ -890,7 +890,7 @@
           "score": 3,
           "evidence": "Your statement says you want to improve and relearn skills you already have. It names no TIC role or project. Your public repo has one small 2025 upload. The prototype file was committed after the deadline.",
           "gap": "The statement is generic, and the repo shows no past building. Band 6 to 8 needs a named TIC role or project you want to work on, or a link to earlier work you can show.",
-          "action": "Name one TIC role you want, and add a link to one project you built before the sprint, even a single page that runs."
+          "action": "Link one earlier project you built yourself, and name one TIC project you will lead in the first term."
         }
       },
       "total": 10,

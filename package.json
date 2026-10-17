@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "portless techinnovationclub next dev",
-    "build": "convex codegen && next build",
-    "start": "next start",
+    "dev": "node init && portless techinnovationclub next dev",
+    "build": "node init && convex codegen && next build",
+    "start": "node init && next start",
     "lint": "eslint"
   },
   "dependencies": {
