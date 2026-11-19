@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { connection } from "next/server";
 import { ArrowRight, ArrowUpRight, BookOpen, ChevronDown, MapPin } from "lucide-react";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
@@ -30,8 +31,6 @@ export const metadata: Metadata = {
     "Mini hackathons, weekly Drops, showcases and talks at the Tech Innovation Club, Pan-Atlantic University, from November 2026 to April 2027.",
 };
 
-export const revalidate = 3600;
-
 const KIND_STYLES: Record<EventKind, string> = {
   hackathon: "bg-gold/15 text-[#7a4d00] border-gold/50 dark:text-gold",
   drop: "bg-secondary/10 text-secondary border-secondary/25 dark:bg-secondary/30 dark:text-[#cfc4ff] dark:border-secondary/60",
@@ -52,7 +51,8 @@ const LEVEL_STYLES: Record<LevelName, string> = {
 
 const LEVEL_HEAT: Record<LevelName, string> = { Mild: "🌶️", Hot: "🌶️🌶️", Fire: "🌶️🌶️🌶️" };
 
-export default function CalendarPage() {
+export default async function CalendarPage() {
+  await connection();
   const today = lagosToday();
   const upNext = nextEvent(PHASES, today);
 
