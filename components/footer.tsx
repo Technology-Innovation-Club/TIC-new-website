@@ -12,6 +12,7 @@ export function Footer() {
     { label: "About", href: "/about" },
     { label: "Media", href: "/media" },
     { label: "Programmes", href: "/programmes" },
+    { label: "Calendar", href: "/calendar" },
     { label: "Partners", href: "/partners" },
   ];
 
