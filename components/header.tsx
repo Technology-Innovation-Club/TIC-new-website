@@ -73,7 +73,7 @@ export function Header() {
           key={item.href}
           href={item.href}
           onClick={() => setIsOpen(false)}
-          className={`text-sm font-semibold font-poppins relative group inline-flex ${
+          className={`whitespace-nowrap text-sm font-semibold font-poppins relative group inline-flex ${
             isActive(item.href) ? "text-primary" : "text-foreground/80"
           }`}
         >
@@ -111,23 +111,23 @@ export function Header() {
               <div className="flex items-center gap-2">
                 <span className="font-bold text-primary font-poppins">TIC</span>
               </div>
-              <p className="text-xs text-foreground/60">Lagos, Nigeria</p>
+              <p className="text-xs text-foreground/60 whitespace-nowrap">Lagos, Nigeria</p>
             </div>
           </Link>
 
-          <nav className="hidden lg:flex items-center gap-8">{links}</nav>
+          <nav className="hidden lg:flex items-center gap-6 xl:gap-8">{links}</nav>
 
           <div className="hidden lg:flex items-center gap-4">
             <ModeToggle />
             <Link
               href="/media"
-              className="px-4 py-2 rounded-lg border border-border text-primary font-semibold hover:bg-muted transition-colors"
+              className="hidden xl:block whitespace-nowrap px-4 py-2 rounded-lg border border-border text-primary font-semibold hover:bg-muted transition-colors"
             >
               Explore wins
             </Link>
             <Link
               href="/contact"
-              className="px-5 py-2 rounded-lg bg-secondary text-secondary-foreground font-semibold hover:brightness-[0.98] active:translate-y-px transition-all inline-flex items-center gap-2 font-poppins dark:bg-card dark:text-card-foreground dark:border dark:border-border"
+              className="whitespace-nowrap px-5 py-2 rounded-lg bg-secondary text-secondary-foreground font-semibold hover:brightness-[0.98] active:translate-y-px transition-all inline-flex items-center gap-2 font-poppins dark:bg-card dark:text-card-foreground dark:border dark:border-border"
             >
               Partner / Join
               <ArrowRight size={16} />

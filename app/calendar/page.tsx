@@ -198,8 +198,8 @@ function EventRow({ event, today }: { event: ClubEvent; today: string }) {
   const hasDetails = Boolean(event.groups?.length || event.levels?.length || event.resources?.length);
 
   return (
-    <li id={event.id} className={`scroll-mt-24 grid grid-cols-[4.5rem_1fr] sm:grid-cols-[5.5rem_1fr] gap-4 sm:gap-6 ${past ? "opacity-55" : ""}`}>
-      <div className="pt-1 text-center">
+    <li id={event.id} className={`scroll-mt-24 grid sm:grid-cols-[5.5rem_1fr] gap-4 sm:gap-6 ${past ? "opacity-55" : ""}`}>
+      <div className="hidden sm:block pt-1 text-center">
         <p className="text-xs font-bold uppercase tracking-widest text-foreground/55">{weekday}</p>
         <p className="text-4xl sm:text-5xl font-semibold font-poppins text-primary dark:text-foreground leading-none mt-1">
           {day}
@@ -211,7 +211,7 @@ function EventRow({ event, today }: { event: ClubEvent; today: string }) {
       </div>
 
       <article
-        className={`rounded-2xl border bg-card p-6 sm:p-7 tic-shadow ${
+        className={`rounded-2xl border bg-card p-5 sm:p-7 tic-shadow ${
           happening ? "border-gold ring-2 ring-gold/40" : "border-border"
         }`}
       >
@@ -234,7 +234,10 @@ function EventRow({ event, today }: { event: ClubEvent; today: string }) {
           {event.title}
         </h3>
         <p className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm font-medium text-foreground/60">
-          <span>{dateLabel(event)}</span>
+          <span>
+            {dateLabel(event)}
+            {event.week ? <span className="sm:hidden"> · Week {event.week}</span> : null}
+          </span>
           {event.place && (
             <span className="inline-flex items-center gap-1">
               <MapPin size={14} aria-hidden="true" />
@@ -262,11 +265,11 @@ function PauseRow({ event, today }: { event: ClubEvent; today: string }) {
   return (
     <li
       id={event.id}
-      className={`scroll-mt-24 grid grid-cols-[4.5rem_1fr] sm:grid-cols-[5.5rem_1fr] gap-4 sm:gap-6 ${
+      className={`scroll-mt-24 grid sm:grid-cols-[5.5rem_1fr] gap-4 sm:gap-6 ${
         isPast(event, today) ? "opacity-55" : ""
       }`}
     >
-      <div />
+      <div className="hidden sm:block" />
       <div className="rounded-2xl border border-dashed border-foreground/25 px-6 py-4 flex flex-wrap items-center gap-x-4 gap-y-1">
         <span className="font-semibold text-foreground/80">{event.title}</span>
         <span className="text-sm text-foreground/60">{dateLabel(event)}</span>
